@@ -1,0 +1,416 @@
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/raleway.woff2') format('woff2');
+}
+
+html .theme-rh-theme {
+    border-radius: 0 !important;
+}
+
+
+body.theme-rh-theme { 
+    --color-blue-dark: #264653;
+    --color-blue-dark-text: #a0b7c1;
+    --color-blue-light: #2a9d8f;
+    --color-blue-light-text: #abfaf0;
+    --color-yellow: #e9c46a;
+    --color-yellow-text: #63583c;
+    --color-orange-light: #f4a261;
+    --color-orange-light-text: #af995e;
+    --color-orange-dark: #e76f51;
+    --color-orange-dark-text: #f2dcd6;
+    --color-gray: #d6d6d6;
+    --color-gray-text: #333;
+    --color-gray-light: #f5f5f5;
+    --color-gray-light-text: #999;
+    --color-gray-dark: #666;
+    --color-gray-dark-text: #666;
+    
+    --main-font-family: 'Raleway' !important;
+    --main-font-size: normal;
+    
+    --tree-font-family: inherit;
+    --tree-font-size: normal;
+    
+    --detail-font-family: inherit;
+    --detail-font-size: normal;
+    
+    --detail-text-font-family: 'Raleway' !important;
+    --main-background-color: #fefefe;
+    --main-text-color: #333;
+    --main-border-color: #e76f51;
+    
+    --accented-background-color: #f5f5f5;
+    --more-accented-background-color: #e76f51;
+    
+    --header-background-color: #0b3b52;
+    --header-button-background-color: #0b3b52;
+    --header-button-accent-color: #f5f5f5;
+    
+    --button-background-color: white;
+    --button-disabled-background-color: white;
+    --button-border-color: none;
+    --button-text-color: #0b3b52;
+    --button-border-radius: 1px;
+    
+    --muted-text-color: #2f665f;
+    --input-text-color: #e76f51;
+    --input-background-color: white;
+    --modal-background-color: #ebebeb;
+    --hover-item-text-color: #f2dcd6;
+    --hover-item-background-color: #e76f51;
+    --active-item-text-color: #f2dcd6;
+    --active-item-background-color: #e76f51;
+    
+    --menu-text-color: #264653;
+    --context-menu-text: #264653;
+    --menu-background-color: #333;
+    --menu-background-color-light: #fefefe;
+}
+
+
+/* -------------------------------------- GENERAL -------------------------------------- */
+
+    /* Buttons General options*/
+    body.theme-rh-theme button {
+        background: none;  
+    }
+
+    [class*="active"] {
+        background-color: var(--color-orange-dark);
+        color: var(--color-orange-dark-text);
+        font-weight: normal !important;
+    }
+
+    /* GLOBAL BUTTON AREA */
+    body.theme-rh-theme #global-buttons {
+        background-color: var(--color-yellow);
+        border: none;
+        border-radius: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding: 0px !important;
+    }
+ 
+    /* GLOBAL BUTTON [LINK] */
+    body.theme-rh-theme #global-buttons a { 
+        color: var(--color-yellow-text);
+        display: block;
+        padding: 20px;
+        
+    }
+
+    /* GLOBAL BUTTON [LINK:HOVER] */
+    body.theme-rh-theme #global-buttons a:hover { 
+        color: white;
+        background-color: var(--color-yellow-text);
+    }
+
+/* -------------------------------------- HEADER -------------------------------------- */ 
+
+    /* header bar */
+    #header {
+        padding: 2px 0px 3px 0px !important;
+        margin-bottom: 0;
+        background-color: var(--color-blue-dark) !important;
+    }
+
+
+    /* Buttons in header bar */
+    body.theme-rh-theme #header button {
+        background-color: var(--color-blue-dark);
+        border: none;
+        color: var(--color-blue-dark-text);
+        font-size: 85% !important;
+        padding: 3px 15px !important;
+    }
+
+
+    /* TABS ROW*/
+    body.theme-rh-theme .note-tab-row {
+        margin-top: 0px;
+        padding-top: 0px;
+        border-radius: 0;
+        background-color: var(--color-gray-light);
+        min-height: 63px !important;
+        padding-left: 10px;
+    }
+
+
+    body.theme-rh-theme .note-tab {
+        border-right: 3px solid white;
+        font-size: smaller;
+        margin-right: 5px;
+        margin-left: 5px;
+        padding-right: 10px;
+    }
+
+
+    /* TAB BUTTON [CLOSE] */
+    body.theme-rh-theme .note-tab-wrapper {        
+        border-radius: 0px !important;
+        background-image: none !important;
+    }
+
+
+    /* TAB BUTTON [CLOSE] */
+    body.theme-rh-theme .note-tab-close {
+        color: var(--color-orange-dark-text)
+    }
+
+
+    /* TAB TEXT [ACTIVE] */
+    body.theme-rh-theme .note-tab[active] .note-tab-wrapper .note-tab-title {
+        color: var(--color-orange-dark-text);
+        font-weight: normal;
+    }
+
+    /* TAB [ACTIVE] */
+    body.theme-rh-theme .note-tab[active] {
+        background-color: var(--color-orange-dark) !important;
+        box-shadow: none;
+        margin-left: 3px;
+        margin-right: 3px;
+        bottom: 0;
+        height: 50px;
+    }
+
+
+    /* TAB TEXT [INACTIVE] */
+    body.theme-rh-theme .note-tab-wrapper .note-tab-title {
+        color: var(--color-gray-light-text);
+    }
+    
+
+    /* TAB [INACTIVE] */
+    body.theme-rh-theme .note-tab {
+        background-color: var(--color-gray-light);
+        box-shadow: inset 0px -15px 7px -12px rgba(181,181,181,0.8);
+        border: 1px solid var(--color-gray);
+        border-bottom: none;
+        margin-left: 3px;
+        margin-right: 3px;
+        bottom: 0;
+        height: 40px;
+    }
+
+
+    /* NEW TAB ICON */
+    body.theme-rh-theme .note-new-tab {
+        bottom: 0;
+    }
+
+
+
+
+/* -------------------------------------- MAIN -------------------------------------- */
+
+    /* NOTE CONTAINER */
+    body.theme-rh-theme #note-tab-container {
+        margin-left: 0px;
+        padding-left: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-gray);
+        background-color: var(--color-gray-light) !important;)
+
+    }
+
+
+    /* NOTE BUTTONS */
+    body.theme-rh-theme #note-tab-container button {
+        border: 1px solid var(--color-gray); 
+        border-radius: 24px; 
+        color: var(--color-gray-dark-text);
+        padding: 6px 12px;
+        margin: auto 5px auto auto;
+    }
+
+
+    /* NOTE MENU DROPDOWN */
+    body.theme-rh-theme .dropdown-menu {
+        background-color: var(--menu-background-color-light) !important;
+    }
+ 
+
+    /* SAVE INDICATOR */
+    body.theme-rh-theme .saved-indicator {
+        color: green;
+        font-size: 100%;
+        margin-right: 15px;
+        padding: 10px;
+        border: 1px dotted gray;
+        border-radius: 20px; 
+    }
+
+
+    /* NOTE TITLE */
+    body.theme-rh-theme input.note-title {
+        background-color: white !important;
+        padding: 3px 20px;
+        border-radius: 24px;
+        border: 1px solid var(--color-gray);
+        box-shadow: 7px 7px 4px -4px rgba(181,181,181,0.6);
+        text-align: center;
+    }
+
+
+    /* NOTE CONTENT */
+    body.theme-rh-theme .note-detail-component-wrapper {
+        padding-bottom: 0px;
+        margin-top: 15px;
+        border-top: 1px solid var(--color-gray);
+        padding-top: 15px;
+    }
+
+
+    /* PARAGRAPH STYLE: Codeblock */
+    body.theme-rh-theme code {
+        display: block;
+        padding: 10px 0 6px 10px;
+        border-left: 5px solid var(--color-orange-dark);
+    }
+
+    
+    /* NOTE CHILDREN AREA */
+    body.theme-rh-theme .children-overview {
+        border-top: 1px solid var(--color-gray);
+        box-shadow: 0px -3px 4px -3px rgba(181,181,181,0.6);
+        
+    }
+
+     
+    /* NOTE CHILDREN */
+    body.theme-rh-theme .child-overview-item {
+        align-content: flex-start;
+        background-color: var(--color-gray);
+        border-radius: 0px;
+        border-left: 7px solid var(--color-gray-dark);
+        flex-grow: inherit;
+        font-weight: normal;
+        height: initial;
+        line-height: 1.2em;
+        margin-right: 2px;
+        margin-top: 0;
+        overflow: auto;
+        text-align: left;
+        padding: 6px;
+    }
+
+    /* NOTE CHILDREN TEXT */
+    body.theme-rh-theme .child-overview-item a {
+        color: var(--color-gray-text);
+        display: block;
+        padding: 10px;
+    }
+
+    body.theme-rh-theme .child-overview-item a:hover {
+        color: var(--color-orange-dark);
+        text-decoration: none;
+    }
+
+/* -------------------------------------- SIDEBAR -------------------------------------- */
+
+    
+    /* SIDEBAR TEXT */
+    body.theme-rh-theme div#left-pane {
+        color: var(--color-gray-text);
+    }
+
+
+    /* SIDEBAR NODE */ 
+    body.theme-rh-theme span.fancytree-node {
+        
+    }
+
+    
+    /* SIDEBAR MENU ITEM */
+    body.theme-rh-theme span.fancytree-title {
+        border: none;
+        background: none;
+        padding: 3px 0;
+        
+    }
+
+
+    /* SIDEBAR MENU ITEM [FOCUSED] */
+    body.theme-rh-theme span.fancytree-focused .fancytree-title, 
+    body.theme-rh-theme span.fancytree-focused.fancytree-selected .fancytree-title {
+        border: none !important;  
+        background-color: none !important;
+        
+    }
+
+
+    /* SIDEBAR MENU ITEM [ICON]*/
+    body.theme-rh-theme span.fancytree-custom-icon {
+        color: var(--color-blue-dark);
+    }
+
+
+    /* SIDEBAR MENU ITEM [PROTECTED] */
+    body.theme-rh-theme span.fancytree-node.protected > span.fancytree-custom-icon {
+        filter: none;
+        color: var(--color-yellow);
+    }
+
+
+    body.theme-rh-theme span.fancytree-active:not(.fancytree-focused) .fancytree-title {
+        border: none !important;    
+        font-weight: normal;
+    }
+    
+
+   body.theme-rh-theme  span.fancytree-selected .fancytree-title {
+        background-color: var(--color-gray) !important;
+        border-color: var(--main-background-color) !important; /* invisible border */
+        border-radius: 0px;
+        color: var(--color-gray-text) !important;
+        font-style: normal;
+    }
+
+    body.theme-rh-theme span.fancytree-node:hover span.fancytree-title {
+        border-color: var(--main-border-color) !important;
+        border-radius: 0px;
+        
+    }
+
+
+
+/* -------------------------------------- FOOTER -------------------------------------- */
+    /* Attribute Buttons */
+    body.theme-rh-theme .show-attributes-button {
+        padding: 3px;
+        border-radius: 0 !important;
+        border: none !important;
+    }
+
+    /* Attributes */
+     body.theme-rh-theme .attribute-list-inner {
+        font-size: 90%;
+        margin-left: 10px;
+    }
+
+    /* Attributes Container*/
+    body.theme-rh-theme .attribute-list {
+        border-top: 1px solid #f5f5f5;
+        font-size: small;
+    }
+/* -------------------------------------- MENUS -------------------------------------- */
+
+    /* Context Menu (right click) */
+    body.theme-rh-theme #context-menu-container {
+        background-color: var(--menu-background-color-light) !important;
+    }
+
+    body.theme-rh-theme #context-menu-container .dropdown-item {
+        color: var(--context-menu-text) !important;
+    }
+
+/* -------------------------------------- MISC -------------------------------------- */
+
+
+
+
