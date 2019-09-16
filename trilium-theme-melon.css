@@ -1,16 +1,14 @@
-/*@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/custom/fonts/Roboto.woff2') format('woff2');
-}*/
+/* -------------------------------------- GLOBAL -------------------------------------- */
+
 
 html .theme-melon-theme {
     border-radius: 0 !important;
 }
 
 
-body.theme-melon-theme { 
+body.theme-melon-theme {
+
+    /* COLOR PALETTE */ 
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
     --color-blue-light: #2a9d8f;
@@ -75,10 +73,12 @@ body.theme-melon-theme {
 
 /* -------------------------------------- GENERAL -------------------------------------- */
 
+
     /* Buttons General options*/
     body.theme-melon-theme button {
         background: none;  
     }
+
 
     /* ACTIVE CLASS */    
     [class*="active"] {
@@ -86,6 +86,7 @@ body.theme-melon-theme {
         color: var(--color-orange-dark-text);
         font-weight: normal !important;
     }
+
 
     /* GLOBAL BUTTON AREA */
     body.theme-melon-theme #global-buttons {
@@ -98,6 +99,7 @@ body.theme-melon-theme {
         padding: 0px !important;
     }
  
+
     /* GLOBAL BUTTON [LINK] */
     body.theme-melon-theme #global-buttons a { 
         color: var(--color-yellow-text);
@@ -106,6 +108,7 @@ body.theme-melon-theme {
         
     }
 
+
     /* GLOBAL BUTTON [LINK:HOVER] */
     body.theme-melon-theme #global-buttons a:hover { 
         color: white;
@@ -113,10 +116,8 @@ body.theme-melon-theme {
     }
 
 
-
-
-
 /* -------------------------------------- HEADER -------------------------------------- */ 
+
 
     /* header bar */
     #header {
@@ -175,6 +176,7 @@ body.theme-melon-theme {
         font-weight: normal;
     }
 
+
     /* TAB [ACTIVE] */
     body.theme-melon-theme .note-tab[active] {
         background-color: var(--color-orange-dark) !important;
@@ -212,8 +214,8 @@ body.theme-melon-theme {
 
 
 
-
 /* -------------------------------------- MAIN -------------------------------------- */
+
 
     /* NOTE CONTAINER */
     body.theme-melon-theme #note-tab-container {
@@ -272,12 +274,14 @@ body.theme-melon-theme {
         padding-top: 15px;
     }
 
+
     /* NOTE CONTENT [TEXT] */
     body.theme-melon-theme .note-detail-component-wrapper p, 
     body.theme-melon-theme .note-detail-component-wrapper li {
         font-size: 1.2em;
         font-weight: normal;
     }
+
 
     /* NOTE CONTENT [LINKS] */
     html body.desktop.theme-melon-theme div#container div#note-tab-container div.note-tab-content a {
@@ -290,6 +294,7 @@ body.theme-melon-theme {
         border-bottom: 1px solid var(--color-yellow);
         margin-top: 2em;
     }
+
 
     /* PARAGRAPH STYLE: Codeblock */
     body.theme-melon-theme code {
@@ -343,6 +348,7 @@ body.theme-melon-theme {
         font-family: 'Noto Sans';
     }
 
+
     /* NOTE CHILDREN TEXT [LINKS] */
     body.theme-melon-theme .child-overview-item a {
         color: var(--color-gray-text);
@@ -365,6 +371,7 @@ body.theme-melon-theme {
     }
 
 
+    /* TOOLTIP [H1-3] */
     body.theme-melon-theme .tooltip h1, 
     body.theme-melon-theme .tooltip h2, 
     body.theme-melon-theme .tooltip h3 {
@@ -372,6 +379,8 @@ body.theme-melon-theme {
         font-weight: bold;
     }
 
+
+    /* TOOLTIP [INNER] */
     body.theme-melon-theme .tooltip-inner {
         background-color: var(--color-gray-light) !important;
         padding: 20px;
@@ -386,7 +395,7 @@ body.theme-melon-theme {
     }
 
 
-/* -------------------------------------- SIDEBAR -------------------------------------- */
+/* -------------------------------------- SIDEBAR (TREE MENU) -------------------------------------- */
 
     
     /* SIDEBAR TEXT */
@@ -406,7 +415,6 @@ body.theme-melon-theme {
         border: none;
         background: none;
         padding: 3px 0;
-        
     }
 
 
@@ -415,7 +423,6 @@ body.theme-melon-theme {
     body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
         border: none !important;  
         background-color: none !important;
-        
     }
 
 
@@ -455,6 +462,8 @@ body.theme-melon-theme {
 
 
 /* -------------------------------------- FOOTER -------------------------------------- */
+
+
     /* Attribute Buttons */
     body.theme-melon-theme .show-attributes-button {
         padding: 3px;
@@ -462,17 +471,21 @@ body.theme-melon-theme {
         border: none !important;
     }
 
+
     /* Attributes */
      body.theme-melon-theme .attribute-list-inner {
         font-size: 90%;
         margin-left: 10px;
     }
 
+
     /* Attributes Container*/
     body.theme-melon-theme .attribute-list {
         border-top: 1px solid #f5f5f5;
         font-size: small;
     }
+
+
 /* -------------------------------------- MENUS -------------------------------------- */
 
     /* Context Menu (right click) */
@@ -480,9 +493,11 @@ body.theme-melon-theme {
         background-color: var(--menu-background-color-light) !important;
     }
 
+
     body.theme-melon-theme #context-menu-container .dropdown-item {
         color: var(--context-menu-text) !important;
     }
+
 
 /* -------------------------------------- MISC -------------------------------------- */
 
