@@ -1,14 +1,15 @@
-/* -------------------------------------- GLOBAL -------------------------------------- */
+/*@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/Roboto.woff2') format('woff2');
+}*/
 
-
-html .theme-melon-theme {
+html .theme-rh-theme {
     border-radius: 0 !important;
 }
 
-
-body.theme-melon-theme {
-
-    /* COLOR PALETTE */ 
+body.theme-melon-theme { 
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
     --color-blue-light: #2a9d8f;
@@ -27,6 +28,7 @@ body.theme-melon-theme {
     --color-gray-dark-text: #666;
     --color-paper: #ecebe3;
     --color-paper-text: #555;
+    --color-paper-light: #fcfcfa;
     
     --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
     --main-font-size: normal;
@@ -73,12 +75,10 @@ body.theme-melon-theme {
 
 /* -------------------------------------- GENERAL -------------------------------------- */
 
-
     /* Buttons General options*/
     body.theme-melon-theme button {
         background: none;  
     }
-
 
     /* ACTIVE CLASS */    
     [class*="active"] {
@@ -86,7 +86,6 @@ body.theme-melon-theme {
         color: var(--color-orange-dark-text);
         font-weight: normal !important;
     }
-
 
     /* GLOBAL BUTTON AREA */
     body.theme-melon-theme #global-buttons {
@@ -99,7 +98,6 @@ body.theme-melon-theme {
         padding: 0px !important;
     }
  
-
     /* GLOBAL BUTTON [LINK] */
     body.theme-melon-theme #global-buttons a { 
         color: var(--color-yellow-text);
@@ -108,16 +106,37 @@ body.theme-melon-theme {
         
     }
 
-
     /* GLOBAL BUTTON [LINK:HOVER] */
     body.theme-melon-theme #global-buttons a:hover { 
         color: white;
         background-color: var(--color-yellow-text);
     }
 
+    
+    /* GLOBAL BUTTON ICON [NEW NOTE TOP LEVEL] */
+    body.theme-melon-theme a#create-top-level-note-button:before{
+        content: "\EA71";
+    }
+
+
+    /* GLOBAL BUTTON ICON [COLLAPSE TREE] */
+    body.theme-melon-theme a#collapse-tree-button:before {
+        content: "\E9F7";
+    }
+
+
+    /* GLOBAL BUTTON ICON [SCROLL TO ACTIVE] */
+    body.theme-melon-theme a#scroll-to-active-note-button:before {
+        content: "\EC0B";
+    }
+
+    /* GLOBAL BUTTON ICON [SEARCH] */
+    body.theme-melon-theme a#toggle-search-button:before {
+        content: "\EBA8";
+    }
+
 
 /* -------------------------------------- HEADER -------------------------------------- */ 
-
 
     /* header bar */
     #header {
@@ -131,11 +150,16 @@ body.theme-melon-theme {
     body.theme-melon-theme #header button {
         background-color: var(--color-blue-dark);
         border: none;
+        border-bottom: 1px solid var(--color-blue-dark);
         color: var(--color-blue-dark-text);
         font-size: 85% !important;
         padding: 3px 15px !important;
     }
 
+
+    body.theme-melon-theme #header button:hover {
+        border-bottom: 1px solid var(--color-blue-dark-text);
+    }
 
     /* TABS ROW*/
     body.theme-melon-theme .note-tab-row {
@@ -176,7 +200,6 @@ body.theme-melon-theme {
         font-weight: normal;
     }
 
-
     /* TAB [ACTIVE] */
     body.theme-melon-theme .note-tab[active] {
         background-color: var(--color-orange-dark) !important;
@@ -214,8 +237,8 @@ body.theme-melon-theme {
 
 
 
-/* -------------------------------------- MAIN -------------------------------------- */
 
+/* -------------------------------------- MAIN -------------------------------------- */
 
     /* NOTE CONTAINER */
     body.theme-melon-theme #note-tab-container {
@@ -237,6 +260,11 @@ body.theme-melon-theme {
         margin: auto 5px auto auto;
     }
 
+
+    /* BUTTONS HOVER*/
+    body.theme-melon-theme .btn-primary:hover {
+        background-color: var(--color-gray);
+    }
 
     /* NOTE MENU DROPDOWN */
     body.theme-melon-theme .dropdown-menu {
@@ -266,12 +294,24 @@ body.theme-melon-theme {
     }
 
 
-    /* NOTE CONTENT */
+    /* NOTE CONTENT [WRAPPER] */
     body.theme-melon-theme .note-detail-component-wrapper {
         padding-bottom: 0px;
         margin-top: 15px;
         border-top: 1px solid var(--color-gray);
         padding-top: 15px;
+    }
+
+    /* NOTE CONTENT */
+    body.theme-melon-theme .note-detail-component {
+        display: block;
+        box-shadow: inset 1px 1px 1px 1px var(--color-gray-light);
+        border: 1px dotted var(--color-gray);
+        background-color: var(--color-paper-light);
+        padding-left: 5px;
+        margin-right: 20px;
+        margin-bottom: 10px;     
+        margin-left: 10px;
     }
 
 
@@ -282,10 +322,9 @@ body.theme-melon-theme {
         font-weight: normal;
     }
 
-
     /* NOTE CONTENT [LINKS] */
-    html body.desktop.theme-melon-theme div#container div#note-tab-container div.note-tab-content a {
-        color: var(--color-paper-text);
+    html body.desktop.theme-rh-theme div#container div#note-tab-container div.note-tab-content a {
+        color: var(--color-orange-dark);
     }
 
 
@@ -301,15 +340,21 @@ body.theme-melon-theme {
         display: block;
         padding: 10px 0 6px 10px;
         border-left: 5px solid var(--color-orange-dark);
+        border-radius: 0;
     }
 
-    
+
+    /* CODE LINE BREAKS */
+    body.theme-melon-theme p > code + br {
+        /* do not display line breaks in Code Paragraphs, so the code sticks together */
+        display: none;
+    }
+
+
     /* NOTE CHILDREN AREA */
     body.theme-melon-theme .children-overview {
         border-top: 1px solid var(--color-gray);
-        /*! box-shadow: 0px -3px 4px -3px rgba(181,181,181,0.6); */
-        
-        /*! max-width: 95%; */
+        margin-right: 10px;
     }
 
      
@@ -318,36 +363,28 @@ body.theme-melon-theme {
         align-content: flex-start;
         background-color: var(--color-paper);
         border-radius: 0px;
-        /*! border-left: 1px solid var(--color-gray-light-text); */
+        box-shadow: 5px 5px 3px -3px rgba(181,181,181,0.6);
         flex-grow: inherit;
         font-weight: normal;
-        /*! height: 40px; */
         line-height: 1.2em;
-        margin-right: 0px;
-        margin-top: 0;
-        overflow: auto;
-        text-align: left;
-        padding: 6px;
-        /*! border-right: 1px solid var(--color-gray-light); */
         margin: 10px;
-        box-shadow: 5px 5px 3px -3px rgba(181,181,181,0.6);
-        /*! text-align: center; */
-        /*! content: "gugu"; */
+        overflow: auto;
+        padding: 6px;
+        text-align: left;
     }
 
     
     /* NOTE CHILDREN [ICON] */
     body.theme-melon-theme .child-overview-item:before {
-        content: "SUBFOLDER";
-        font-size: smaller;
-        color: var(--color-gray-dark);
-        
-        background-color: white;
-        padding: 3px 5px;
         border-radius: 10px;
-        font-family: 'Noto Sans';
+        background-color: white;
+        content: "SUBITEM";
+        color: var(--color-gray-dark);
+        font-family: var(--main-font-family);
+        font-size: x-small;
+        padding: 4px 6px;
+        text-align: center;
     }
-
 
     /* NOTE CHILDREN TEXT [LINKS] */
     body.theme-melon-theme .child-overview-item a {
@@ -370,8 +407,6 @@ body.theme-melon-theme {
         font-size: small !important;
     }
 
-
-    /* TOOLTIP [H1-3] */
     body.theme-melon-theme .tooltip h1, 
     body.theme-melon-theme .tooltip h2, 
     body.theme-melon-theme .tooltip h3 {
@@ -379,23 +414,23 @@ body.theme-melon-theme {
         font-weight: bold;
     }
 
-
-    /* TOOLTIP [INNER] */
     body.theme-melon-theme .tooltip-inner {
         background-color: var(--color-gray-light) !important;
-        padding: 20px;
-        max-width: 500px;
-        /* height needs to stay small because tooltip has problem when it can't fit to either top or bottom of the cursor */
-        max-height: 300px;
-        overflow: hidden;
-        border: 1px solid var(--main-border-color);
-        border-radius: 5px;
-        text-align: left;
+        border: 1px solid var(--color-gray);
+        border-radius: 2px;
+        box-shadow: 5px 5px 3px -4px rgba(181,181,181,0.6);
         color: var(--main-text-color) !important;
+        line-height: 1em;
+        overflow: hidden;
+        padding: 15px;
+        max-width: 300px;
+        max-height: 300px; /* height needs to stay small because tooltip has problem when it can't fit to either top or bottom of the cursor */
+        text-align: left;
+       
     }
 
 
-/* -------------------------------------- SIDEBAR (TREE MENU) -------------------------------------- */
+/* -------------------------------------- SIDEBAR -------------------------------------- */
 
     
     /* SIDEBAR TEXT */
@@ -415,6 +450,7 @@ body.theme-melon-theme {
         border: none;
         background: none;
         padding: 3px 0;
+        
     }
 
 
@@ -423,6 +459,7 @@ body.theme-melon-theme {
     body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
         border: none !important;  
         background-color: none !important;
+        
     }
 
 
@@ -435,7 +472,12 @@ body.theme-melon-theme {
     /* SIDEBAR MENU ITEM [PROTECTED] */
     body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon {
         filter: none;
-        color: var(--color-yellow);
+        color: var(--color-gray-dark);
+    }
+
+    /* PROTECTED ITEM [ICON]*/
+    body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon:before {
+        content: "\EBC6";
     }
 
 
@@ -445,6 +487,7 @@ body.theme-melon-theme {
     }
     
 
+   /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
    body.theme-melon-theme  span.fancytree-selected .fancytree-title {
         background-color: var(--color-gray) !important;
         border-color: var(--main-background-color) !important; /* invisible border */
@@ -453,31 +496,28 @@ body.theme-melon-theme {
         font-style: normal;
     }
 
+    /* SIDEBAR MENU ITEM [SECONDARY SELECTED:HOVER] */
     body.theme-melon-theme span.fancytree-node:hover span.fancytree-title {
+        background-color: var(--color-gray-light-text);
         border-color: var(--main-border-color) !important;
         border-radius: 0px;
-        
     }
-
 
 
 /* -------------------------------------- FOOTER -------------------------------------- */
 
-
-    /* Attribute Buttons */
+/* Attribute Buttons */
     body.theme-melon-theme .show-attributes-button {
         padding: 3px;
         border-radius: 0 !important;
         border: none !important;
     }
 
-
     /* Attributes */
      body.theme-melon-theme .attribute-list-inner {
         font-size: 90%;
         margin-left: 10px;
     }
-
 
     /* Attributes Container*/
     body.theme-melon-theme .attribute-list {
@@ -493,15 +533,8 @@ body.theme-melon-theme {
         background-color: var(--menu-background-color-light) !important;
     }
 
-
     body.theme-melon-theme #context-menu-container .dropdown-item {
         color: var(--context-menu-text) !important;
     }
 
-
-/* -------------------------------------- MISC -------------------------------------- */
-
-
-
-
-
+/* -------------------------------------- MISC ------------------------------
