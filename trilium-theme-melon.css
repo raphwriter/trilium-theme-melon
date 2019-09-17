@@ -1,540 +1,470 @@
-/*@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/custom/fonts/Roboto.woff2') format('woff2');
-}*/
-
-html .theme-rh-theme {
-    border-radius: 0 !important;
+html.theme-melon-theme {
+  border-radius: 0 !important;
 }
 
-body.theme-melon-theme { 
-    --color-blue-dark: #264653;
-    --color-blue-dark-text: #a0b7c1;
-    --color-blue-light: #2a9d8f;
-    --color-blue-light-text: #abfaf0;
-    --color-yellow: #e9c46a;
-    --color-yellow-text: #63583c;
-    --color-orange-light: #f4a261;
-    --color-orange-light-text: #c96a2e;
-    --color-orange-dark: #e76f51;
-    --color-orange-dark-text: #f2dcd6;
-    --color-gray: #d6d6d6;
-    --color-gray-text: #333;
-    --color-gray-light: #f5f5f5;
-    --color-gray-light-text: #999;
-    --color-gray-dark: #666;
-    --color-gray-dark-text: #666;
-    --color-paper: #ecebe3;
-    --color-paper-text: #555;
-    --color-paper-light: #fcfcfa;
-    
-    --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
-    --main-font-size: normal;
-    
-    --tree-font-family: inherit;
-    --tree-font-size: normal;
-    
-    --detail-font-family: inherit;
-    --detail-font-size: normal;
-    
-    --detail-text-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
-    --main-background-color: #fefefe;
-    --main-text-color: #333;
-    --main-border-color: #e76f51;
-    
-    --accented-background-color: #f5f5f5;
-    --more-accented-background-color: #e76f51;
-    
-    --header-background-color: #0b3b52;
-    --header-button-background-color: #0b3b52;
-    --header-button-accent-color: #f5f5f5;
-    
-    --button-background-color: white;
-    --button-disabled-background-color: white;
-    --button-border-color: none;
-    --button-text-color: #0b3b52;
-    --button-border-radius: 1px;
-    
-    --muted-text-color: #2f665f;
-    --input-text-color: #e76f51;
-    --input-background-color: white;
-    --modal-background-color: #ebebeb;
-    --hover-item-text-color: #f2dcd6;
-    --hover-item-background-color: #e76f51;
-    --active-item-text-color: #f2dcd6;
-    --active-item-background-color: #e76f51;
-    
-    --menu-text-color: #264653;
-    --context-menu-text: #264653;
-    --menu-background-color: #333;
-    --menu-background-color-light: #fefefe;
+:root {
+  --color-blue-dark: #264653;
+  --color-blue-dark-text: #a0b7c1;
+  --color-blue-light: #2a9d8f;
+  --color-blue-light-text: #abfaf0;
+  --color-yellow: #e9c46a;
+  --color-yellow-text: #63583c;
+  --color-orange-light: #f4a261;
+  --color-orange-light-text: #c96a2e;
+  --color-orange-dark: #e76f51;
+  --color-orange-dark-text: #f2dcd6;
+  --color-gray: #d6d6d6;
+  --color-gray-text: #333;
+  --color-gray-light: #f5f5f5;
+  --color-gray-light-text: #999;
+  --color-gray-dark: #666;
+  --color-gray-dark-text: #666;
+  --color-paper: #ecebe3;
+  --color-paper-text: #555;
+  --color-paper-light: #fcfcfa;
+  --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
+  --main-font-size: normal;
+  --tree-font-family: inherit;
+  --tree-font-size: normal;
+  --detail-font-family: inherit;
+  --detail-font-size: normal;
+  --detail-text-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
+  --main-background-color: #fefefe;
+  --main-text-color: #333;
+  --main-border-color: #e76f51;
+  --accented-background-color: #f5f5f5;
+  --more-accented-background-color: #e76f51;
+  --header-background-color: #0b3b52;
+  --header-button-background-color: #0b3b52;
+  --header-button-accent-color: #f5f5f5;
+  --button-background-color: white;
+  --button-disabled-background-color: white;
+  --button-border-color: none;
+  --button-text-color: #0b3b52;
+  --button-border-radius: 1px;
+  --muted-text-color: #2f665f;
+  --input-text-color: #e76f51;
+  --input-background-color: white;
+  --modal-background-color: #ebebeb;
+  --hover-item-text-color: #f2dcd6;
+  --hover-item-background-color: #e76f51;
+  --active-item-text-color: #f2dcd6;
+  --active-item-background-color: #e76f51;
+  --menu-text-color: #264653;
+  --context-menu-text: #264653;
+  --menu-background-color: #333;
+  --menu-background-color-light: #fefefe;
 }
-
 
 /* -------------------------------------- GENERAL -------------------------------------- */
 
-    /* Buttons General options*/
-    body.theme-melon-theme button {
-        background: none;  
-    }
+/* Buttons General options */
+body.theme-melon-theme button {
+  background: none;
+}
 
-    /* ACTIVE CLASS */    
-    [class*="active"] {
-        background-color: var(--color-orange-dark);
-        color: var(--color-orange-dark-text);
-        font-weight: normal !important;
-    }
+/* ACTIVE CLASS */
+[class*="active"] {
+  background-color: var(--color-orange-dark);
+  color: var(--color-orange-dark-text);
+  font-weight: normal !important;
+}
 
-    /* GLOBAL BUTTON AREA */
-    body.theme-melon-theme #global-buttons {
-        background-color: var(--color-yellow);
-        border: none;
-        border-radius: 0;
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
-        padding: 0px !important;
-    }
- 
-    /* GLOBAL BUTTON [LINK] */
-    body.theme-melon-theme #global-buttons a { 
-        color: var(--color-yellow-text);
-        display: block;
-        padding: 20px;
-        
-    }
+/* -------------------------------------- HEADER -------------------------------------- */
 
-    /* GLOBAL BUTTON [LINK:HOVER] */
-    body.theme-melon-theme #global-buttons a:hover { 
-        color: white;
-        background-color: var(--color-yellow-text);
-    }
+/* header bar */
+#header {
+  background-color: var(--color-blue-dark) !important;
+  margin-bottom: 0;
+  padding: 2px 0 3px 0 !important;
+}
 
-    
-    /* GLOBAL BUTTON ICON [NEW NOTE TOP LEVEL] */
-    body.theme-melon-theme a#create-top-level-note-button:before{
-        content: "\EA71";
-    }
+/* Buttons in header bar */
+body.theme-melon-theme #header button {
+  background-color: var(--color-blue-dark);
+  border: none;
+  border-bottom: 1px solid var(--color-blue-dark);
+  color: var(--color-blue-dark-text);
+  font-size: 85% !important;
+  padding: 3px 15px !important;
+}
 
+body.theme-melon-theme #header button:hover {
+  border-bottom: 1px solid var(--color-blue-dark-text);
+}
 
-    /* GLOBAL BUTTON ICON [COLLAPSE TREE] */
-    body.theme-melon-theme a#collapse-tree-button:before {
-        content: "\E9F7";
-    }
+/* TABS ROW */
+body.theme-melon-theme .note-tab-row {
+  background-color: var(--color-gray-light);
+  border-radius: 0;
+  margin-top: 0;
+  min-height: 63px !important;
+  padding-left: 10px;
+  padding-top: 0;
+}
 
+/* TAB BUTTON [CLOSE] */
+body.theme-melon-theme .note-tab-wrapper {
+  border-radius: 0 !important;
+  background-image: none !important;
+}
 
-    /* GLOBAL BUTTON ICON [SCROLL TO ACTIVE] */
-    body.theme-melon-theme a#scroll-to-active-note-button:before {
-        content: "\EC0B";
-    }
+/* TAB BUTTON [CLOSE] */
+body.theme-melon-theme .note-tab-close {
+  color: var(--color-orange-dark-text);
+}
 
-    /* GLOBAL BUTTON ICON [SEARCH] */
-    body.theme-melon-theme a#toggle-search-button:before {
-        content: "\EBA8";
-    }
+/* TAB TEXT [ACTIVE] */
+body.theme-melon-theme .note-tab[active] .note-tab-wrapper .note-tab-title {
+  color: var(--color-orange-dark-text);
+  font-weight: normal;
+}
 
+/* TAB [ACTIVE] */
+body.theme-melon-theme .note-tab[active] {
+  background-color: var(--color-orange-dark) !important;
+  box-shadow: none;
+  margin-left: 3px;
+  margin-right: 3px;
+  bottom: 0;
+  height: 50px;
+}
 
-/* -------------------------------------- HEADER -------------------------------------- */ 
+/* TAB TEXT [INACTIVE] */
+body.theme-melon-theme .note-tab-wrapper .note-tab-title {
+  color: var(--color-gray-light-text);
+}
 
-    /* header bar */
-    #header {
-        padding: 2px 0px 3px 0px !important;
-        margin-bottom: 0;
-        background-color: var(--color-blue-dark) !important;
-    }
+/* TAB [INACTIVE] */
 
+/* body.theme-melon-theme .note-tab {
+  border-right: 3px solid white;
+  font-size: smaller;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 10px;
+} */
 
-    /* Buttons in header bar */
-    body.theme-melon-theme #header button {
-        background-color: var(--color-blue-dark);
-        border: none;
-        border-bottom: 1px solid var(--color-blue-dark);
-        color: var(--color-blue-dark-text);
-        font-size: 85% !important;
-        padding: 3px 15px !important;
-    }
+body.theme-melon-theme .note-tab {
+  background-color: var(--color-gray-light);
+  box-shadow: inset 0 -15px 7px -12px rgba(181, 181, 181, 0.8);
+  border: 1px solid var(--color-gray);
+  border-bottom: none;
+  margin-left: 3px;
+  margin-right: 3px;
+  bottom: 0;
+  height: 40px;
+}
 
-
-    body.theme-melon-theme #header button:hover {
-        border-bottom: 1px solid var(--color-blue-dark-text);
-    }
-
-    /* TABS ROW*/
-    body.theme-melon-theme .note-tab-row {
-        margin-top: 0px;
-        padding-top: 0px;
-        border-radius: 0;
-        background-color: var(--color-gray-light);
-        min-height: 63px !important;
-        padding-left: 10px;
-    }
-
-
-    body.theme-melon-theme .note-tab {
-        border-right: 3px solid white;
-        font-size: smaller;
-        margin-right: 5px;
-        margin-left: 5px;
-        padding-right: 10px;
-    }
-
-
-    /* TAB BUTTON [CLOSE] */
-    body.theme-melon-theme .note-tab-wrapper {        
-        border-radius: 0px !important;
-        background-image: none !important;
-    }
-
-
-    /* TAB BUTTON [CLOSE] */
-    body.theme-melon-theme .note-tab-close {
-        color: var(--color-orange-dark-text)
-    }
-
-
-    /* TAB TEXT [ACTIVE] */
-    body.theme-melon-theme .note-tab[active] .note-tab-wrapper .note-tab-title {
-        color: var(--color-orange-dark-text);
-        font-weight: normal;
-    }
-
-    /* TAB [ACTIVE] */
-    body.theme-melon-theme .note-tab[active] {
-        background-color: var(--color-orange-dark) !important;
-        box-shadow: none;
-        margin-left: 3px;
-        margin-right: 3px;
-        bottom: 0;
-        height: 50px;
-    }
-
-
-    /* TAB TEXT [INACTIVE] */
-    body.theme-melon-theme .note-tab-wrapper .note-tab-title {
-        color: var(--color-gray-light-text);
-    }
-    
-
-    /* TAB [INACTIVE] */
-    body.theme-melon-theme .note-tab {
-        background-color: var(--color-gray-light);
-        box-shadow: inset 0px -15px 7px -12px rgba(181,181,181,0.8);
-        border: 1px solid var(--color-gray);
-        border-bottom: none;
-        margin-left: 3px;
-        margin-right: 3px;
-        bottom: 0;
-        height: 40px;
-    }
-
-
-    /* NEW TAB ICON */
-    body.theme-melon-theme .note-new-tab {
-        bottom: 0;
-    }
-
-
-
+/* NEW TAB ICON */
+body.theme-melon-theme .note-new-tab {
+  bottom: 0;
+}
 
 /* -------------------------------------- MAIN -------------------------------------- */
 
-    /* NOTE CONTAINER */
-    body.theme-melon-theme #note-tab-container {
-        margin-left: 0px;
-        padding-left: 20px;
-        padding-top: 20px;
-        border-top: 1px solid var(--color-gray);
-        background-color: var(--color-gray-light) !important;)
+/* NOTE CONTAINER */
+body.theme-melon-theme #note-tab-container {
+  margin-left: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-gray);
+  background-color: var(--color-gray-light) !important;
+}
 
-    }
+/* NOTE BUTTONS */
+body.theme-melon-theme #note-tab-container button {
+  border: 1px solid var(--color-gray);
+  border-radius: 24px;
+  color: var(--color-gray-dark-text);
+  padding: 6px 12px;
+  margin: auto 5px auto auto;
+}
 
+/* BUTTONS HOVER */
+body.theme-melon-theme .btn-primary:hover {
+  background-color: var(--color-gray);
+}
 
-    /* NOTE BUTTONS */
-    body.theme-melon-theme #note-tab-container button {
-        border: 1px solid var(--color-gray); 
-        border-radius: 24px; 
-        color: var(--color-gray-dark-text);
-        padding: 6px 12px;
-        margin: auto 5px auto auto;
-    }
+/* NOTE MENU DROPDOWN */
+body.theme-melon-theme .dropdown-menu {
+  background-color: var(--menu-background-color-light) !important;
+}
 
+/* SAVE INDICATOR */
+body.theme-melon-theme .saved-indicator {
+  color: green;
+  font-size: 100%;
+  margin-right: 15px;
+  padding: 10px;
+  border: 1px dotted gray;
+  border-radius: 20px;
+}
 
-    /* BUTTONS HOVER*/
-    body.theme-melon-theme .btn-primary:hover {
-        background-color: var(--color-gray);
-    }
+/* NOTE TITLE */
+body.theme-melon-theme input.note-title {
+  background-color: white !important;
+  padding: 3px 20px;
+  border-radius: 24px;
+  border: 1px solid var(--color-gray);
+  box-shadow: 7px 7px 4px -4px rgba(181, 181, 181, 0.6);
+  text-align: center;
+}
 
-    /* NOTE MENU DROPDOWN */
-    body.theme-melon-theme .dropdown-menu {
-        background-color: var(--menu-background-color-light) !important;
-    }
- 
+/* NOTE CONTENT [WRAPPER] */
+body.theme-melon-theme .note-detail-component-wrapper {
+  padding-bottom: 0;
+  margin-top: 15px;
+  border-top: 1px solid var(--color-gray);
+  padding-top: 15px;
+}
 
-    /* SAVE INDICATOR */
-    body.theme-melon-theme .saved-indicator {
-        color: green;
-        font-size: 100%;
-        margin-right: 15px;
-        padding: 10px;
-        border: 1px dotted gray;
-        border-radius: 20px; 
-    }
+/* NOTE CONTENT */
+body.theme-melon-theme .note-detail-component {
+  display: block;
+  box-shadow: inset 1px 1px 1px 1px var(--color-gray-light);
+  border: 1px dotted var(--color-gray);
+  background-color: var(--color-paper-light);
+  padding-left: 5px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
 
+/* NOTE CONTENT [TEXT] */
+body.theme-melon-theme .note-detail-component-wrapper p,
+body.theme-melon-theme .note-detail-component-wrapper li {
+  font-size: 1.2em;
+  font-weight: normal;
+}
 
-    /* NOTE TITLE */
-    body.theme-melon-theme input.note-title {
-        background-color: white !important;
-        padding: 3px 20px;
-        border-radius: 24px;
-        border: 1px solid var(--color-gray);
-        box-shadow: 7px 7px 4px -4px rgba(181,181,181,0.6);
-        text-align: center;
-    }
+/* NOTE CONTENT [LINKS] */
+body.desktop.theme-rh-theme div#container div#note-tab-container div.note-tab-content a {
+  color: var(--color-orange-dark);
+}
 
+/* NOTE CONTENT [TEXT:H1] */
+body.theme-melon-theme .note-detail-component-wrapper h1 {
+  border-bottom: 1px solid var(--color-yellow);
+  margin-top: 2em;
+}
 
-    /* NOTE CONTENT [WRAPPER] */
-    body.theme-melon-theme .note-detail-component-wrapper {
-        padding-bottom: 0px;
-        margin-top: 15px;
-        border-top: 1px solid var(--color-gray);
-        padding-top: 15px;
-    }
+/* PARAGRAPH STYLE: Codeblock */
+body.theme-melon-theme code {
+  display: block;
+  padding: 10px 0 6px 10px;
+  border-left: 5px solid var(--color-orange-dark);
+  border-radius: 0;
+}
 
-    /* NOTE CONTENT */
-    body.theme-melon-theme .note-detail-component {
-        display: block;
-        box-shadow: inset 1px 1px 1px 1px var(--color-gray-light);
-        border: 1px dotted var(--color-gray);
-        background-color: var(--color-paper-light);
-        padding-left: 5px;
-        margin-right: 20px;
-        margin-bottom: 10px;     
-        margin-left: 10px;
-    }
+/* CODE LINE BREAKS */
+body.theme-melon-theme p > code + br {
+  /* do not display line breaks in Code Paragraphs, so the code sticks together */
+  display: none;
+}
 
+/* NOTE CHILDREN AREA */
+body.theme-melon-theme .children-overview {
+  border-top: 1px solid var(--color-gray);
+  margin-right: 10px;
+}
 
-    /* NOTE CONTENT [TEXT] */
-    body.theme-melon-theme .note-detail-component-wrapper p, 
-    body.theme-melon-theme .note-detail-component-wrapper li {
-        font-size: 1.2em;
-        font-weight: normal;
-    }
+/* NOTE CHILDREN */
+body.theme-melon-theme .child-overview-item {
+  align-content: flex-start;
+  background-color: var(--color-paper);
+  border-radius: 0;
+  box-shadow: 5px 5px 3px -3px rgba(181, 181, 181, 0.6);
+  flex-grow: inherit;
+  font-weight: normal;
+  line-height: 1.2em;
+  margin: 10px;
+  overflow: auto;
+  padding: 6px;
+  text-align: left;
+}
 
-    /* NOTE CONTENT [LINKS] */
-    html body.desktop.theme-rh-theme div#container div#note-tab-container div.note-tab-content a {
-        color: var(--color-orange-dark);
-    }
+/* NOTE CHILDREN [ICON] */
+body.theme-melon-theme .child-overview-item::before {
+  border-radius: 10px;
+  background-color: white;
+  content: "SUBITEM";
+  color: var(--color-gray-dark);
+  font-family: var(--main-font-family);
+  font-size: x-small;
+  padding: 4px 6px;
+  text-align: center;
+}
 
+/* NOTE CHILDREN TEXT [LINKS:HOVER] */
+body.theme-melon-theme .child-overview-item a:hover {
+  color: var(--color-orange-dark);
+  text-decoration: none;
+}
 
-    /* NOTE CONTENT [TEXT:H1] */
-    body.theme-melon-theme .note-detail-component-wrapper h1 {
-        border-bottom: 1px solid var(--color-yellow);
-        margin-top: 2em;
-    }
+/* NOTE CHILDREN TEXT [LINKS] */
+body.theme-melon-theme .child-overview-item a {
+  color: var(--color-gray-text);
+  display: block;
+  padding: 10px;
+}
 
+/* TOOLTIP */
 
-    /* PARAGRAPH STYLE: Codeblock */
-    body.theme-melon-theme code {
-        display: block;
-        padding: 10px 0 6px 10px;
-        border-left: 5px solid var(--color-orange-dark);
-        border-radius: 0;
-    }
+body.theme-melon-theme .tooltip {
+  font-size: small !important;
+}
 
+body.theme-melon-theme .tooltip h1,
+body.theme-melon-theme .tooltip h2,
+body.theme-melon-theme .tooltip h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
 
-    /* CODE LINE BREAKS */
-    body.theme-melon-theme p > code + br {
-        /* do not display line breaks in Code Paragraphs, so the code sticks together */
-        display: none;
-    }
-
-
-    /* NOTE CHILDREN AREA */
-    body.theme-melon-theme .children-overview {
-        border-top: 1px solid var(--color-gray);
-        margin-right: 10px;
-    }
-
-     
-    /* NOTE CHILDREN */
-    body.theme-melon-theme .child-overview-item {
-        align-content: flex-start;
-        background-color: var(--color-paper);
-        border-radius: 0px;
-        box-shadow: 5px 5px 3px -3px rgba(181,181,181,0.6);
-        flex-grow: inherit;
-        font-weight: normal;
-        line-height: 1.2em;
-        margin: 10px;
-        overflow: auto;
-        padding: 6px;
-        text-align: left;
-    }
-
-    
-    /* NOTE CHILDREN [ICON] */
-    body.theme-melon-theme .child-overview-item:before {
-        border-radius: 10px;
-        background-color: white;
-        content: "SUBITEM";
-        color: var(--color-gray-dark);
-        font-family: var(--main-font-family);
-        font-size: x-small;
-        padding: 4px 6px;
-        text-align: center;
-    }
-
-    /* NOTE CHILDREN TEXT [LINKS] */
-    body.theme-melon-theme .child-overview-item a {
-        color: var(--color-gray-text);
-        display: block;
-        padding: 10px;
-    }
-
-
-    /* NOTE CHILDREN TEXT [LINKS:HOVER] */
-    body.theme-melon-theme .child-overview-item a:hover {
-        color: var(--color-orange-dark);
-        text-decoration: none;
-    }
-
-
-    /* TOOLTIP */
-
-    body.theme-melon-theme .tooltip {
-        font-size: small !important;
-    }
-
-    body.theme-melon-theme .tooltip h1, 
-    body.theme-melon-theme .tooltip h2, 
-    body.theme-melon-theme .tooltip h3 {
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    body.theme-melon-theme .tooltip-inner {
-        background-color: var(--color-gray-light) !important;
-        border: 1px solid var(--color-gray);
-        border-radius: 2px;
-        box-shadow: 5px 5px 3px -4px rgba(181,181,181,0.6);
-        color: var(--main-text-color) !important;
-        line-height: 1em;
-        overflow: hidden;
-        padding: 15px;
-        max-width: 300px;
-        max-height: 300px; /* height needs to stay small because tooltip has problem when it can't fit to either top or bottom of the cursor */
-        text-align: left;
-       
-    }
-
+body.theme-melon-theme .tooltip-inner {
+  background-color: var(--color-gray-light) !important;
+  border: 1px solid var(--color-gray);
+  border-radius: 2px;
+  box-shadow: 5px 5px 3px -4px rgba(181, 181, 181, 0.6);
+  color: var(--main-text-color) !important;
+  line-height: 1em;
+  overflow: hidden;
+  padding: 15px;
+  max-width: 300px;
+  max-height: 300px; /* height needs to stay small because tooltip has problem when it can't fit to either top or bottom of the cursor */
+  text-align: left;
+}
 
 /* -------------------------------------- SIDEBAR -------------------------------------- */
 
-    
-    /* SIDEBAR TEXT */
-    body.theme-melon-theme div#left-pane {
-        color: var(--color-gray-text);
-    }
+/* SIDEBAR TEXT */
+body.theme-melon-theme div#left-pane {
+  color: var(--color-gray-text);
+}
 
+/* SIDEBAR MENU ITEM */
+body.theme-melon-theme span.fancytree-title {
+  border: none;
+  background: none;
+  padding: 3px 0;
+}
 
-    /* SIDEBAR NODE */ 
-    body.theme-melon-theme span.fancytree-node {
-        
-    }
+/* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
+body.theme-melon-theme span.fancytree-selected .fancytree-title {
+  background-color: var(--color-gray) !important;
+  border-color: var(--main-background-color) !important; /* invisible border */
+  border-radius: 0;
+  color: var(--color-gray-text) !important;
+  font-style: normal;
+}
 
-    
-    /* SIDEBAR MENU ITEM */
-    body.theme-melon-theme span.fancytree-title {
-        border: none;
-        background: none;
-        padding: 3px 0;
-        
-    }
+/* SIDEBAR MENU ITEM [FOCUSED] */
+body.theme-melon-theme span.fancytree-focused .fancytree-title,
+body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
+  border: none !important;
+  background-color: none !important;
+}
 
+/* SIDEBAR MENU ITEM [ICON] */
+body.theme-melon-theme span.fancytree-custom-icon {
+  color: var(--color-blue-dark);
+}
 
-    /* SIDEBAR MENU ITEM [FOCUSED] */
-    body.theme-melon-theme span.fancytree-focused .fancytree-title, 
-    body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
-        border: none !important;  
-        background-color: none !important;
-        
-    }
+/* SIDEBAR MENU ITEM [PROTECTED] */
+body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon {
+  filter: none;
+  color: var(--color-gray-dark);
+}
 
+/* PROTECTED ITEM [ICON] */
+body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon::before {
+  content: "\EBC6";
+}
 
-    /* SIDEBAR MENU ITEM [ICON]*/
-    body.theme-melon-theme span.fancytree-custom-icon {
-        color: var(--color-blue-dark);
-    }
+/* SIDEBAR MENU ITEM [SECONDARY SELECTED:HOVER] */
+body.theme-melon-theme span.fancytree-node:hover span.fancytree-title {
+  background-color: var(--color-gray-light-text);
+  border-color: var(--main-border-color) !important;
+  border-radius: 0;
+}
 
-
-    /* SIDEBAR MENU ITEM [PROTECTED] */
-    body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon {
-        filter: none;
-        color: var(--color-gray-dark);
-    }
-
-    /* PROTECTED ITEM [ICON]*/
-    body.theme-melon-theme span.fancytree-node.protected > span.fancytree-custom-icon:before {
-        content: "\EBC6";
-    }
-
-
-    body.theme-melon-theme span.fancytree-active:not(.fancytree-focused) .fancytree-title {
-        border: none !important;    
-        font-weight: normal;
-    }
-    
-
-   /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
-   body.theme-melon-theme  span.fancytree-selected .fancytree-title {
-        background-color: var(--color-gray) !important;
-        border-color: var(--main-background-color) !important; /* invisible border */
-        border-radius: 0px;
-        color: var(--color-gray-text) !important;
-        font-style: normal;
-    }
-
-    /* SIDEBAR MENU ITEM [SECONDARY SELECTED:HOVER] */
-    body.theme-melon-theme span.fancytree-node:hover span.fancytree-title {
-        background-color: var(--color-gray-light-text);
-        border-color: var(--main-border-color) !important;
-        border-radius: 0px;
-    }
-
+body.theme-melon-theme span.fancytree-active:not(.fancytree-focused) .fancytree-title {
+  border: none !important;
+  font-weight: normal;
+}
 
 /* -------------------------------------- FOOTER -------------------------------------- */
 
 /* Attribute Buttons */
-    body.theme-melon-theme .show-attributes-button {
-        padding: 3px;
-        border-radius: 0 !important;
-        border: none !important;
-    }
+body.theme-melon-theme .show-attributes-button {
+  padding: 3px;
+  border-radius: 0 !important;
+  border: none !important;
+}
 
-    /* Attributes */
-     body.theme-melon-theme .attribute-list-inner {
-        font-size: 90%;
-        margin-left: 10px;
-    }
+/* Attributes */
+body.theme-melon-theme .attribute-list-inner {
+  font-size: 90%;
+  margin-left: 10px;
+}
 
-    /* Attributes Container*/
-    body.theme-melon-theme .attribute-list {
-        border-top: 1px solid #f5f5f5;
-        font-size: small;
-    }
+/* Attributes Container */
+body.theme-melon-theme .attribute-list {
+  border-top: 1px solid #f5f5f5;
+  font-size: small;
+}
 
+/* CONTEXT MENU (right click) */
+body.theme-melon-theme #context-menu-container {
+  background-color: var(--menu-background-color-light) !important;
+}
 
-/* -------------------------------------- MENUS -------------------------------------- */
+/* DROPDOWN MENU */
+body.theme-melon-theme #context-menu-container .dropdown-item {
+  color: var(--context-menu-text) !important;
+}
 
-    /* Context Menu (right click) */
-    body.theme-melon-theme #context-menu-container {
-        background-color: var(--menu-background-color-light) !important;
-    }
+/* GLOBAL BUTTON [LINK] */
+body.theme-melon-theme #global-buttons a {
+  color: var(--color-yellow-text);
+  display: block;
+  padding: 20px;
+}
 
-    body.theme-melon-theme #context-menu-container .dropdown-item {
-        color: var(--context-menu-text) !important;
-    }
+/* GLOBAL BUTTON [LINK:HOVER] */
+body.theme-melon-theme #global-buttons a:hover {
+  color: white;
+  background-color: var(--color-yellow-text);
+}
 
-/* -------------------------------------- MISC ------------------------------
+/* GLOBAL BUTTON ICON [NEW NOTE TOP LEVEL] */
+body.theme-melon-theme a#create-top-level-note-button::before {
+  content: "\EA71";
+}
+
+/* GLOBAL BUTTON ICON [COLLAPSE TREE] */
+body.theme-melon-theme a#collapse-tree-button::before {
+  content: "\E9F7";
+}
+
+/* GLOBAL BUTTON ICON [SCROLL TO ACTIVE] */
+body.theme-melon-theme a#scroll-to-active-note-button::before {
+  content: "\EC0B";
+}
+
+/* GLOBAL BUTTON ICON [SEARCH] */
+body.theme-melon-theme a#toggle-search-button::before {
+  content: "\EBA8";
+}
+
+/* GLOBAL BUTTON AREA */
+body.theme-melon-theme #global-buttons {
+  background-color: var(--color-yellow);
+  border: none;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 0 !important;
+}
