@@ -58,7 +58,7 @@ html.theme-melon-theme {
 
 /* -------------------------------------- GENERAL -------------------------------------- */
 
-/* Buttons General options */
+/* BUTTONS GENERAL */
 body.theme-melon-theme button {
   background: none;
 }
@@ -67,28 +67,29 @@ body.theme-melon-theme button {
 [class*="active"] {
   background-color: var(--color-orange-dark);
   color: var(--color-orange-dark-text);
-  font-weight: normal !important;
+  font-weight: normal /*!important*/;
 }
 
 /* -------------------------------------- HEADER -------------------------------------- */
 
-/* header bar */
-#header {
-  background-color: var(--color-blue-dark) !important;
+/* HEADER BAR */
+body.theme-melon-theme #header {
+  background-color: var(--color-blue-dark) /*!important*/;
   margin-bottom: 0;
-  padding: 2px 0 3px 0 !important;
+  padding: 2px 0 3px 0 /*!important*/;
 }
 
-/* Buttons in header bar */
+/* HEADER BAR [BUTTONS] */
 body.theme-melon-theme #header button {
   background-color: var(--color-blue-dark);
   border: none;
   border-bottom: 1px solid var(--color-blue-dark);
   color: var(--color-blue-dark-text);
-  font-size: 85% !important;
-  padding: 3px 15px !important;
+  font-size: 85% /*!important*/;
+  padding: 3px 15px /*!important*/;
 }
 
+/* HEADER BAR [BUTTONS:HOVER] */
 body.theme-melon-theme #header button:hover {
   border-bottom: 1px solid var(--color-blue-dark-text);
 }
@@ -98,68 +99,69 @@ body.theme-melon-theme .note-tab-row {
   background-color: var(--color-gray-light);
   border-radius: 0;
   margin-top: 0;
-  min-height: 63px !important;
+  min-height: 63px /*!important*/;
   padding-left: 10px;
   padding-top: 0;
 }
 
-/* TAB BUTTON [CLOSE] */
-body.theme-melon-theme .note-tab-wrapper {
-  border-radius: 0 !important;
-  background-image: none !important;
-}
 
 /* TAB BUTTON [CLOSE] */
 body.theme-melon-theme .note-tab-close {
-  color: var(--color-orange-dark-text);
+  background-color: var(--color-gray-light);
+  color: var(--color-orange-dark);
 }
 
-/* TAB TEXT [ACTIVE] */
+/* TAB BUTTON [NEW] */
+body.theme-melon-theme .note-new-tab {
+  bottom: 5px;
+  color: var(--color-gray-dark);
+  left: 7px;
+}
+
+/* TAB [ALL] WRAPPER */
+body.theme-melon-theme .note-tab .note-tab-wrapper {
+  background-image: none;
+  background-color: var(--color-gray-light);
+  box-shadow: inset 0 -15px 7px -12px rgba(181, 181, 181, 0.4);
+  font-size: smaller;
+}
+
+/* TAB [ALL] */
+body.theme-melon-theme .note-tab {
+  border: 1px solid var(--color-gray);
+  border-bottom: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  bottom: 0;
+  height: 40px;
+  /*padding-right: 10px;*/
+}
+
+/* TAB [ALL] TITLE */
+body.theme-melon-theme .note-tab .note-tab-wrapper .note-tab-title {
+  color: var(--color-gray-light-text);
+}
+
+/* TAB [ACTIVE] WRAPPER */
+body.theme-melon-theme .note-tab[active] .note-tab-wrapper {
+  background-color: var(--color-orange-dark) /*!important*/;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 0;
+  bottom: 0;
+}
+
+/* TAB [ACTIVE] */
+body.theme-melon-theme .note-tab[active] {
+  height: 50px;
+}
+
+/* TAB [ACTIVE] TITLE */
 body.theme-melon-theme .note-tab[active] .note-tab-wrapper .note-tab-title {
   color: var(--color-orange-dark-text);
   font-weight: normal;
 }
 
-/* TAB [ACTIVE] */
-body.theme-melon-theme .note-tab[active] {
-  background-color: var(--color-orange-dark) !important;
-  box-shadow: none;
-  margin-left: 3px;
-  margin-right: 3px;
-  bottom: 0;
-  height: 50px;
-}
-
-/* TAB TEXT [INACTIVE] */
-body.theme-melon-theme .note-tab-wrapper .note-tab-title {
-  color: var(--color-gray-light-text);
-}
-
-/* TAB [INACTIVE] */
-
-/* body.theme-melon-theme .note-tab {
-  border-right: 3px solid white;
-  font-size: smaller;
-  margin-right: 5px;
-  margin-left: 5px;
-  padding-right: 10px;
-} */
-
-body.theme-melon-theme .note-tab {
-  background-color: var(--color-gray-light);
-  box-shadow: inset 0 -15px 7px -12px rgba(181, 181, 181, 0.8);
-  border: 1px solid var(--color-gray);
-  border-bottom: none;
-  margin-left: 3px;
-  margin-right: 3px;
-  bottom: 0;
-  height: 40px;
-}
-
-/* NEW TAB ICON */
-body.theme-melon-theme .note-new-tab {
-  bottom: 0;
-}
 
 /* -------------------------------------- MAIN -------------------------------------- */
 
@@ -169,7 +171,7 @@ body.theme-melon-theme #note-tab-container {
   padding-left: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--color-gray);
-  background-color: var(--color-gray-light) !important;
+  background-color: var(--color-gray-light);
 }
 
 /* NOTE BUTTONS */
@@ -188,7 +190,7 @@ body.theme-melon-theme .btn-primary:hover {
 
 /* NOTE MENU DROPDOWN */
 body.theme-melon-theme .dropdown-menu {
-  background-color: var(--menu-background-color-light) !important;
+  background-color: var(--color-gray-light) !important;
 }
 
 /* SAVE INDICATOR */
@@ -203,11 +205,11 @@ body.theme-melon-theme .saved-indicator {
 
 /* NOTE TITLE */
 body.theme-melon-theme input.note-title {
-  background-color: white !important;
-  padding: 3px 20px;
-  border-radius: 24px;
+  background-color: white;
   border: 1px solid var(--color-gray);
+  border-radius: 24px;
   box-shadow: 7px 7px 4px -4px rgba(181, 181, 181, 0.6);
+  padding: 3px 20px;
   text-align: center;
 }
 
@@ -238,15 +240,15 @@ body.theme-melon-theme .note-detail-component-wrapper li {
   font-weight: normal;
 }
 
-/* NOTE CONTENT [LINKS] */
-body.desktop.theme-rh-theme div#container div#note-tab-container div.note-tab-content a {
-  color: var(--color-orange-dark);
-}
-
 /* NOTE CONTENT [TEXT:H1] */
 body.theme-melon-theme .note-detail-component-wrapper h1 {
   border-bottom: 1px solid var(--color-yellow);
   margin-top: 2em;
+}
+
+/* NOTE CONTENT [LINKS] */
+body.theme-melon-theme .note-detail-component-wrapper a {
+  color: var(--color-orange-dark);
 }
 
 /* PARAGRAPH STYLE: Codeblock */
@@ -259,7 +261,7 @@ body.theme-melon-theme code {
 
 /* CODE LINE BREAKS */
 body.theme-melon-theme p > code + br {
-  /* do not display line breaks in Code Paragraphs, so the code sticks together */
+  /* do not display line breaks in Code Paragraphs, so the code visually sticks together */
   display: none;
 }
 
@@ -323,7 +325,7 @@ body.theme-melon-theme .tooltip h3 {
 }
 
 body.theme-melon-theme .tooltip-inner {
-  background-color: var(--color-gray-light) !important;
+  background-color: var(--color-gray-light);
   border: 1px solid var(--color-gray);
   border-radius: 2px;
   box-shadow: 5px 5px 3px -4px rgba(181, 181, 181, 0.6);
@@ -352,18 +354,18 @@ body.theme-melon-theme span.fancytree-title {
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
 body.theme-melon-theme span.fancytree-selected .fancytree-title {
-  background-color: var(--color-gray) !important;
-  border-color: var(--main-background-color) !important; /* invisible border */
+  background-color: var(--color-gray) /*!important*/;
+  border-color: var(--main-background-color) /*!important*/; /* invisible border */
   border-radius: 0;
-  color: var(--color-gray-text) !important;
+  color: var(--color-gray-text) /*!important*/;
   font-style: normal;
 }
 
 /* SIDEBAR MENU ITEM [FOCUSED] */
 body.theme-melon-theme span.fancytree-focused .fancytree-title,
 body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
-  border: none !important;
-  background-color: none !important;
+  border: none /*!important*/;
+  background-color: none /*!important*/;
 }
 
 /* SIDEBAR MENU ITEM [ICON] */
