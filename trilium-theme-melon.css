@@ -22,6 +22,7 @@ html.theme-melon-theme {
   --color-paper: #ecebe3;
   --color-paper-text: #555;
   --color-paper-light: #fcfcfa;
+  --color-shadow: rgba(181, 181, 181, 0.6);
   --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial !important;
   --main-font-size: normal;
   --tree-font-family: inherit;
@@ -107,7 +108,7 @@ body.theme-melon-theme .note-tab-row {
 
 /* TAB BUTTON [CLOSE] */
 body.theme-melon-theme .note-tab-close {
-  background-color: var(--color-gray-light);
+  background-color: var(--color-paper-light);
   color: var(--color-orange-dark);
 }
 
@@ -122,7 +123,7 @@ body.theme-melon-theme .note-new-tab {
 body.theme-melon-theme .note-tab .note-tab-wrapper {
   background-image: none;
   background-color: var(--color-gray-light);
-  box-shadow: inset 0 -15px 7px -12px rgba(181, 181, 181, 0.4);
+  box-shadow: inset 0 -15px 7px -12px var(--color-shadow);
   font-size: smaller;
 }
 
@@ -159,9 +160,8 @@ body.theme-melon-theme .note-tab[active] {
 /* TAB [ACTIVE] TITLE */
 body.theme-melon-theme .note-tab[active] .note-tab-wrapper .note-tab-title {
   color: var(--color-orange-dark-text);
-  font-weight: normal;
+  font-weight: bold;
 }
-
 
 /* -------------------------------------- MAIN -------------------------------------- */
 
@@ -195,12 +195,12 @@ body.theme-melon-theme .dropdown-menu {
 
 /* SAVE INDICATOR */
 body.theme-melon-theme .saved-indicator {
-  color: green;
+  border: 1px dotted var(--color-gray);
+  border-radius: 50%;
+  color: var(--color-blue-light);
   font-size: 100%;
   margin-right: 15px;
   padding: 10px;
-  border: 1px dotted gray;
-  border-radius: 20px;
 }
 
 /* NOTE TITLE */
@@ -208,29 +208,61 @@ body.theme-melon-theme input.note-title {
   background-color: white;
   border: 1px solid var(--color-gray);
   border-radius: 24px;
-  box-shadow: 7px 7px 4px -4px rgba(181, 181, 181, 0.6);
+  box-shadow: 7px 7px 4px -4px var(--color-shadow);
+  color: var(--color-orange-dark) !important;
   padding: 3px 20px;
   text-align: center;
 }
 
 /* NOTE CONTENT [WRAPPER] */
 body.theme-melon-theme .note-detail-component-wrapper {
-  padding-bottom: 0;
   margin-top: 15px;
-  border-top: 1px solid var(--color-gray);
+  padding-bottom: 5px;
   padding-top: 15px;
 }
 
 /* NOTE CONTENT */
 body.theme-melon-theme .note-detail-component {
-  display: block;
+  background-color: var(--color-paper-light);
   box-shadow: inset 1px 1px 1px 1px var(--color-gray-light);
   border: 1px dotted var(--color-gray);
-  background-color: var(--color-paper-light);
-  padding-left: 5px;
-  margin-right: 20px;
+  display: block;
   margin-bottom: 10px;
   margin-left: 10px;
+  padding-left: 5px;
+  margin-right: 20px;
+}
+
+/* NOTE [PROTECTED] PASSWORD ENTRY [WRAPPER] */
+body.theme-melon-theme .protected-session-password-component {
+  background-color: var(--color-yellow);
+  border: none;
+  margin: 15px auto;
+  padding: 20px;
+  text-align: center;
+  width: 60%;
+}
+
+body.theme-melon-theme .protected-session-password-component::before {
+  font-family: 'jam-icons';
+  font-size: 2.5rem;
+  content: "\EBC6";
+  color: var(--color-blue-dark);
+}
+
+/* NOTE [PROTECTED] PASSWORD ENTRY [LABEL] */
+body.theme-melon-theme .protected-session-password-component label {
+  color: var(--color-yellow-text);
+}
+
+/* NOTE [PROTECTED] PASSWORD ENTRY [INPUT FIELD] */
+body.theme-melon-theme .protected-session-password {
+  text-align: center;
+}
+
+/* NOTE [PROTECTED] PASSWORD ENTRY [BUTTON] */
+body.theme-melon-theme .protected-session-password-component button {
+  background-color: white;
 }
 
 /* NOTE CONTENT [TEXT] */
@@ -276,7 +308,7 @@ body.theme-melon-theme .child-overview-item {
   align-content: flex-start;
   background-color: var(--color-paper);
   border-radius: 0;
-  box-shadow: 5px 5px 3px -3px rgba(181, 181, 181, 0.6);
+  box-shadow: 5px 5px 3px -3px var(--color-shadow);
   flex-grow: inherit;
   font-weight: normal;
   line-height: 1.2em;
@@ -312,7 +344,6 @@ body.theme-melon-theme .child-overview-item a {
 }
 
 /* TOOLTIP */
-
 body.theme-melon-theme .tooltip {
   font-size: small !important;
 }
@@ -325,10 +356,10 @@ body.theme-melon-theme .tooltip h3 {
 }
 
 body.theme-melon-theme .tooltip-inner {
-  background-color: var(--color-gray-light);
+  background-color: var(--color-gray-light) !important;
   border: 1px solid var(--color-gray);
   border-radius: 2px;
-  box-shadow: 5px 5px 3px -4px rgba(181, 181, 181, 0.6);
+  box-shadow: 5px 5px 3px -4px var(--color-shadow);
   color: var(--main-text-color) !important;
   line-height: 1em;
   overflow: hidden;
@@ -354,18 +385,18 @@ body.theme-melon-theme span.fancytree-title {
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
 body.theme-melon-theme span.fancytree-selected .fancytree-title {
-  background-color: var(--color-gray) /*!important*/;
-  border-color: var(--main-background-color) /*!important*/; /* invisible border */
+  background-color: var(--color-gray) !important;
+  border-color: var(--main-background-color) !important; /* invisible border */
   border-radius: 0;
-  color: var(--color-gray-text) /*!important*/;
+  color: var(--color-gray-text) !important;
   font-style: normal;
 }
 
 /* SIDEBAR MENU ITEM [FOCUSED] */
-body.theme-melon-theme span.fancytree-focused .fancytree-title,
-body.theme-melon-theme span.fancytree-focused.fancytree-selected .fancytree-title {
-  border: none /*!important*/;
-  background-color: none /*!important*/;
+body.theme-melon-theme span.fancytree-focus .fancytree-title,
+body.theme-melon-theme span.fancytree-focus .fancytree-selected .fancytree-title {
+  border: none !important;
+  background-color: none !important;
 }
 
 /* SIDEBAR MENU ITEM [ICON] */
@@ -396,25 +427,43 @@ body.theme-melon-theme span.fancytree-active:not(.fancytree-focused) .fancytree-
   font-weight: normal;
 }
 
-/* -------------------------------------- FOOTER -------------------------------------- */
-
-/* Attribute Buttons */
-body.theme-melon-theme .show-attributes-button {
-  padding: 3px;
-  border-radius: 0 !important;
-  border: none !important;
+/* CONTEXT MENU ITEM [ACTIVE (on click)]*/
+body.theme-melon-theme .fancytree-node .fancytree-title:active {
+  background-color: var(--color-yellow) !important;
 }
 
-/* Attributes */
-body.theme-melon-theme .attribute-list-inner {
+/* CONTEXT MENU ITEM [active item background ("fix"?!)]*/
+body.theme-melon-theme span.fancytree-active .fancytree-title {
+  background: transparent !important;
+  border-radius: 0;
+  color: var(--color-orange-dark-text) !important;
+}
+
+/* MENU ITEM [Shortcut-Display-Fix]*/
+body.theme-melon-theme span kbd {
+  float: none; /*fixes the line breaking for items with keyboard shortcuts displayed*/
+}
+
+/* -------------------------------------- FOOTER -------------------------------------- */
+
+
+/* NOTE ATTRIBUTES BAR */
+body.theme-melon-theme .attribute-list {
+  font-size: small;
+  margin-top: 5px;
+}
+
+/* NOTE ATTRIBUTES LABEL */
+body.theme-melon-theme .note-tab-content .attribute-list .attribute-list-inner {
+  color: var(--color-gray-dark);
   font-size: 90%;
   margin-left: 10px;
 }
 
-/* Attributes Container */
-body.theme-melon-theme .attribute-list {
-  border-top: 1px solid #f5f5f5;
-  font-size: small;
+/* NOTE ATTRIBUTES BUTTON */
+body.theme-melon-theme .note-tab-content .attribute-list .show-attributes-button {
+  padding: 3px;
+  border-radius: 0 !important;
 }
 
 /* CONTEXT MENU (right click) */
@@ -425,6 +474,8 @@ body.theme-melon-theme #context-menu-container {
 /* DROPDOWN MENU */
 body.theme-melon-theme #context-menu-container .dropdown-item {
   color: var(--context-menu-text) !important;
+  margin-right: inherit;
+  padding: 0.2rem 1.5rem;
 }
 
 /* GLOBAL BUTTON [LINK] */
@@ -469,4 +520,32 @@ body.theme-melon-theme #global-buttons {
   margin-right: 0;
   margin-top: 0;
   padding: 0 !important;
+}
+
+/* -------------------------------------- MODALS -------------------------------------- */
+
+/* MODAL HEADER [e.g. Options Menu] */
+body.theme-melon-theme .modal-header {
+  background-color: var(--color-yellow);
+}
+
+/* MODAL BODY [e.g. Options Menu] */
+body.theme-melon-theme .modal-body .tab-content .tab-pane {
+  background-color: var(--color-paper-light);
+  color: var(--color-gray-dark);
+}
+
+/* MODAL [TAB] LINK*/
+body.theme-melon-theme .modal-body .nav-item a {
+  color: var(--color-orange-dark);
+}
+
+/* MODAL [BUTTON] */
+body.theme-melon-theme .modal button {
+  color: var(--color-orange-dark);
+}
+
+/* MODAL FOOTER*/
+body.theme-melon-theme .modal-footer {
+  background-color: var(--color-paper-light);
 }
