@@ -429,7 +429,7 @@ body.theme-melon-theme span.fancytree-active:not(.fancytree-focused) .fancytree-
 
 /* CONTEXT MENU ITEM [ACTIVE (on click)]*/
 body.theme-melon-theme .fancytree-node .fancytree-title:active {
-  background-color: var(--color-yellow) !important;
+  background: transparent;
 }
 
 /* CONTEXT MENU ITEM [active item background ("fix"?!)]*/
@@ -437,6 +437,12 @@ body.theme-melon-theme span.fancytree-active .fancytree-title {
   background: transparent !important;
   border-radius: 0;
   color: var(--color-orange-dark-text) !important;
+}
+
+/* CONTEXT MENU ITEM [active&hover item background ("fix"?!)]*/
+body.theme-melon-theme span.fancytree-active .fancytree-title:hover {
+  background: transparent !important;
+  border-radius: 0;
 }
 
 /* MENU ITEM [Shortcut-Display-Fix]*/
