@@ -70,11 +70,12 @@ body.theme-melon-theme button {
 }
 
 /* ACTIVE CLASS */
-[class*="active"] {
+.theme-melon-theme [class*="active"] {
   background-color: var(--color-orange-dark);
   color: var(--color-orange-dark-text);
   font-weight: normal /*!important*/;
 }
+
 
 /* -------------------------------------- HEADER -------------------------------------- */
 
@@ -179,7 +180,7 @@ body.theme-melon-theme #note-tab-container {
   background-color: var(--color-gray-light);
 }
 
-/* NOTE BUTTONS */
+/* NOTE CONTAINER / BUTTONS */
 body.theme-melon-theme #note-tab-container .note-detail-content button {
   border: 1px solid var(--color-gray);
   border-radius: 24px;
@@ -193,7 +194,7 @@ body.theme-melon-theme .btn-primary:hover {
   background-color: var(--color-gray);
 }
 
-/* NOTE MENU DROPDOWN */
+/* NOTE MENU / DROPDOWN MENU */
 body.theme-melon-theme .dropdown-menu {
   background-color: var(--color-gray-light) !important;
 }
