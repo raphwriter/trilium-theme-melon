@@ -76,6 +76,10 @@ body.theme-melon-theme button {
   font-weight: normal /*!important*/;
 }
 
+/* KBD Shortcuts */
+body.theme-melon-theme kbd {
+    color: var(--color-blue-light);
+}
 
 /* -------------------------------------- HEADER -------------------------------------- */
 
@@ -435,7 +439,7 @@ body.theme-melon-theme .widget .widget-header-actions:not(:empty)::after {
     font-family: 'boxicons' !important;
 }
 
-/* -------------------------------------- SIDEBAR L-------------------------------------- */
+/* -------------------------------------- SIDEBAR L -------------------------------------- */
 
 /* SIDEBAR TEXT */
 body.theme-melon-theme div#left-pane {
@@ -569,54 +573,78 @@ body.theme-melon-theme a#create-top-level-note-button::before {
 
 /* GLOBAL BUTTON ICON [COLLAPSE TREE] */
 body.theme-melon-theme a#collapse-tree-button::before {
-  content: "\ED09";
+    content: "\ED09";
 }
 
 /* GLOBAL BUTTON ICON [SCROLL TO ACTIVE] */
 body.theme-melon-theme a#scroll-to-active-note-button::before {
-  content: "\EA29";
+    content: "\EA29";
 }
 
 /* GLOBAL BUTTON ICON [SEARCH] */
 body.theme-melon-theme a#toggle-search-button::before {
-  content: "\EB5A";
+    content: "\EB5A";
 }
 
 /* GLOBAL BUTTON AREA */
 body.theme-melon-theme #global-buttons {
-  background-color: var(--color-yellow);
-  border: none;
-  border-radius: 0;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding: 0 !important;
+    background-color: var(--color-yellow);
+    border: none;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0 !important;
 }
 
 /* -------------------------------------- MODALS -------------------------------------- */
 
+/* MODAL */
+body.theme-melon-theme .modal-content {
+    border-radius: 0;
+}
+
 /* MODAL HEADER [e.g. Options Menu] */
 body.theme-melon-theme .modal-header {
-  background-color: var(--color-yellow);
+    /*background-color: var(--color-yellow);*/
+    background-color: var(--color-sidebar-yellow-dark);
+    border-radius: 0;
+}
+/* MODAL HEADER [TITLE H5] */
+body.theme-melon-theme .modal-header h5 {
+    color: var(--color-yellow-text);
+    font-weight: bold;
+}
+
+/* MODAL HEADER [CLOSE BUTTON] */
+body.theme-melon-theme .modal button.close {
+    /*color: var(--color-gray-text);*/
+    opacity: 0.8;
+}
+
+/* MODAL HEADER [REVISIONS BUTTON] */
+body.theme-melon-theme .modal-header button#note-revisions-erase-all-revisions-button {
+    border-color: var(--color-yellow);
+    background-color: var(--color-yellow) !important;
 }
 
 /* MODAL BODY [e.g. Options Menu] */
 body.theme-melon-theme .modal-body .tab-content .tab-pane {
-  background-color: var(--color-paper-light);
-  color: var(--color-gray-dark);
+    background-color: var(--color-paper-light);
+    color: var(--color-gray-dark);
 }
 
 /* MODAL [TAB] LINK*/
 body.theme-melon-theme .modal-body .nav-item a {
-  color: var(--color-orange-dark);
+    color: var(--color-orange-dark);
 }
 
 /* MODAL [BUTTON] */
 body.theme-melon-theme .modal button {
-  color: var(--color-orange-dark);
+    color: var(--color-orange-dark);
 }
 
 /* MODAL FOOTER*/
 body.theme-melon-theme .modal-footer {
-  background-color: var(--color-paper-light);
+    background-color: var(--color-paper-light);
 }
