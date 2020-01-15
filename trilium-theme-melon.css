@@ -349,10 +349,56 @@ body.theme-melon-theme .note-detail-component {
     box-shadow: inset 1px 1px 1px 1px var(--color-gray-light);
     border: 1px dotted var(--color-gray);
     display: block;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    padding-left: 5px;
-    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+/* EMPTY NODE WITH CHILDREN / MESSAGE */
+body.theme-melon-theme .note-book-auto-message {
+    background-color: var(--color-gray-light-alpha);
+    border-bottom: 1px dotted var(--color-gray-dark);
+    border-radius: 2px;
+    color: var(--color-paper-text);
+    font-family: Georgia, serif;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding: 10px 0 10px 20px;
+}
+
+/* EMPTY NODE WITH CHILDREN / NOTE PREVIEW / CARD */
+body.theme-melon-theme .note-book-card {
+    border-radius: 1px;
+    /*border: 1px dotted var(--color-sidebar-yellow-dark);
+    border-left: 6px solid var(--color-sidebar-yellow-dark);*/
+    flex-grow: 2;
+}
+body.theme-melon-theme div.note-book-content h1,
+body.theme-melon-theme div.note-book-content h2,
+body.theme-melon-theme div.note-book-content h3,
+body.theme-melon-theme div.note-book-content p,
+body.theme-melon-theme div.note-book-content li,
+body.theme-melon-theme div.note-book-content code {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* EMPTY NODE WITH CHILDREN / NOTE PREVIEW / CARD / TITLE */
+body.theme-melon-theme .note-book-title {
+    flex-grow: 0;
+    background-color: var(--color-blue-light);
+    margin: -15px -15px 5px -15px;
+    padding: 15px 10px 10px 15px;
+}
+
+/* EMPTY NODE WITH CHILDREN / NOTE PREVIEW / CARD / TITLE [LINK] */
+body.theme-melon-theme div.note-book-card.type-text h5.note-book-title span a.no-tooltip-preview {
+    color: var(--color-blue-light-text); 
+}
+
+body.theme-melon-theme .ck.ck-editor__editable_inline {
+    padding-left: 15px;
 }
 
 /* NOTE [PROTECTED] PASSWORD ENTRY [WRAPPER] */
@@ -436,16 +482,40 @@ body.theme-melon-theme .note-detail-component-wrapper h3 {
 
 /* NOTE CONTENT [LINKS] */
 body.theme-melon-theme .note-detail-component-wrapper a {
-    color: var(--color-orange-dark);
+    /*color: var(--color-orange-dark);*/
 }
 
 /* NOTE CONTENT [CODE] */
 body.theme-melon-theme code {
     background-color: var(--color-gray-light-alpha);
-    display: inline-block; /* set to 'block' for previous block-style */
-    padding: 5px 8px 2px 10px;
+    display: inline-block;
+    padding: 5px 8px 2px 8px;
     border-left: 4px solid var(--color-gray);
     border-radius: 1px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* NOTE CONTENT [CODEBLOCK] */
+body.theme-melon-theme .ck-content pre {
+    padding: 10px 8px 8px 10px;
+    border-left: 4px solid var(--color-gray);
+    border-radius: 1px;
+    margin-right: 5px;
+    background-color: var(--color-gray-light-alpha);
+}
+
+body.theme-melon-theme .ck-content pre code {
+    border: none;
+    font-size: 14px;
+    line-height: 1.4rem;
+}
+
+body.theme-melon-theme .ck.ck-editor__editable pre[data-language]::after {
+    right: 0;
+    background: var(--color-gray);
+    color: var(--color-gray-dark);
+    border-top-right-radius: 1px;
 }
 
 /* CODE LINE BREAKS */
