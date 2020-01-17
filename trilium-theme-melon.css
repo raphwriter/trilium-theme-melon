@@ -6,7 +6,7 @@ html {
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
     --color-blue-light: #2a9d8f;      
-    --color-blue-light-text: #abfaf0;
+    --color-blue-light-text: #f0f4f4;
     --color-yellow: #e9c46a; 
     --color-yellow-text: #63583c;
     --color-yellow-bg-alpha: #e9c46a1a; 
@@ -65,6 +65,8 @@ html {
     --menu-background-color: #333;
     --menu-background-color-light: #fefefe;
     --link-color: #e76f51 !important;
+    
+    
    
 }
 
@@ -75,6 +77,15 @@ body.theme-melon-theme button {
     /*background: none !important;*/
     font-weight: normal !important;
 }
+
+
+/* BUTTONS:HOVER */
+body.theme-melon-theme .btn-primary {
+    color: var(--color-blue-light-text);
+    border-color: var(--color-blue-light);
+    background-color: var(--color-blue-light);
+}
+
 
 /* ACTIVE CLASS */
 .theme-melon-theme [class*="active"] {
@@ -282,6 +293,7 @@ body.theme-melon-theme #note-tab-container {
     padding-top: 20px;
     border-top: 1px solid var(--color-gray);
     background-color: var(--color-gray-light);
+    flex-grow: 1;
 }
 
 /* NOTE ATTRIBUTES */
@@ -298,11 +310,6 @@ body.theme-melon-theme #note-tab-container .note-detail-content button {
     color: var(--color-gray-dark-text);
     padding: 6px 12px;
     margin: auto 5px auto auto;
-}
-
-/* BUTTONS HOVER */
-body.theme-melon-theme .btn-primary:hover {
-    background-color: var(--color-gray);
 }
 
 /* NOTE MENU / DROPDOWN MENU */
@@ -370,9 +377,11 @@ body.theme-melon-theme .note-book-auto-message {
 /* EMPTY NODE WITH CHILDREN / NOTE PREVIEW / CARD */
 body.theme-melon-theme .note-book-card {
     border-radius: 1px;
-    /*border: 1px dotted var(--color-sidebar-yellow-dark);
-    border-left: 6px solid var(--color-sidebar-yellow-dark);*/
-    flex-grow: 2;
+    border: 1px dotted var(--color-sidebar-yellow-dark);
+    /*border-left: 6px solid var(--color-sidebar-yellow-dark);*/
+    flex-grow: 0;
+    margin: 5px;
+    align-self: baseline;
 }
 body.theme-melon-theme div.note-book-content h1,
 body.theme-melon-theme div.note-book-content h2,
@@ -824,31 +833,28 @@ body.theme-melon-theme .modal-content {
     border-radius: 0;
 }
 
-/* MODAL HEADER [e.g. Options Menu] */
+/* MODAL / HEADER */
 body.theme-melon-theme .modal-header {
-    /*background-color: var(--color-yellow);*/
-    background-color: var(--color-sidebar-yellow-dark);
+    background-color: var(--color-blue-light);
     border-radius: 0;
 }
-/* MODAL HEADER [TITLE H5] */
+/* MODAL / HEADER / TITLE */
 body.theme-melon-theme .modal-header h5 {
-    color: var(--color-yellow-text);
-    font-weight: bold;
+    color: var(--color-blue-light-text);
 }
 
-/* MODAL HEADER [CLOSE BUTTON] */
+/* MODAL / HEADER / BUTTON [CLOSE] */
 body.theme-melon-theme .modal button.close {
-    /*color: var(--color-gray-text);*/
     opacity: 0.8;
+    color: var(--color-blue-light-text);
 }
 
-/* MODAL HEADER [REVISIONS BUTTON] */
+/* MODAL / HEADER  / BUTTON [REVISIONS] */
 body.theme-melon-theme .modal-header button#note-revisions-erase-all-revisions-button {
-    border-color: var(--color-yellow) !important;
-    background-color: var(--color-yellow) !important;
+    background-color: var(--color-blue-light-text);
 }
 
-/* MODAL BODY [e.g. Options Menu] */
+/* MODAL / BODY */
 body.theme-melon-theme .modal-body .tab-content .tab-pane {
     background-color: var(--color-paper-light);
     color: var(--color-gray-dark);
@@ -861,10 +867,15 @@ body.theme-melon-theme .modal-body .nav-item a {
 
 /* MODAL [BUTTON] */
 body.theme-melon-theme .modal button {
-    color: var(--color-orange-dark);
+    color: var(--color-blue-light);
 }
 
-/* MODAL FOOTER*/
+/* MODAL [BUTTON] */
+body.theme-melon-theme .modal button.btn-primary {
+    color: var(--color-blue-light-text);
+}
+
+/* MODAL / FOOTER */
 body.theme-melon-theme .modal-footer {
-    background-color: var(--color-paper-light);
+    background-color: var(--color-gray-light);
 }
