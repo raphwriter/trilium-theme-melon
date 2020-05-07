@@ -41,6 +41,7 @@ html {
 
 body.theme-melon-theme-3 div#root-widget {
     --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial ;
+    --main-font-family-serif: Georgia, Serif;
     --detail-text-font-family: Georgia, Serif;
 }
 
@@ -54,6 +55,7 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type {
     align-items: center;
     /*border-bottom: 1px solid lightgray;*/
     min-height: 50px;
+
 }
 
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
@@ -64,6 +66,21 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu
     padding: 0 5px;
 }
 
+/* make top all blue */
+body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
+body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
+    background: var(--color-blue-light-text);
+} 
+
+body.theme-melon-theme-3 .note-tab-row-container {
+    background: var(--color-blue-light-text);
+}
+
+body.theme-melon-theme-3 .tab-row-filler {
+    background: var(--color-blue-light-text);
+}
+
+/* hide tabbar bottom border thingie */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .tab-row-filler .tab-row-border {
     display: none;
 }
@@ -112,13 +129,14 @@ body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-drag-handle {
 
 /* TAB [INACTIVE & ACTIVE] - WRAPPER */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab-wrapper {
+    background: var(--color-paper-light);
     border-radius: 0;
     margin-right: 10px;
 }
 
 /* TAB [INACTIVE & ACTIVE] - TITLE */
 body.theme-melon-theme-3 .note-tab .note-tab-wrapper .note-tab-title {
-    color: var(--color-gray-light-text);
+    color: var(--color-blue-dark);
 }
 
 /* TAB [INACTIVE & ACTIVE] */
@@ -156,14 +174,17 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab[ac
     height: 35px;
 }
 
-
-
-
 /* SECONDARY MENU BAR */
 body.theme-melon-theme-3 .standard-top-widget {
+    background: var(--color-blue-light-text);
     border-bottom: 1px solid var(--color-blue-light);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-top: 0;
 }
+
+
 
 
 /* ============================================================================= */
@@ -171,13 +192,36 @@ body.theme-melon-theme-3 .standard-top-widget {
 /* ============================================================================= */
 
 /* GLOBAL BUTTONS */
-body.theme-melon-theme-3 div#left-panel .global-buttons {
+body.theme-melon-theme-3 div#left-pane .global-buttons {
     display: flex;
     justify-content: space-around;
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
     margin: 3px 5px 5px 5px;
     align-self: end;
+}
+
+div#root-widget div.component div#left-pane div.search-box {
+    align-self: normal;
+    align-items: center;
+    border: var(--border-standard);    
+    /*display: flex;*/
+    flex-shrink: 0;
+    flex-flow: column;
+    place-self: start;
+    position: absolute;
+    left: 3.2rem;
+    background: white;
+    z-index: 1000;
+}
+
+div#root-widget div.component div#left-pane div.search-results {
+    position: absolute;
+    top: 13rem;
+    background: white;
+    z-index: 1000;
+    left: 3.2rem;
+    border: 1px solid gray;
 }
 
 /* HIDE BREADCRUMBS / PATH */
@@ -201,7 +245,20 @@ body.theme-melon-theme-3 .fancytree-node:not(.fancytree-folder) .fancytree-expan
 body.theme-melon-theme-3 div#left-pane {
     background-color: var(--color-paper-light);
     color: var(--color-gray-text);
-    flex-direction: column-reverse;
+    flex-direction:   row-reverse !important;
+    /*! padding-left: 15px; */
+    display: flex;
+}
+
+body.theme-melon-theme-3 div#left-pane .global-buttons {
+    align-self: end;
+    border-radius: var(--border-radius-small);
+    border: var(--border-standard);
+    color: var(--color-blue-dark);
+    flex-flow: column;
+    align-self: start;
+    justify-content: space-around;
+    
 }
 
 /* SIDEBAR MENU ITEM */
@@ -285,6 +342,31 @@ body.theme-melon-theme-3 span kbd {
 /* ============================================================================= */
 /* ================================ MIDDLE PANE ================================ */
 /* ============================================================================= */
+
+/* NOTEBOOK CARD*/
+body.theme-melon-theme-3 .note-book-card {
+    background-color: var(--color-paper-light);
+    border: var(--border-standard);
+    border-radius: var(--border-radius-small);
+    /*box-shadow: var(--shadow-standard);*/
+}
+
+/* Hide contents of notes in book view -- Please comment this selector to restore the default behaviour! */
+body.theme-melon-theme-3 .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
+    display: none;
+    font-family: var(--main-font-family-serif);
+    
+}
+
+body.theme-melon-theme-3 .note-book-auto-message {
+    border-radius: var(--border-radius-small);
+    background: var(--color-paper-light);
+    border: var(--border-standard);
+    color: var(--color-gray-dark-text);
+    padding: 5px;
+    width: 100%;
+}
+
 /* NOTE TITLE */
 body.theme-melon-theme-3 input.note-title {
     border: var(--border-standard);
