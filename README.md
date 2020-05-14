@@ -5,6 +5,15 @@ melon-3 should be compatible with trilium 0.4.2
 
 ## Screenshots
 ### Note View
+<<<<<<< HEAD
+![screenshot1](/screenshots/trilium-theme-melon-3_3.png "Note View")
+
+### Book View
+![screenshot2](/screenshots/trilium-theme-melon-3_1.png "Book View")
+
+### Zen View
+![screenshot3](/screenshots/trilium-theme-melon-3_2.png "Zen View")
+=======
 ![screenshot1](/trilium-theme-melon-3_3.png "Note View")
 
 ### Book View
@@ -12,6 +21,7 @@ melon-3 should be compatible with trilium 0.4.2
 
 ### Zen View
 ![screenshot3](/trilium-theme-melon-3_2.png "Zen View")
+>>>>>>> e2e99f64e88888329000615f55693f4737121fe8
 
 
 ## Theme Installation
@@ -33,8 +43,16 @@ Further instructions can be found [here](https://github.com/zadam/trilium/wiki/T
 - the _customResourceProvider_ attribute needs to be added to every font file you want to use
 - the respective attribute value should be _fonts/Font-File-Name.woff_
  
+<<<<<<< HEAD
+ ![fontsetup](/screenshots/trilium-theme-melon-3_4_fonts.png "Font Setup")
+=======
  ![fontsetup](/trilium-theme-melon-3_4_fonts.png "Font Setup")
+>>>>>>> e2e99f64e88888329000615f55693f4737121fe8
  
  
 ## Old Versions
 The old version can be found in these branches [trilium-0.4.x](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.4.x), [trilium-0.3.8](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.3.8)
+<<<<<<< HEAD
+
+=======
+>>>>>>> e2e99f64e88888329000615f55693f4737121fe8
