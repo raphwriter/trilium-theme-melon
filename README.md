@@ -3,13 +3,16 @@ A theme for [trilium](https://github.com/zadam/trilium)
 
 melon-3 should be compatible with trilium 0.4.2
 
-## Screenshot
-![screenshot](/trilium-theme-melon-3_1.png "Book View")
-![screenshot](/trilium-theme-melon-3_2.png "Zen View")
-![screenshot](/trilium-theme-melon-3_1.png "Note View")
+## Screenshots
+### Note View
+![screenshot1](/trilium-theme-melon-3_3.png "Note View")
 
+### Book View
+![screenshot2](/trilium-theme-melon-3_1.png "Book View")
 
-The old version can be found in these branches [trilium-0.4.x](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.4.x), [trilium-0.3.8](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.3.8)
+### Zen View
+![screenshot3](/trilium-theme-melon-3_2.png "Zen View")
+
 
 ## Theme Installation
 Install the theme by following these steps:
@@ -30,4 +33,8 @@ Further instructions can be found [here](https://github.com/zadam/trilium/wiki/T
 - the _customResourceProvider_ attribute needs to be added to every font file you want to use
 - the respective attribute value should be _fonts/Font-File-Name.woff_
  
- ![screenshot](/trilium-theme-melon-3_4_fonts.png "Font Setup")
+ ![fontsetup](/trilium-theme-melon-3_4_fonts.png "Font Setup")
+ 
+ 
+## Old Versions
+The old version can be found in these branches [trilium-0.4.x](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.4.x), [trilium-0.3.8](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.3.8)
