@@ -3,7 +3,92 @@ MELON 3 by https://github.com/raphwriter/
 A theme for Trilium (https://github.com/zadam/trilium)
 */
 
+
+/* font declarations */
+
+/* open-sans*/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/open-sans-v17-latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/custom/fonts/open-sans-v17-latin-italic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/custom/fonts/open-sans-v17-latin-600italic.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/open-sans-v17-latin-600.woff') format('woff'); 
+}
+
+/* Fira Sans */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/custom/fonts/firasans-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/FiraSans-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/FiraMono-Regular.woff') format('woff');
+}
+
+/* roboto-slab */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/custom/fonts/roboto-slab-v11-latin-200.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/custom/fonts/roboto-slab-v11-latin-300.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/roboto-slab-v11-latin-regular.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/roboto-slab-v11-latin-600.woff') format('woff'); 
+}
+
+
 html {
+    /* color variables */
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
     --color-blue-light: #2a9d8f;      
@@ -32,17 +117,33 @@ html {
     --border-radius-tabs: 3px;
     --border-standard: 1px solid var(--color-gray);
     --border-accent: 2px solid var(--color-orange-dark);
+    --border-accent-alt: 2px solid var(--color-blue-light);
+    --border-accent-light: 1px dotted var(--color-blue-dark-text);
     
     --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
     
     --active-item-text-color: #f2dcd6;
     --active-item-background-color: #e76f51;
+
 }
 
+/* hyperlinks */
+body.theme-melon-theme-3 div#root-widget a,
+body.theme-melon-theme-3 div#root-widget a:visited,
+body.theme-melon-theme-3 div#root-widget a:hover {
+    color: var(--color-blue-dark);
+}
+
+/* font variables */
 body.theme-melon-theme-3 div#root-widget {
-    --main-font-family: 'Source Sans Pro', 'Liberation Sans', Arial ;
-    --main-font-family-serif: Georgia, Serif;
-    --detail-text-font-family: Georgia, Serif;
+    --main-font-family-sans: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
+    --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+    --detail-text-font-family: 'Open Sans', 'Fira Sans', Arial, Sans-serif;
+
+    --font-headers: 'Roboto Slab', Georgia, Serif;
+    --font-body: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    --font-code: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
 }
 
 /* ============================================================================= */
@@ -51,9 +152,10 @@ body.theme-melon-theme-3 div#root-widget {
 
 /* selects first "component"-classed child of #root-widget */
 /* which happens to be the tab-bar */
-body.theme-melon-theme-3 #root-widget > div.component:first-of-type {
+body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
+body.theme-melon-theme-3 .standard-top-widget {
     align-items: center;
-    /*border-bottom: 1px solid lightgray;*/
+    /*! border-bottom: 1px solid lightgray; */
     min-height: 50px;
 
 }
@@ -69,15 +171,15 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu
 /* make top all blue */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
-    background: var(--color-blue-light-text);
+    background: var(--color-blue-dark-text);
 } 
 
 body.theme-melon-theme-3 .note-tab-row-container {
-    background: var(--color-blue-light-text);
+    background: var(--color-blue-dark-text);
 }
 
 body.theme-melon-theme-3 .tab-row-filler {
-    background: var(--color-blue-light-text);
+    background: var(--color-blue-dark-text);
 }
 
 /* hide tabbar bottom border thingie */
@@ -101,13 +203,23 @@ body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-close span {
 
 /* TAB ROW / BUTTON [NEW TAB] */
 body.theme-melon-theme-3 .note-new-tab {
-    color: var(--color-gray-dark);
+    color: var(--color-paper-light);
+    border-bottom: none;
+
+    font-size: 1.3rem;
+    font-weight: lighter;
 }
 
 body.theme-melon-theme-3 .note-new-tab:hover {
-    border-radius: var(--border-radius-tabs);
+    border-radius: var(--border-radius-standard);
+    background-color: var(--color-orange-dark);
+    color: white;
+    border: none;
 }
    
+body.theme-melon-theme-3 .note-tab-row {
+    border-radius: 0 !important;
+}
 
 body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-wrapper {
     /*border-top-left-radius: var(--border-radius-tabs);
@@ -141,12 +253,9 @@ body.theme-melon-theme-3 .note-tab .note-tab-wrapper .note-tab-title {
 
 /* TAB [INACTIVE & ACTIVE] */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab {
-    /*border: none;
-    /*border: 1px solid var(--color-gray);*/
-    /*border-bottom: none;*/
-    border-radius: 0 !important;
+    /*border-radius: 0 !important;*/
     margin-left: 0;
-    margin-right: 5px;
+    margin-right: 3px;
     bottom: 0;
     height: 35px;
 }
@@ -177,14 +286,17 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab[ac
 /* SECONDARY MENU BAR */
 body.theme-melon-theme-3 .standard-top-widget {
     background: var(--color-blue-light-text);
-    border-bottom: 1px solid var(--color-blue-light);
+    /*! border-bottom: 1px solid var(--color-blue-light); */
     margin-bottom: 5px;
     padding-left: 20px;
     padding-bottom: 5px;
-    padding-top: 0;
+    padding-top: 5px;
+    box-shadow: inset 0 0px 10px -5px var(--color-gray-dark);
 }
 
-
+body.theme-melon-theme-3 div#plugin-buttons {
+    margin-right: 1rem;
+}
 
 
 /* ============================================================================= */
@@ -192,118 +304,82 @@ body.theme-melon-theme-3 .standard-top-widget {
 /* ============================================================================= */
 
 /* GLOBAL BUTTONS */
+
 body.theme-melon-theme-3 div#left-pane .global-buttons {
-    display: flex;
-    justify-content: space-around;
-    border: var(--border-standard);
+    
     border-radius: var(--border-radius-small);
-    margin: 3px 5px 5px 5px;
-    align-self: end;
+    border: var(--border-standard);
+    color: var(--color-blue-dark);
+    /*! background-color: var(--color-blue-light-text); */
+    border: none;
+
+    margin: 0;
+    border-bottom: var(--border-accent-alt);
+    margin-bottom: 0.5rem;
 }
 
-div#root-widget div.component div#left-pane div.search-box {
-    align-self: normal;
-    align-items: center;
-    border: var(--border-standard);    
-    /*display: flex;*/
-    flex-shrink: 0;
-    flex-flow: column;
-    place-self: start;
-    position: absolute;
-    left: 3.2rem;
-    background: white;
-    z-index: 1000;
-}
-
-div#root-widget div.component div#left-pane div.search-results {
-    position: absolute;
-    top: 13rem;
-    background: white;
-    z-index: 1000;
-    left: 3.2rem;
-    border: 1px solid gray;
-}
-
-/* HIDE BREADCRUMBS / PATH */
+/* hide the breadcrumbs/path widget */
 body.theme-melon-theme-3 div.note-paths-widget {
     display: none;
 }
 
-/* "SYMLINK" */
-body.theme-melon-theme-3 span.fancytree-title::after {
-    color: var(--color-gray-dark);
-    font-family: var(--main-font-family-serif);
+
+body.theme-melon-theme-3 div#left-pane .tree-settings-popup button {
+    color: var(--color-paper-light);
 }
 
-/* HIDE CARETS of NODES WITHOUT CHILDREN*/
-body.theme-melon-theme-3 .fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
-    /*	color: var(--color-gray-light);*/
-    display: none;
+
+/* "SYMLINK" */
+body.theme-melon-theme-3 span.fancytree-title::after {
+    color: var(--color-orange-dark);
+    font-family: var(--font-headers);
+   /* overflow-x: hidden;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;*/
 }
+
 
 /* SIDEBAR */
 body.theme-melon-theme-3 div#left-pane {
     background-color: var(--color-paper-light);
-    color: var(--color-gray-text);
-    flex-direction:   row-reverse !important;
-    /*! padding-left: 15px; */
-    display: flex;
 }
 
-body.theme-melon-theme-3 div#left-pane .global-buttons {
-    align-self: end;
-    border-radius: var(--border-radius-small);
-    border: var(--border-standard);
-    color: var(--color-blue-dark);
-    flex-flow: column;
-    align-self: start;
-    justify-content: space-around;
-    
+
+/* TREE MENU */
+
+
+body.theme-melon-theme-3 div.tree-wrapper,
+body.theme-melon-theme-3 div.tree {
+    font-family: var(--font-headers);
+    font-weight: 400;
+    background: white;
 }
 
-/* SIDEBAR MENU ITEM */
-body.theme-melon-theme-3 span.fancytree-title {
-    border: none;
-    background: none;
-    padding: 3px 0;
-}
+
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
 body.theme-melon-theme-3 span.fancytree-selected .fancytree-title {
     background-color: var(--color-gray);
     border-color: var(--main-background-color) ; /* invisible border */
     border-radius: 0;
-    color: var(--color-gray-text) ;
+    color: var(--color-gray-text);
     font-style: normal;
 }
 
 /* SIDEBAR MENU ITEM [FOCUSED] */
 body.theme-melon-theme-3 span.fancytree-focus .fancytree-title,
 body.theme-melon-theme-3 span.fancytree-focus .fancytree-selected .fancytree-title {
-    border: none ;
-    background-color: none ;
+    border: none;
+    background-color: none;
 }
 
-/* SIDEBAR MENU ITEM [ICON] */
-body.theme-melon-theme-3 span.fancytree-custom-icon {
-    color: var(--color-blue-dark);
-}
 
-/* SIDEBAR MENU ITEM [PROTECTED NOTE] */
-body.theme-melon-theme-3 span.fancytree-node.protected > span.fancytree-custom-icon {
-    filter: none;
-    color: var(--color-gray-dark);
-}
-
-/* PROTECTED ITEM [ICON] */
-body.theme-melon-theme-3 span.fancytree-node.protected > span.fancytree-custom-icon::before {
-    content: "\EAD6";
-}
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED:HOVER] */
 body.theme-melon-theme-3 span.fancytree-node:hover span.fancytree-title {
     background-color: var(--color-gray-light-text);
-    border-color: var(--main-border-color) ;
+    border-color: var(--main-border-color);
     border-radius: 0;
 }
 
@@ -313,7 +389,28 @@ body.theme-melon-theme-3 span.fancytree-active:not(.fancytree-focused) .fancytre
 }
 
 body.theme-melon-theme-3 .fancytree-active {
-   background: var(--color-orange-dark);
+    background: var(--color-blue-light);
+    border-radius: var(--border-radius-small);
+    color: var(--color-paper-light);
+    width: 95%;
+}
+
+
+body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container ul[role=group] {
+    /*border-left: 1px dotted gray;
+    margin-left: 0.1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;*/
+}
+
+body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container li[role=treeitem] {
+    padding: 0px; 
+}
+
+body.theme-melon-theme-3 span.fancytree-title {
+    border: none;
+    background: none;
 }
 
 /* CONTEXT MENU ITEM [ACTIVE (on click)]*/
@@ -324,62 +421,97 @@ body.theme-melon-theme-3 .fancytree-node .fancytree-title:active {
 /* CONTEXT MENU ITEM [active item background ("fix"?!)]*/
 body.theme-melon-theme-3 span.fancytree-active .fancytree-title {
     background: transparent !important;
-    border-radius: 0;
-    color: var(--color-orange-dark-text) !important;
+    /*border-radius: 3px;*/
+    color: var(--color-blue-light-text) !important;
 }
 
 /* CONTEXT MENU ITEM [active&hover item background ("fix"?!)]*/
 body.theme-melon-theme-3 span.fancytree-active .fancytree-title:hover {
     background: transparent !important;
-    border-radius: 0;
+    /*border-radius: 0;*/
 }
 
-/* MENU ITEM [Shortcut-Display-Fix]*/
-body.theme-melon-theme-3 span kbd {
-    float: none; /*fixes the line breaking for items with keyboard shortcuts displayed*/
-}
+
+
 
 /* ============================================================================= */
 /* ================================ MIDDLE PANE ================================ */
 /* ============================================================================= */
 
-/* NOTEBOOK CARD*/
+/* message on top of notes and book view */
+body.theme-melon-theme-3 .alert-warning,
+body.theme-melon-theme-3 .note-book-auto-message {
+    background: var(--color-paper-light);
+    border: var(--border-standard) !important;
+    border-bottom: var(--border-accent-alt) !important;
+    border-radius: var(--border-radius-small);
+    color: var(--color-gray-dark-text);
+    font-size: 90%;
+    font-style: italic;
+    padding: 3px 5px;    
+    text-align: center;
+    width: 100%;
+    text-align: left;
+    font-size: 90%;
+    margin-bottom: 0.5rem;    
+}
+
+/* mute hide/show children button */
+body.theme-melon-theme-3 .note-book-children .note-book-hide-children-button,
+body.theme-melon-theme-3 .note-book-children .note-book-open-children-button {
+    color: var(--color-gray-dark-text);
+    font-size: 90%;
+    align-self: flex-end;
+}
+
+/* book view */
+body.theme-melon-theme-3 .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
+    /* display: none; */ /* <-- uncomment this to hide note contents in book view */
+    font-family: var(--font-body);
+}
+
 body.theme-melon-theme-3 .note-book-card {
     background-color: var(--color-paper-light);
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
-    /*box-shadow: var(--shadow-standard);*/
+    box-shadow: var(--shadow-standard);
+    border-left: var(--border-accent-alt);
 }
 
-/* Hide contents of notes in book view -- Please comment this selector to restore the default behaviour! */
-body.theme-melon-theme-3 .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
-    display: none;
-    font-family: var(--main-font-family-serif);
-    
+body.theme-melon-theme-3 .note-book-children {
+    /* display: flex; */
+    /* flex-direction: column; */
+    border-top: var(--border-accent-light);
+    margin: 0px -15px -5px;
+    padding: 4px 15px 5px;
+    background: none;
 }
 
-body.theme-melon-theme-3 .note-book-auto-message {
-    border-radius: var(--border-radius-small);
-    background: var(--color-paper-light);
-    border: var(--border-standard);
-    color: var(--color-gray-dark-text);
-    padding: 5px;
-    width: 100%;
+body.theme-melon-theme-3 .note-book-card h5 {
+    font-size: 100%;
+    background-color: var(--color-gray-light);
+    margin: -15px -15px 0;
+    padding: 15px;
 }
 
-/* NOTE TITLE */
+
+
+
+/* note title */
 body.theme-melon-theme-3 input.note-title {
     border: var(--border-standard);
     border-bottom: var(--border-accent);
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
     color: var(--color-blue-dark) !important;
+    font-size: 100%;
+    font-family: var(--font-body);
+    font-weight: 600;
     padding: 3px 20px;
     text-align: left;
-    font-size: 100%;
 }
 
-/* NOTE BUTTONS - PROTECT & UNPROTECT */
+/* note buttons - protection */
 body.theme-melon-theme-3 .btn {
     border: 1px solid var(--color-gray);
     border-radius: var(--border-radius-small);
@@ -387,43 +519,61 @@ body.theme-melon-theme-3 .btn {
     align-self: center;
 }
 
-/* NOTE BUTTONS - NOTE TYPE */
 body.theme-melon-theme-3 .dropdown {
     align-self: center;
 }
 
-body.theme-melon-theme-3 div.note-type {
+/* note buttons - type, actions */
+body.theme-melon-theme-3 div.note-type,
+body.theme-melon-theme-3 div.note-actions {
     font-size: 80%;
 }
 
-body.theme-melon-theme-3 div.note-actions{
-    font-size: 80%;
-}
-
-/* NOTE CONTENT */
+/* note body */
 body.theme-melon-theme-3 div.note-detail {
     background-color: var(--color-paper-light);
     box-shadow: 1px 1px 1px 1px var(--color-gray-light);
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
     display: block;
+    font-family: var(--font-body);
     margin: 5px;
 }
 
-/* H1 */
+body.theme-melon-theme-3 .note-detail-book-content a,
+body.theme-melon-theme-3 .note-detail-book-content a:visited {
+    color: var(--color-blue-dark);
+}
+
+body.theme-melon-theme-3 .note-detail-book-content a:hover {
+    color: var(--color-blue-light);
+}
+
+body.theme-melon-theme-3 .note-detail-text {
+    font-family: var(--font-body);
+}
+
+/* h1 */
 body.theme-melon-theme-3 h1 {
     border-bottom: 2px solid var(--color-orange-dark);
     color: var(--color-gray-text);
     display: table;
-    font-family: var(--main-font-family-serif);
+    font-family: var(--font-headers);
     font-size: 28px;
+    font-weight: 600;
     margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
-/* H2 */
+/* first h1 in a note should not have such a large top margin */
+body.theme-melon-theme-3 h1:first-of-type {
+    margin-top: 0.8rem;
+}
+
+/* h2 */
 body.theme-melon-theme-3 h2 {
     color: var(--color-gray-text);
-    font-family: var(--main-font-family-serif);
+    font-family: var(--font-headers);
     font-size: 21px;
     margin-bottom: 0.6rem;
     margin-top: 1.5rem;
@@ -432,16 +582,17 @@ body.theme-melon-theme-3 h2 {
     padding: 3px 0px;
 }
 
+/* h2 following directly after h1 */
 body.theme-melon-theme-3 h1 + h2 {
-    /* h2 following directly after h1 */
     margin-top: 0.6rem;
 }
 
-/* H3 */
+/* h3 */
 body.theme-melon-theme-3 h3 {
     color: var(--color-blue-light);
-    font-family: var(--main-font-family-serif);
+    font-family: var(--font-headers);
     font-size: 16px;
+    font-weight: 400;
     letter-spacing: 0.05rem;
 }
 
@@ -451,90 +602,52 @@ body.theme-melon-theme-3 h3 {
 
 body.theme-melon-theme-3 div#right-pane {
     font-size: 95%;
-    background-color: white;
     color: var(--color-gray-dark);
-    padding-left: 0;
 }
 
-/* SIDEBAR R / BUTTON "HIDE SIDEBAR" */
-body.theme-melon-theme button#hide-sidebar-button,
-body.theme-melon-theme button#show-sidebar-button {
-    border: 1px solid var(--color-gray);
-    border-radius: 24px;
-    color: var(--color-gray-dark-text);
-    font-size: 16px;
-    padding: 6px 12px;
-    margin: 0 5px auto auto;
-}
-
-
-/* SIDEBAR R LIST ITEMS*/
+/* List Items */
 body.theme-melon-theme-3 div#right-pane li {
     list-style-type: square;
 }
 
-/* SIDEBAR R / WIDGET */
-body.theme-melon-theme div#right-pane div#sidebar-container div.sidebar-widget-container .card {
-    border-radius: 1px;
-    border: 1px solid var(--color-shadow);
-    box-shadow: 5px 5px 3px -4px var(--color-shadow);
+/* Widget */
+body.theme-melon-theme-3 div#right-pane .card {
+    border: var(--border-standard);
+    box-shadow: var(--shadow-standard);
     margin: 15px;
+    margin-top: 0.5rem;
 }
-
-/* SIDEBAR R / WIDGET / TITLE */
-body.theme-melon-theme-3 div#right-pane div#sidebar-container div.sidebar-widget-container .card .card-header button .widget-title {
-    background: none;
-    border-radius: 0;
-    color: var(--color-gray-text);
-    font-weight: normal;
-    padding: 5px 10px;
-}
-
-/* SIDEBAR R / WIDGET / TITLE / CARET ICON */
-body.theme-melon-theme div#right-pane div#sidebar-container div.sidebar-widget-container .card .card-header button::before {
-    color: var(--color-yellow-text);
-    content: "\E9E4\ ";
-    font-family: 'boxicons';
-    font-size: 0.7rem;
-}
-
-/* SIDEBAR R / WIDGET / HELP ICON */
-body.theme-melon-theme .widget-help:before {
-    color: var(--color-yellow-text);
-    font-size: small;
-    margin-left: 0.2rem;
-}
-
-
-/* SIDEBAR R / WIDGET / HEADER */
+    
+/* Widget Header */
 body.theme-melon-theme-3 div#right-pane .card-header {
-    background-color: var(--color-gray-light);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     border: none;
-    border-radius: 0;
+    border-bottom: var(--border-accent-alt);
     width: 100%;
 }
 
-/* SIDEBAR R / WIDGET / HEADER /  */
+body.theme-melon-theme-3 #right-pane .widget-title {
+    font-weight: 600;
+    font-family: var(--font-headers);
+}
+
 body.theme-melon-theme-3 div#right-pane .card .card-header .widget-header-actions a.widget-header-action {
     color: var(--color-blue-dark) !important;
     font-size: 0.8rem;
 }
 
-/* SIDEBAR R / WIDGET / BODY */
+/* Widget Body */
 body.theme-melon-theme-3 div#right-pane .card-body {
-    background-color: var(--color-paper-light);
-    border: none;
-    color: var(--color-paper-text);
+    color: var(--color-gray-dark);
+    font-family: var(--font-body);    
 }
 
-/* SIDEBAR R / WIDGET / BODY / LINKS*/
 body.theme-melon-theme-3 div#right-pane .card-body a {
-    color: var(--color-blue-dark);
+    color: var(--color-blue-light);
 }
 
-/* SIDEBAR R / WIDGET / BODY / TABLE TEXT*/
 body.theme-melon-theme-3 div#right-pane .card-body th,
 body.theme-melon-theme-3 div#right-pane .card-body td {
     color: var(--color-paper-text);
 }
-
