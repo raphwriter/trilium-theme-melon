@@ -91,7 +91,8 @@ html {
     /* color variables */
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
-    --color-blue-light: #2a9d8f;      
+    --color-blue-light: #2a9d8f;
+    --color-blue-light-alpha: #2aa19270;
     --color-blue-light-text: #f0f4f4;
     --color-yellow: #e9c46a; 
     --color-yellow-text: #63583c;
@@ -118,6 +119,7 @@ html {
     --border-standard: 1px solid var(--color-gray);
     --border-accent: 2px solid var(--color-orange-dark);
     --border-accent-alt: 2px solid var(--color-blue-light);
+    --border-accent-muted: 2px solid var(--color-gray-dark);
     --border-accent-light: 1px dotted var(--color-blue-dark-text);
     
     --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
@@ -171,15 +173,15 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu
 /* make top all blue */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
-    background: var(--color-blue-dark-text);
+    background: var(--color-blue-light);
 } 
 
 body.theme-melon-theme-3 .note-tab-row-container {
-    background: var(--color-blue-dark-text);
+    background: var(--color-blue-light);
 }
 
 body.theme-melon-theme-3 .tab-row-filler {
-    background: var(--color-blue-dark-text);
+    background: var(--color-blue-light);
 }
 
 /* hide tabbar bottom border thingie */
@@ -189,10 +191,10 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .tab-row-fil
 
 /* TAB / BUTTON [CLOSE TAB] */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab-row .note-tab .note-tab-close {
-    background-color: var(--color-paper-light);
-    color: var(--color-orange-dark);
-    width: 20px;
-    height: 20px;
+    color: var(--color-blue-light);
+    border: var(--border-standard);
+    border-radius: var(--border-radius-small);
+    margin-left: 5px;
 }
 
 /* TAB / BUTTON [CLOSE TAB] / ICON */
@@ -219,6 +221,7 @@ body.theme-melon-theme-3 .note-new-tab:hover {
    
 body.theme-melon-theme-3 .note-tab-row {
     border-radius: 0 !important;
+    margin-top: 0px;
 }
 
 body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-wrapper {
@@ -231,7 +234,7 @@ body.theme-melon-theme-3 .note-tab .note-tab-wrapper {
     /*background-image: none;
     background-color: var(--color-gray-light);
     box-shadow: inset 0 -15px 7px -12px var(--color-shadow);*/
-    font-size: smaller;
+    font-size: 90%;
 }
 
 /* TAB [INACTIVE & ACTIVE] */
@@ -241,31 +244,32 @@ body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-drag-handle {
 
 /* TAB [INACTIVE & ACTIVE] - WRAPPER */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab-wrapper {
-    background: var(--color-paper-light);
-    border-radius: 0;
-    margin-right: 10px;
+    border-radius: var(--border-radius-small);
+    margin-right: 5px;
 }
 
 /* TAB [INACTIVE & ACTIVE] - TITLE */
 body.theme-melon-theme-3 .note-tab .note-tab-wrapper .note-tab-title {
-    color: var(--color-blue-dark);
+    color: var(--color-gray-text);
+    text-overflow: ellipsis;
 }
 
 /* TAB [INACTIVE & ACTIVE] */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab {
-    /*border-radius: 0 !important;*/
     margin-left: 0;
     margin-right: 3px;
     bottom: 0;
     height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: var(--font-headers);
+    padding: 5px 5px;
 }
 
 /* TAB [ACTIVE] - WRAPPER */
 body.theme-melon-theme-3 .note-tab[active] .note-tab-wrapper {
-    border: var(--border-standard);
     border-bottom: var(--border-accent);
-    border-radius: 0 !important;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 
@@ -279,8 +283,7 @@ bbody.theme-melon-theme-3 #root-widget > div.component:first-of-type div.note-ta
 /* TAB [ACTIVE] */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab[active] {
     border: none;
-    border-radius: 0;
-    height: 35px;
+    border-radius: var(--border-radius-small);
 }
 
 /* SECONDARY MENU BAR */
@@ -348,6 +351,10 @@ body.theme-melon-theme-3 div#left-pane {
 
 /* TREE MENU */
 
+/* hide caret of childless notes */
+body.theme-melon-theme-3 .fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
+    display: none;
+}
 
 body.theme-melon-theme-3 div.tree-wrapper,
 body.theme-melon-theme-3 div.tree {
@@ -500,23 +507,19 @@ body.theme-melon-theme-3 .note-book-card h5 {
 /* note title */
 body.theme-melon-theme-3 input.note-title {
     border: var(--border-standard);
-    border-bottom: var(--border-accent);
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
-    color: var(--color-blue-dark) !important;
     font-size: 100%;
-    font-family: var(--font-body);
-    font-weight: 600;
-    padding: 3px 20px;
-    text-align: left;
+    font-family: var(--font-headers);
+    padding: 3px 10px;
+    color: var(--color-gray-text) !important;
+    background-color: var(--color-blue-light-text) !important;
 }
 
 /* note buttons - protection */
 body.theme-melon-theme-3 .btn {
-    border: 1px solid var(--color-gray);
     border-radius: var(--border-radius-small);
-    color: var(--color-gray-dark-text);
-    align-self: center;
+    color: var(--color-blue-dark);
 }
 
 body.theme-melon-theme-3 .dropdown {
@@ -550,7 +553,9 @@ body.theme-melon-theme-3 .note-detail-book-content a:hover {
 }
 
 body.theme-melon-theme-3 .note-detail-text {
+    color: var(--color-gray-text);
     font-family: var(--font-body);
+    line-height: 1.45;
 }
 
 /* h1 */
@@ -594,6 +599,32 @@ body.theme-melon-theme-3 h3 {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.05rem;
+}
+
+/* code */
+
+body.theme-melon-theme-3 .ck-content pre {
+    background: var(--color-gray-light);
+    border: var(--border-standard);
+    /*border-left: var(--border-accent-muted);*/
+    
+}
+
+body.theme-melon-theme-3 .ck-content pre code {
+    color: var(--color-gray-text) !important;
+    font-family: var(--font-code);
+}
+
+/* Checklists */
+body.theme-melon-theme-3 .ck-content .todo-list .todo-list__label > input::before {
+    background: var(--color-gray-light);
+    border: var(--border-standard) !important;
+    border-color: var(--color-blue-light) !important;
+}
+
+body.theme-melon-theme-3 .ck-content .todo-list .todo-list__label > input[checked]::before {
+    background: var(--color-blue-light);
+    border-color: var(--color-blue-dark);
 }
 
 /* ============================================================================= */
@@ -650,4 +681,20 @@ body.theme-melon-theme-3 div#right-pane .card-body a {
 body.theme-melon-theme-3 div#right-pane .card-body th,
 body.theme-melon-theme-3 div#right-pane .card-body td {
     color: var(--color-paper-text);
+}
+
+
+/* ============================================================================= */
+/* ================================ LAYOUT ===================================== */
+/* ============================================================================= */
+
+body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
+    background: linear-gradient(to bottom, transparent, #2aa19233, transparent);
+    width: 5px;
+    border: 1px dotted var(--color-gray-light);
+    border-top: none;
+    border-bottom: none;
+    margin: -5px 5px;
+    padding: 1px;
+    margin-left: 10px;
 }
