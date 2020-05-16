@@ -163,11 +163,9 @@ body.theme-melon-theme-3 .standard-top-widget {
 }
 
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
-    align-self: center;
     border: none;
-    border-right: 1px dotted var(--color-blue-light);
-    margin: 0 15px 0 15px;
-    padding: 0 5px;
+    margin: 0 0 0 10px;
+    padding: 0;
 }
 
 /* make top all blue */
@@ -246,6 +244,8 @@ body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-drag-handle {
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab-wrapper {
     border-radius: var(--border-radius-small);
     margin-right: 5px;
+    align-items: center;
+    display: flex;
 }
 
 /* TAB [INACTIVE & ACTIVE] - TITLE */
@@ -309,16 +309,23 @@ body.theme-melon-theme-3 div#plugin-buttons {
 /* GLOBAL BUTTONS */
 
 body.theme-melon-theme-3 div#left-pane .global-buttons {
-    
     border-radius: var(--border-radius-small);
     border: var(--border-standard);
     color: var(--color-blue-dark);
     /*! background-color: var(--color-blue-light-text); */
     border: none;
-
     margin: 0;
     border-bottom: var(--border-accent-alt);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 2px 3px 2px;
+}
+
+/* grow global buttons */
+body.theme-melon-theme-3 div#left-pane .global-buttons a {
+    flex-grow: 1;
+    text-align: center;
 }
 
 /* hide the breadcrumbs/path widget */
@@ -346,6 +353,11 @@ body.theme-melon-theme-3 span.fancytree-title::after {
 /* SIDEBAR */
 body.theme-melon-theme-3 div#left-pane {
     background-color: var(--color-paper-light);
+    border: var(--border-standard);
+    margin-left: 10px;
+    margin-top: 5px;
+    margin: 5px 5px 0 10px;
+    border-radius: var(--border-radius-small);
 }
 
 
@@ -361,6 +373,7 @@ body.theme-melon-theme-3 div.tree {
     font-family: var(--font-headers);
     font-weight: 400;
     background: white;
+    padding-top: 10px;
 }
 
 
@@ -442,8 +455,12 @@ body.theme-melon-theme-3 span.fancytree-active .fancytree-title:hover {
 
 
 /* ============================================================================= */
-/* ================================ MIDDLE PANE ================================ */
+/* ================================ CENTER PANE ================================ */
 /* ============================================================================= */
+
+body.theme-melon-theme-3 div#center-pane {
+    margin: 0;
+}
 
 /* message on top of notes and book view */
 body.theme-melon-theme-3 .alert-warning,
@@ -520,6 +537,9 @@ body.theme-melon-theme-3 input.note-title {
 body.theme-melon-theme-3 .btn {
     border-radius: var(--border-radius-small);
     color: var(--color-blue-dark);
+    align-items: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
 
 body.theme-melon-theme-3 .dropdown {
@@ -634,6 +654,7 @@ body.theme-melon-theme-3 .ck-content .todo-list .todo-list__label > input[checke
 body.theme-melon-theme-3 div#right-pane {
     font-size: 95%;
     color: var(--color-gray-dark);
+    margin: 5px 10px 0 5px;
 }
 
 /* List Items */
@@ -645,8 +666,8 @@ body.theme-melon-theme-3 div#right-pane li {
 body.theme-melon-theme-3 div#right-pane .card {
     border: var(--border-standard);
     box-shadow: var(--shadow-standard);
-    margin: 15px;
-    margin-top: 0.5rem;
+    margin: 0 0 10px 0;
+    /* margin-top: 0.5rem; */
 }
     
 /* Widget Header */
@@ -656,6 +677,9 @@ body.theme-melon-theme-3 div#right-pane .card-header {
     border: none;
     border-bottom: var(--border-accent-alt);
     width: 100%;
+    height: 38px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 body.theme-melon-theme-3 #right-pane .widget-title {
@@ -690,11 +714,8 @@ body.theme-melon-theme-3 div#right-pane .card-body td {
 
 body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
     background: linear-gradient(to bottom, transparent, #2aa19233, transparent);
-    width: 5px;
     border: 1px dotted var(--color-gray-light);
     border-top: none;
     border-bottom: none;
-    margin: -5px 5px;
-    padding: 1px;
-    margin-left: 10px;
+    margin: -5px 5px -5px 5px;
 }
