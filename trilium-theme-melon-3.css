@@ -125,8 +125,7 @@ html {
     --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
     
     --active-item-text-color: #f2dcd6;
-    --active-item-background-color: #e76f51;
-
+    --active-item-background-color: #e76f51;    
 }
 
 /* hyperlinks */
@@ -463,11 +462,11 @@ body.theme-melon-theme-3 div#center-pane {
 }
 
 /* message on top of notes and book view */
-body.theme-melon-theme-3 .alert-warning,
+body.theme-melon-theme-3 .alert.alert-warning,
 body.theme-melon-theme-3 .note-book-auto-message {
     background: var(--color-paper-light);
     border: var(--border-standard) !important;
-    border-bottom: var(--border-accent-alt) !important;
+    border-bottom: var(--border-accent) !important;
     border-radius: var(--border-radius-small);
     color: var(--color-gray-dark-text);
     font-size: 90%;
@@ -510,11 +509,11 @@ body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-conten
     margin: 5px 0 20px;
 }
 
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h1,
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h2,
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h3,
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h4,
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h5 {
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h1,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h2,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h3,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h4,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h5 {
     font-size: 100%;
 }
 
@@ -605,6 +604,15 @@ body.theme-melon-theme-3 .note-detail-text {
     color: var(--color-gray-text);
     font-family: var(--font-body);
     line-height: 1.45;
+}
+
+/* images */
+
+body.theme-melon-theme-3 .ck-content .image {
+    border: var(--border-standard);
+    border-radius: var(--border-radius-small);
+    margin: 5px;
+    padding: 5px;
 }
 
 /* h1 */
