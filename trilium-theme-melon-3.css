@@ -447,7 +447,7 @@ body.theme-melon-theme-3 span.fancytree-active .fancytree-title {
 
 /* CONTEXT MENU ITEM [active&hover item background ("fix"?!)]*/
 body.theme-melon-theme-3 span.fancytree-active .fancytree-title:hover {
-    background: transparent !important;
+    /*background: transparent !important;*/
     /*border-radius: 0;*/
 }
 
@@ -472,12 +472,12 @@ body.theme-melon-theme-3 .note-book-auto-message {
     color: var(--color-gray-dark-text);
     font-size: 90%;
     font-style: italic;
+    font-size: 90%;
+    margin-bottom: 0.5rem;  
     padding: 3px 5px;    
     text-align: center;
-    width: 100%;
     text-align: left;
-    font-size: 90%;
-    margin-bottom: 0.5rem;    
+    width: 100%;
 }
 
 /* mute hide/show children button */
@@ -485,13 +485,46 @@ body.theme-melon-theme-3 .note-book-children .note-book-hide-children-button,
 body.theme-melon-theme-3 .note-book-children .note-book-open-children-button {
     color: var(--color-gray-dark-text);
     font-size: 90%;
-    align-self: flex-end;
+    margin: 10px 0;
+    display: block;
+    text-align: center;
 }
 
 /* book view */
-body.theme-melon-theme-3 .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
-    /* display: none; */ /* <-- uncomment this to hide note contents in book view */
+body.theme-melon-theme-3 .note-detail .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
+    /* display: none; */ /* <-- uncomment this to hide note-contents in book view */
     font-family: var(--font-body);
+    flex-grow: 0;
+}
+
+/* move first "show / hide children" button to right */
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card {
+    /*display: flex;
+    flex-direction: row;*/
+}
+
+/* structure nested notes in book view */
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card {
+    /*align-items: flex-start;*/
+    border-left: var(--border-standard);
+    margin: 5px 0 20px;
+}
+
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h1,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h2,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h3,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h4,
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h5 {
+    font-size: 100%;
+}
+
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card h5 {
+    padding: 5px 5px 10px;
+    font-size: 95%;
+}
+
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card .note-book-children {
+    border-top: none;
 }
 
 body.theme-melon-theme-3 .note-book-card {
@@ -500,6 +533,7 @@ body.theme-melon-theme-3 .note-book-card {
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
     border-left: var(--border-accent-alt);
+    flex-grow: 1;
 }
 
 body.theme-melon-theme-3 .note-book-children {
@@ -518,9 +552,6 @@ body.theme-melon-theme-3 .note-book-card h5 {
     padding: 15px;
 }
 
-
-
-
 /* note title */
 body.theme-melon-theme-3 input.note-title {
     border: var(--border-standard);
@@ -533,13 +564,11 @@ body.theme-melon-theme-3 input.note-title {
     background-color: var(--color-blue-light-text) !important;
 }
 
-/* note buttons - protection */
+/* buttons */
 body.theme-melon-theme-3 .btn {
     border-radius: var(--border-radius-small);
     color: var(--color-blue-dark);
     align-items: center;
-    /* display: flex; */
-    /* justify-content: space-between; */
 }
 
 body.theme-melon-theme-3 .dropdown {
