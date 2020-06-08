@@ -1,7 +1,7 @@
 # melon-3
 A theme for [trilium](https://github.com/zadam/trilium)
 
-melon-3 should be compatible with trilium 0.4.2
+melon-3 should be compatible with trilium 0.42.x
 
 ## Screenshots
 ![](/screenshots/trilium-theme-melon-3_5.png)
