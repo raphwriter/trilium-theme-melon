@@ -466,15 +466,15 @@ body.theme-melon-theme-3 .alert.alert-warning,
 body.theme-melon-theme-3 .note-book-auto-message {
     background: var(--color-paper-light);
     border: var(--border-standard) !important;
-    border-bottom: var(--border-accent) !important;
+    /* border-bottom: var(--border-accent-muted) !important; */
     border-radius: var(--border-radius-small);
     color: var(--color-gray-dark-text);
     font-size: 90%;
     font-style: italic;
     font-size: 90%;
-    margin-bottom: 0.5rem;  
-    padding: 3px 5px;    
-    text-align: center;
+    margin-bottom: 0.5rem;
+    padding: 3px 15px;
+    /* text-align: center; */
     text-align: left;
     width: 100%;
 }
@@ -505,8 +505,9 @@ body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-conten
 /* structure nested notes in book view */
 body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card {
     /*align-items: flex-start;*/
-    border-left: var(--border-standard);
-    margin: 5px 0 20px;
+    /* border-left: var(--border-standard); */
+    margin: 10px 0 35px;
+    background: var(--color-gray-light);
 }
 
 body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card h1,
@@ -531,7 +532,6 @@ body.theme-melon-theme-3 .note-book-card {
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
-    border-left: var(--border-accent-alt);
     flex-grow: 1;
 }
 
@@ -555,12 +555,14 @@ body.theme-melon-theme-3 .note-book-card h5 {
 body.theme-melon-theme-3 input.note-title {
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
+    border-bottom: var(--border-accent);
     box-shadow: var(--shadow-standard);
-    font-size: 100%;
+    font-size: 150%;
     font-family: var(--font-headers);
+    font-weight: 600;
     padding: 3px 10px;
     color: var(--color-gray-text) !important;
-    background-color: var(--color-blue-light-text) !important;
+    /* background-color: var(--color-blue-light-text) !important; */
 }
 
 /* buttons */
@@ -582,7 +584,7 @@ body.theme-melon-theme-3 div.note-actions {
 
 /* note body */
 body.theme-melon-theme-3 div.note-detail {
-    background-color: var(--color-paper-light);
+    /* background-color: var(--color-paper-light); */
     box-shadow: 1px 1px 1px 1px var(--color-gray-light);
     border: var(--border-standard);
     border-radius: var(--border-radius-small);
