@@ -57,6 +57,21 @@ A theme for Trilium (https://github.com/zadam/trilium)
   src: url('/custom/fonts/FiraMono-Regular.woff') format('woff');
 }
 
+/* Fira Code */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/custom/fonts/FiraCode-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/FiraCode-Bold.woff2') format('woff2');
+}
+
 /* roboto-slab */
 @font-face {
   font-family: 'Roboto Slab';
@@ -144,7 +159,7 @@ body.theme-melon-theme-3 div#root-widget {
 
     --font-headers: 'Roboto Slab', Georgia, Serif;
     --font-body: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
-    --font-code: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+    --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
 }
 
 /* ============================================================================= */
@@ -221,10 +236,7 @@ body.theme-melon-theme-3 .note-tab-row {
     margin-top: 0px;
 }
 
-body.theme-melon-theme-3 .note-tab-row .note-tab .note-tab-wrapper {
-    /*border-top-left-radius: var(--border-radius-tabs);
-    border-top-right-radius: var(--border-radius-tabs);*/
-}
+
 
 /* TAB ROW - WRAPPER */
 body.theme-melon-theme-3 .note-tab .note-tab-wrapper {
@@ -362,9 +374,15 @@ body.theme-melon-theme-3 div#left-pane {
 
 /* TREE MENU */
 
-/* hide caret of childless notes */
+/* hide caret of childless nodes */
 body.theme-melon-theme-3 .fancytree-node:not(.fancytree-folder) .fancytree-expander::before {
     display: none;
+}
+
+/* style the caret icon on expandable nodes*/
+body.theme-melon-theme-3 .fancytree-node .fancytree-expander::before {
+    color: var(--color-blue-dark);
+    font-size: 1rem;
 }
 
 body.theme-melon-theme-3 div.tree-wrapper,
@@ -412,19 +430,13 @@ body.theme-melon-theme-3 .fancytree-active {
     border-radius: var(--border-radius-small);
     color: var(--color-paper-light);
     width: 95%;
+    /*! line-height: 100%; */
 }
 
 
-body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container ul[role=group] {
-    /*border-left: 1px dotted gray;
-    margin-left: 0.1rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;*/
-}
 
 body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container li[role=treeitem] {
-    padding: 0px; 
+    padding: 0px;
 }
 
 body.theme-melon-theme-3 span.fancytree-title {
@@ -444,11 +456,7 @@ body.theme-melon-theme-3 span.fancytree-active .fancytree-title {
     color: var(--color-blue-light-text) !important;
 }
 
-/* CONTEXT MENU ITEM [active&hover item background ("fix"?!)]*/
-body.theme-melon-theme-3 span.fancytree-active .fancytree-title:hover {
-    /*background: transparent !important;*/
-    /*border-radius: 0;*/
-}
+
 
 
 
@@ -496,11 +504,7 @@ body.theme-melon-theme-3 .note-detail .note-detail-book > .note-detail-book-cont
     flex-grow: 0;
 }
 
-/* move first "show / hide children" button to right */
-body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card {
-    /*display: flex;
-    flex-direction: row;*/
-}
+
 
 /* structure nested notes in book view */
 body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card {
