@@ -479,6 +479,26 @@ body.theme-melon-theme-3 div#center-pane {
     margin: 0;
 }
 
+/* buttons in center pane */
+body.theme-melon-theme-3 div#center-pane .btn {
+    color: var(--color-blue-light-text);
+    background-color: var(--color-blue-light);
+    border: none;
+    font-family: var(--font-headers);
+    font-weight: bold;
+}
+
+body.theme-melon-theme-3 div#center-pane .btn kbd {
+    background-color: var(--color-gray-light-alpha);
+    border: 1px solid var(--color-blue-light-text);
+    border-radius: 15px;
+    color: var(--color-blue-light-text);
+    font-family: var(--font-code);    
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+
 /* message on top of notes and book view */
 body.theme-melon-theme-3 .alert.alert-warning,
 body.theme-melon-theme-3 .note-book-auto-message {
@@ -559,10 +579,10 @@ body.theme-melon-theme-3 .note-book-children {
 }
 
 body.theme-melon-theme-3 .note-book-card h5 {
-    font-size: 100%;
     background-color: var(--color-gray-light);
     margin: -15px -15px 0;
-    padding: 15px;
+    padding: 5px 15px;
+    font-family: var(--font-headers);
 }
 
 /* note title */
@@ -576,7 +596,14 @@ body.theme-melon-theme-3 input.note-title {
     font-weight: 600;
     padding: 3px 10px;
     color: var(--color-gray-text) !important;
-    /* background-color: var(--color-blue-light-text) !important; */
+    /*! background-image: url("/custom/img/melon-stripes.png") !important; */
+}
+
+/* note title - protected notes*/
+body.theme-melon-theme-3 input.note-title.protected {
+    text-shadow: none;
+    /*! color: var(--color-orange-dark) !important; */
+    background-image: url("/custom/img/melon-stripes.png") !important;
 }
 
 /* buttons */
@@ -584,6 +611,7 @@ body.theme-melon-theme-3 .btn {
     border-radius: var(--border-radius-small);
     color: var(--color-blue-dark);
     align-items: center;
+    /*! color: var(--color-blue-dark-text); */
 }
 
 body.theme-melon-theme-3 .dropdown {
