@@ -138,6 +138,7 @@ html {
     --border-accent-light: 1px dotted var(--color-blue-dark-text);
     
     --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
+    --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
     
     --active-item-text-color: #f2dcd6;
     --active-item-background-color: #e76f51;    
@@ -151,7 +152,8 @@ body.theme-melon-theme-3 div#root-widget a:hover {
 }
 
 /* font variables */
-body.theme-melon-theme-3 div#root-widget {
+body.theme-melon-theme-3 div#root-widget,
+body.theme-melon-theme-3 div#context-menu-container {
     --main-font-family-sans: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
     --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
@@ -433,7 +435,9 @@ body.theme-melon-theme-3 .fancytree-active {
     /*! line-height: 100%; */
 }
 
-
+body.theme-melon-theme-3 .fancytree-focused {
+    font-weight: 400;
+}
 
 body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container li[role=treeitem] {
     padding: 0px;
@@ -442,6 +446,12 @@ body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container li[role
 body.theme-melon-theme-3 span.fancytree-title {
     border: none;
     background: none;
+}
+
+/* protected nodes */
+body.theme-melon-theme-3 span.fancytree-node.protected > span.fancytree-custom-icon {
+    filter: none;
+    color: var(--color-orange-dark);
 }
 
 /* CONTEXT MENU ITEM [ACTIVE (on click)]*/
@@ -730,6 +740,7 @@ body.theme-melon-theme-3 #right-pane .widget-title {
     font-family: var(--font-headers);
 }
 
+
 body.theme-melon-theme-3 div#right-pane .card .card-header .widget-header-actions a.widget-header-action {
     color: var(--color-blue-dark) !important;
     font-size: 0.8rem;
@@ -761,4 +772,35 @@ body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
     border-top: none;
     border-bottom: none;
     margin: -5px 5px -5px 5px;
+}
+
+/* ============================================================================= */
+/* ================================ CONTEXT MENU =============================== */
+/* ============================================================================= */
+
+body.theme-melon-theme-3 #context-menu-container {
+    border-radius: var(--border-radius-small); 
+    box-shadow: 2px 2px 5px -2px var(--color-gray-dark);
+    border: var(--border-standard);
+    border-top: var(--border-accent);
+    border-bottom: var(--border-accent);
+}
+
+body.theme-melon-theme-3 #context-menu-container li.dropdown-item {
+    padding: 2px 5px 2px 8px;
+    font-size: 14px;
+    font-family: var(--font-headers);
+    font-weight: bold;
+}
+
+body.theme-melon-theme-3 #context-menu-container .dropdown-menu a:hover:not(.disabled),
+body.theme-melon-theme-3 #context-menu-container .dropdown-item:hover:not(.disabled) {
+    background-color: var(--color-blue-light-text) !important;
+}
+
+body.theme-melon-theme-3 #context-menu-container .dropdown-divider {
+    height: 3px;
+    margin: 0.3rem 0px;
+    overflow: hidden;
+    background-color: var(--color-blue-light-text);
 }
