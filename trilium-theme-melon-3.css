@@ -141,13 +141,17 @@ html {
     --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
     
     --active-item-text-color: #f2dcd6;
-    --active-item-background-color: #e76f51;    
+    /* --active-item-background-color: var(--color-orange-dark);    */
+    --hover-item-background-color: var(--color-blue-light-text) !important;
 }
 
 /* hyperlinks */
-body.theme-melon-theme-3 div#root-widget a,
-body.theme-melon-theme-3 div#root-widget a:visited,
-body.theme-melon-theme-3 div#root-widget a:hover {
+body.theme-melon-theme-3 div#root-widget a, 
+body.theme-melon-theme-3 div#root-widget a:visited, 
+body.theme-melon-theme-3 div#root-widget a:hover,
+body.theme-melon-theme-3 .note-detail a,
+body.theme-melon-theme-3 .modal-dialog a
+{
     color: var(--color-blue-dark);
 }
 
@@ -351,6 +355,17 @@ body.theme-melon-theme-3 div#left-pane .tree-settings-popup button {
     color: var(--color-paper-light);
 }
 
+/* unhoist button */
+body.theme-melon-theme-3 div#root-widget div#left-pane span > a.unhoist-button {
+    font-size: 0.8rem;
+    color: var(--color-blue-light-text) !important;
+    text-decoration: none !important;
+    background-color: var(--color-blue-light);
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
+    margin: 0 3px;
+}
+
 
 /* "SYMLINK" */
 body.theme-melon-theme-3 span.fancytree-title::after {
@@ -480,12 +495,17 @@ body.theme-melon-theme-3 div#center-pane {
 }
 
 /* buttons in center pane */
-body.theme-melon-theme-3 div#center-pane .btn {
+body.theme-melon-theme-3 div#center-pane button.btn {
     color: var(--color-blue-light-text);
     background-color: var(--color-blue-light);
     border: none;
     font-family: var(--font-headers);
     font-weight: bold;
+}
+
+body.theme-melon-theme-3 div#center-pane button.btn.btn-sm {
+  font-weight: normal;
+  font-size: .9rem
 }
 
 body.theme-melon-theme-3 div#center-pane .btn kbd {
@@ -596,14 +616,13 @@ body.theme-melon-theme-3 input.note-title {
     font-weight: 600;
     padding: 3px 10px;
     color: var(--color-gray-text) !important;
-    /*! background-image: url("/custom/img/melon-stripes.png") !important; */
 }
 
 /* note title - protected notes*/
 body.theme-melon-theme-3 input.note-title.protected {
     text-shadow: none;
-    /*! color: var(--color-orange-dark) !important; */
-    background-image: url("/custom/img/melon-stripes.png") !important;
+    background-color: var(--color-blue-light-text) !important;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgb(255, 255, 255) 20px, rgb(255, 255, 255) 40px) !important;
 }
 
 /* buttons */
@@ -808,7 +827,7 @@ body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
 
 body.theme-melon-theme-3 #context-menu-container {
     border-radius: var(--border-radius-small); 
-    box-shadow: 2px 2px 5px -2px var(--color-gray-dark);
+    box-shadow: var(--shadow-accented);
     border: var(--border-standard);
     border-top: var(--border-accent);
     border-bottom: var(--border-accent);
@@ -816,19 +835,54 @@ body.theme-melon-theme-3 #context-menu-container {
 
 body.theme-melon-theme-3 #context-menu-container li.dropdown-item {
     padding: 2px 5px 2px 8px;
-    font-size: 14px;
+    font-size: 1rem;
     font-family: var(--font-headers);
-    font-weight: bold;
+    font-weight: normal;
 }
 
+/* item hover effect */
 body.theme-melon-theme-3 #context-menu-container .dropdown-menu a:hover:not(.disabled),
 body.theme-melon-theme-3 #context-menu-container .dropdown-item:hover:not(.disabled) {
     background-color: var(--color-blue-light-text) !important;
 }
 
-body.theme-melon-theme-3 #context-menu-container .dropdown-divider {
-    height: 3px;
+/* menu item divider */
+body.theme-melon-theme-3 #context-menu-container .dropdown-divider,
+body.theme-melon-theme-3 #center-pane .dropdown-divider {
+    border: none;
+    height: 2px;
     margin: 0.3rem 0px;
     overflow: hidden;
     background-color: var(--color-blue-light-text);
+}
+
+
+/* note type and note actions buttons */
+body.theme-melon-theme-3 #center-pane .note-type-dropdown,
+body.theme-melon-theme-3 #center-pane .dropdown-menu,
+body.theme-melon-theme-3 .global-menu .dropdown-menu {
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-accented);
+    border: var(--border-standard);
+    border-top: var(--border-accent);
+    border-bottom: var(--border-accent);
+    font-family: var(--font-headers);
+    font-size: 1rem;
+}
+
+body.theme-melon-theme-3 #center-pane .dropdown-item .switch {
+  height: auto;
+}
+
+body.theme-melon-theme-3 #center-pane .dropdown-item .slider {
+  height: 18px;
+  border-radius: 10px;
+
+}
+
+body.theme-melon-theme-3 #center-pane .dropdown-item .slider::before {
+  height: 10px;
+  width: 10px;
+  border-radius: 8px;
+  
 }
