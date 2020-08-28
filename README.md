@@ -1,23 +1,7 @@
+![](/screenshots/trilium-theme-melon-3_montage.png)
+
 # melon-3
 A theme for [trilium](https://github.com/zadam/trilium)
-
-melon-3 should be compatible with trilium 0.42.x
-
-## Screenshots
-![](/screenshots/trilium-theme-melon-3_5.png)
-
-## Screenshots (slightly out of date, esp. colours)
-### Note View
-![screenshot1](/screenshots/trilium-theme-melon-3_3.png "Note View")
-
-### Book View
-![screenshot2](/screenshots/trilium-theme-melon-3_1.png "Book View")
-
-### Zen View
-![screenshot3](/screenshots/trilium-theme-melon-3_2.png "Zen View")
-
-
-
 
 ## Theme Installation
 Install the theme by following these steps:
@@ -42,4 +26,4 @@ Further instructions can be found [here](https://github.com/zadam/trilium/wiki/T
 
 
 ## Old Versions
-The old version can be found in these branches [trilium-0.4.x](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.4.x), [trilium-0.3.8](https://github.com/raphwriter/trilium-theme-melon/tree/trilium-0.3.8)
+View older versions [here](https://github.com/raphwriter/trilium-theme-melon/branches)
