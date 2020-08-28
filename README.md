@@ -1,4 +1,4 @@
-![more info below](/screenshots/trilium-theme-melon-3_montage.png)
+![screenshots](/screenshots/trilium-theme-melon-3_montage.png "More info below!")
 
 # melon-3
 A theme for [Trilium Notes](https://github.com/zadam/trilium), "_a hierarchical note taking application with focus on building large personal knowledge bases_". I really like this application and its many features. At the same time I felt like it needed some visual _overhaul_ for lack of better terms. I am trying to achieve a consistent look and feel.
