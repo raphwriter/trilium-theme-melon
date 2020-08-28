@@ -8,7 +8,7 @@ Sometimes things break (e.g. due to updates of the application) - please don't h
 ## Theme Installation
 Install the theme by following these steps:
 - copy the (**raw**) content of _trilium-theme-melon-3.css_
-- paste it into a new trilium note named "melon-theme-3"
+- paste it into a new trilium code note (of type CSS) named "melon-theme-3"
 - add a new attribute to the melon-theme note (Alt + A)
   - Type: Label
   - Name: appTheme
