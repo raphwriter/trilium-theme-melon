@@ -3,7 +3,6 @@ MELON 3 by https://github.com/raphwriter/
 A theme for Trilium (https://github.com/zadam/trilium)
 */
 
-
 /* font declarations */
 
 /* open-sans*/
@@ -40,7 +39,7 @@ A theme for Trilium (https://github.com/zadam/trilium)
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 300;
-  src: url('/custom/fonts/firasans-light.woff') format('woff');
+  src: url('/custom/fonts/FiraSans-Light.woff') format('woff');
 }
 
 @font-face {
@@ -72,7 +71,7 @@ A theme for Trilium (https://github.com/zadam/trilium)
   src: url('/custom/fonts/FiraCode-Bold.woff2') format('woff2');
 }
 
-/* roboto-slab */
+/* Roboto-slab */
 @font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -157,7 +156,8 @@ body.theme-melon-theme-3 .modal-dialog a
 
 /* font variables */
 body.theme-melon-theme-3 div#root-widget,
-body.theme-melon-theme-3 div#context-menu-container {
+body.theme-melon-theme-3 div#context-menu-container,
+body.theme-melon-theme-3 .modal {
     --main-font-family-sans: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
     --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
@@ -166,6 +166,158 @@ body.theme-melon-theme-3 div#context-menu-container {
     --font-headers: 'Roboto Slab', Georgia, Serif;
     --font-body: 'Open Sans', 'Fira Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
+}
+
+
+/* ============================================================================= */
+/* ================================ LAYOUT ===================================== */
+/* ============================================================================= */
+
+body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
+    background: linear-gradient(to bottom, transparent, #2aa19233, transparent);
+    border: 1px dotted var(--color-gray-light);
+    border-top: none;
+    border-bottom: none;
+    margin: -5px 5px -5px 5px;
+}
+
+/* buttons */
+body.theme-melon-theme-3 .btn {
+    border-radius: var(--border-radius-small);
+    color: var(--color-blue-dark);
+    align-items: center;
+}
+
+
+body.theme-melon-theme-3 .dropdown {
+    /*! align-self: center; */
+}
+
+/* note buttons - type, actions */
+body.theme-melon-theme-3 div.note-type,
+body.theme-melon-theme-3 div.note-actions {
+    /*font-size: 100%;*/
+}
+
+body.theme-melon-theme-3 div.component.title-row {
+    align-items: center;
+}
+
+/* ============================================================================= */
+/* =================== CONTEXT MENU & FLOATING ELEMENTS ======================== */
+/* ============================================================================= */
+
+body.theme-melon-theme-3 #context-menu-container {
+    border-radius: var(--border-radius-small); 
+    box-shadow: var(--shadow-accented);
+    border: var(--border-standard);
+    border-top: var(--border-accent);
+    border-bottom: var(--border-accent);
+}
+
+body.theme-melon-theme-3 #context-menu-container li.dropdown-item {
+    padding: 2px 5px 2px 8px;
+    font-size: 1rem;
+    font-family: var(--font-headers);
+    font-weight: normal;
+}
+
+/* item hover effect */
+body.theme-melon-theme-3 #context-menu-container .dropdown-menu a:hover:not(.disabled),
+body.theme-melon-theme-3 #context-menu-container .dropdown-item:hover:not(.disabled) {
+    background-color: var(--color-blue-light-text) !important;
+}
+
+/* menu item divider */
+body.theme-melon-theme-3 #context-menu-container .dropdown-divider,
+body.theme-melon-theme-3 #center-pane .dropdown-divider {
+    border: none;
+    height: 2px;
+    margin: 0.3rem 0px;
+    overflow: hidden;
+    background-color: var(--color-blue-light-text);
+}
+
+
+/* note type and note actions buttons */
+body.theme-melon-theme-3 #center-pane .note-type-dropdown,
+body.theme-melon-theme-3 #center-pane .dropdown-menu,
+body.theme-melon-theme-3 .global-menu .dropdown-menu {
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-accented);
+    border: var(--border-standard);
+    border-top: var(--border-accent);
+    border-bottom: var(--border-accent);
+    font-family: var(--font-headers);
+    font-size: 1rem;
+}
+/* toggle note protection switch in note actions dropdown */
+body.theme-melon-theme-3 #center-pane .dropdown-item .switch {
+  height: auto;
+}
+body.theme-melon-theme-3 #center-pane .dropdown-item .slider {
+  height: 18px;
+  border-radius: 10px;
+}
+body.theme-melon-theme-3 #center-pane .dropdown-item .slider::before {
+  height: 10px;
+  width: 10px;
+  border-radius: 8px;
+}
+
+/* modal header */
+body.theme-melon-theme-3 div.modal-content > div.modal-header {
+    display: flex;
+    align-items: center;
+    background: var(--color-paper-light);
+    color: var(--color-paper-text);
+}
+
+/* modal header */
+body.theme-melon-theme-3 div.modal-content > div.modal-header h5 {
+    font-family: var(--font-headers);
+    font-weight: bold;
+}
+
+/* modal body primary button */
+body.theme-melon-theme-3 div.modal-content button.btn-primary {
+    color: var(--color-blue-light-text);
+    background-color: var(--color-blue-light);
+    border: var(--border-accent-alt);
+}
+
+/* modal header - revisions - delete all button */
+body.theme-melon-theme-3 div.modal-content > div.modal-header > button#note-revisions-erase-all-revisions-button {
+    color: var(--color-yellow-text);
+    background-color: var(--color-yellow);
+    border: none;
+    height: 30px;
+    margin: 0 10px 0 5px;
+}
+
+/* modal header - help button */
+body.theme-melon-theme-3 div.modal-content > div.modal-header button.help-button {
+    border-radius: var(--border-radius-small);
+    border: var(--border-standard);
+    color: var(--color-blue-light);
+    font-weight: bold;
+    font-family: var(--font-headers);
+    padding: .1rem .6rem;
+}
+
+/* modal recent changes */
+body.desktop.theme-melon-theme-3.modal-open div#recent-changes-dialog div.modal-content div.modal-body div#recent-changes-content div b {
+    font-family: var(--font-headers);
+    display:block;
+    border-bottom: var(--border-accent-alt);
+}
+
+body.desktop.theme-melon-theme-3.modal-open div#recent-changes-dialog div.modal-content div.modal-body div#recent-changes-content div ul {
+    list-style-type: none;
+    padding-left: 6rem;
+    margin-top: 0.3rem;
+    font-family: var(--font-body);
+    font-size: 90%;
 }
 
 /* ============================================================================= */
@@ -483,9 +635,6 @@ body.theme-melon-theme-3 span.fancytree-active .fancytree-title {
 
 
 
-
-
-
 /* ============================================================================= */
 /* ================================ CENTER PANE ================================ */
 /* ============================================================================= */
@@ -524,15 +673,11 @@ body.theme-melon-theme-3 .alert.alert-warning,
 body.theme-melon-theme-3 .note-book-auto-message {
     background: var(--color-paper-light);
     border: var(--border-standard) !important;
-    /* border-bottom: var(--border-accent-muted) !important; */
     border-radius: var(--border-radius-small);
-    color: var(--color-gray-dark-text);
-    font-size: 90%;
+    color: var(--color-gray-dark-text);    
     font-style: italic;
-    font-size: 90%;
     margin-bottom: 0.5rem;
-    padding: 3px 15px;
-    /* text-align: center; */
+    padding: 5px 15px;
     text-align: left;
     width: 100%;
 }
@@ -590,19 +735,24 @@ body.theme-melon-theme-3 .note-book-card {
 }
 
 body.theme-melon-theme-3 .note-book-children {
-    /* display: flex; */
-    /* flex-direction: column; */
-    border-top: var(--border-accent-light);
-    margin: 0px -15px -5px;
     padding: 4px 15px 5px;
-    background: none;
 }
 
+/* note title in book view */
 body.theme-melon-theme-3 .note-book-card h5 {
-    background-color: var(--color-gray-light);
-    margin: -15px -15px 0;
-    padding: 5px 15px;
     font-family: var(--font-headers);
+    font-weight: bold;
+}
+
+body.theme-melon-theme-3 .note-book-card h5 a {
+    border-bottom: var(--border-accent);
+    display: inline-table;
+    text-decoration: none;
+}
+
+body.theme-melon-theme-3 .note-book-card h5 a:hover {
+    border-bottom: var(--border-accent-muted);
+    text-decoration: none;
 }
 
 /* note title */
@@ -625,23 +775,7 @@ body.theme-melon-theme-3 input.note-title.protected {
     background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgb(255, 255, 255) 20px, rgb(255, 255, 255) 40px) !important;
 }
 
-/* buttons */
-body.theme-melon-theme-3 .btn {
-    border-radius: var(--border-radius-small);
-    color: var(--color-blue-dark);
-    align-items: center;
-    /*! color: var(--color-blue-dark-text); */
-}
 
-body.theme-melon-theme-3 .dropdown {
-    align-self: center;
-}
-
-/* note buttons - type, actions */
-body.theme-melon-theme-3 div.note-type,
-body.theme-melon-theme-3 div.note-actions {
-    font-size: 80%;
-}
 
 /* note body */
 body.theme-melon-theme-3 div.note-detail {
@@ -719,6 +853,14 @@ body.theme-melon-theme-3 h3 {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.05rem;
+}
+
+/* h4 */
+body.theme-melon-theme-3 h4 {
+    color: var(--color-blue-light);
+    font-family: var(--font-headers);
+    font-size: 12px;
+    font-weight: 400;
 }
 
 /* code */
@@ -806,83 +948,4 @@ body.theme-melon-theme-3 div#right-pane .card-body a {
 body.theme-melon-theme-3 div#right-pane .card-body th,
 body.theme-melon-theme-3 div#right-pane .card-body td {
     color: var(--color-paper-text);
-}
-
-
-/* ============================================================================= */
-/* ================================ LAYOUT ===================================== */
-/* ============================================================================= */
-
-body.theme-melon-theme-3 #root-widget .gutter.gutter-horizontal {
-    background: linear-gradient(to bottom, transparent, #2aa19233, transparent);
-    border: 1px dotted var(--color-gray-light);
-    border-top: none;
-    border-bottom: none;
-    margin: -5px 5px -5px 5px;
-}
-
-/* ============================================================================= */
-/* ================================ CONTEXT MENU =============================== */
-/* ============================================================================= */
-
-body.theme-melon-theme-3 #context-menu-container {
-    border-radius: var(--border-radius-small); 
-    box-shadow: var(--shadow-accented);
-    border: var(--border-standard);
-    border-top: var(--border-accent);
-    border-bottom: var(--border-accent);
-}
-
-body.theme-melon-theme-3 #context-menu-container li.dropdown-item {
-    padding: 2px 5px 2px 8px;
-    font-size: 1rem;
-    font-family: var(--font-headers);
-    font-weight: normal;
-}
-
-/* item hover effect */
-body.theme-melon-theme-3 #context-menu-container .dropdown-menu a:hover:not(.disabled),
-body.theme-melon-theme-3 #context-menu-container .dropdown-item:hover:not(.disabled) {
-    background-color: var(--color-blue-light-text) !important;
-}
-
-/* menu item divider */
-body.theme-melon-theme-3 #context-menu-container .dropdown-divider,
-body.theme-melon-theme-3 #center-pane .dropdown-divider {
-    border: none;
-    height: 2px;
-    margin: 0.3rem 0px;
-    overflow: hidden;
-    background-color: var(--color-blue-light-text);
-}
-
-
-/* note type and note actions buttons */
-body.theme-melon-theme-3 #center-pane .note-type-dropdown,
-body.theme-melon-theme-3 #center-pane .dropdown-menu,
-body.theme-melon-theme-3 .global-menu .dropdown-menu {
-    border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-accented);
-    border: var(--border-standard);
-    border-top: var(--border-accent);
-    border-bottom: var(--border-accent);
-    font-family: var(--font-headers);
-    font-size: 1rem;
-}
-
-body.theme-melon-theme-3 #center-pane .dropdown-item .switch {
-  height: auto;
-}
-
-body.theme-melon-theme-3 #center-pane .dropdown-item .slider {
-  height: 18px;
-  border-radius: 10px;
-
-}
-
-body.theme-melon-theme-3 #center-pane .dropdown-item .slider::before {
-  height: 10px;
-  width: 10px;
-  border-radius: 8px;
-  
 }
