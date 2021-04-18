@@ -360,7 +360,7 @@ body.theme-melon-theme-3 div.modal-content .modal-body {
 /* which happens to be the tab-bar */
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
 body.theme-melon-theme-3 .standard-top-widget {
-    align-items: center;
+    /*align-items: center;*/
     /*! border-bottom: 1px solid lightgray; */
     min-height: 50px;
 
@@ -376,6 +376,7 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type,
 body.theme-melon-theme-3 #root-widget > div.component:first-of-type .global-menu-wrapper {
     background: var(--color-blue-light);
+    padding-top: 5px;
 } 
 
 body.theme-melon-theme-3 .note-tab-row-container {
@@ -584,12 +585,19 @@ body.theme-melon-theme-3 .fancytree-node .fancytree-expander::before {
     font-size: 1rem;
 }
 
-body.theme-melon-theme-3 div.tree-wrapper,
+
 body.theme-melon-theme-3 div.tree {
     font-family: var(--font-headers);
     font-weight: 400;
     background: white;
     padding-top: 10px;
+    padding-bottom: 0;
+    max-height: 90%;
+    
+}
+
+body.theme-melon-theme-3 div.tree-wrapper {
+    min-height: max-content;
 }
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED] */
