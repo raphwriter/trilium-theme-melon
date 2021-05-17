@@ -105,7 +105,7 @@ html {
 /* ----------------------------------------------------------------------------- */
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
-    --color-blue-light: #2a9d8f;
+    --color-blue-light: #5ea299;
     --color-blue-light-alpha: #2aa19270;
     --color-blue-light-alpha-darker: #2a9d8fd1;
     --color-blue-light-text: #f0f4f4;
@@ -122,6 +122,7 @@ html {
     --color-gray-light: #f5f5f5;
     --color-gray-light-alpha: rgba(199, 199, 199, 0.2);
     --color-gray-light-text: #999;
+    --color-gray-medium: #868E8D;
     --color-gray-dark: #666;
     --color-gray-dark-text: #666;
     --color-paper: #ecebe3;
@@ -132,8 +133,8 @@ html {
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
 /* ----------------------------------------------------------------------------- */
-    --border-radius-small: 3px;
-    --border-radius-tabs: 3px;
+    --border-radius-small: 2px;
+    --border-radius-tabs: 2px;
     --border-standard: 1px solid var(--color-gray);
     --border-accent: 2px solid var(--color-orange-dark);
     --border-accent-alt: 2px solid var(--color-blue-light);
@@ -514,7 +515,6 @@ body.theme-melon-theme-3 #root-widget > div.component:first-of-type .note-tab[ac
 /* SECONDARY MENU BAR */
 body.theme-melon-theme-3 .standard-top-widget {
     background: var(--color-blue-light-text);
-    /*! border-bottom: 1px solid var(--color-blue-light); */
     margin-bottom: 5px;
     padding-left: 5px;
     padding-bottom: 5px;
@@ -526,6 +526,14 @@ body.theme-melon-theme-3 div#plugin-buttons {
     margin-right: 1rem;
 }
 
+body.theme-melon-theme-3 div#root-widget div.standard-top-widget div button.btn.btn-sm.noborder {
+    font-family: var(--font-body);
+    padding: .25rem .5rem;
+}
+
+body.theme-melon-theme-3 div#root-widget div.standard-top-widget input {
+    font-family: var(--font-body);
+}
 
 /* ----------------------------------------------------------------------------- */
 /* LEFT PANE
@@ -534,16 +542,7 @@ body.theme-melon-theme-3 div#plugin-buttons {
 /* GLOBAL BUTTONS */
 
 body.theme-melon-theme-3 div#left-pane .global-buttons {
-   /* border-radius: var(--border-radius-small);
-    border: var(--border-standard);
-    color: var(--color-blue-dark);
-    border: none;
-    margin: 0;
-    border-bottom: var(--border-accent-alt);
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 2px 3px 2px;*/
+
 }
 
 /* grow global buttons */
@@ -552,25 +551,13 @@ body.theme-melon-theme-3 div#left-pane .global-buttons a {
     text-align: center;*/
 }
 
-/* hide the breadcrumbs/path widget */
-body.theme-melon-theme-3 div.note-paths-widget {
-    /*display: none;*/
-}
-
-
 body.theme-melon-theme-3 div#left-pane .tree-settings-popup button {
     color: var(--color-paper-light);
 }
 
 /* unhoist button */
 body.theme-melon-theme-3 div#root-widget div#left-pane span > a.unhoist-button {
-    /*font-size: 0.8rem;
-    color: var(--color-blue-light-text) !important;
-    text-decoration: none !important;
-    background-color: var(--color-blue-light);
-    padding: 2px 4px;
-    border-radius: var(--border-radius-small);
-    margin: 0 3px;*/
+
 }
 
 
@@ -582,8 +569,7 @@ body.theme-melon-theme-3 span.fancytree-title::after {
 
 /* SIDEBAR */
 body.theme-melon-theme-3 div#left-pane {
-    /*background-color: white;
-    border: none;*/
+
 }
 
 /* TREE MENU */
@@ -621,34 +607,37 @@ body.theme-melon-theme-3 span.fancytree-selected .fancytree-title {
 /* SIDEBAR MENU ITEM [FOCUSED] */
 body.theme-melon-theme-3 span.fancytree-focus .fancytree-title,
 body.theme-melon-theme-3 span.fancytree-focus .fancytree-selected .fancytree-title {
-    /*border: none;
-    background-color: none;*/
+
 }
 
 /* SIDEBAR MENU ITEM [SECONDARY SELECTED:HOVER] */
 body.theme-melon-theme-3 span.fancytree-node:hover span.fancytree-title {
-    /*background-color: var(--color-gray-light-text);
-    border-color: var(--main-border-color);
-    border-radius: 0;*/
+
 }
 
 body.theme-melon-theme-3 span.fancytree-active:not(.fancytree-focused) .fancytree-title {
-    /*border: none !important;
-    font-weight: normal;*/
 }
 
 body.theme-melon-theme-3 .fancytree-active {
     background: var(--color-blue-light);
-    border-radius: var(--border-radius-small);
+    border-radius: 0;
     color: var(--color-paper-light);
 }
 
 body.theme-melon-theme-3 .fancytree-focused {
-    /*font-weight: 300;*/
+
 }
 
-body.theme-melon-theme-3 div.tree-wrapper.component .fancytree-container li[role=treeitem] {
-    /*padding: 0px;*/
+body.theme-melon-theme-3 div.tree-wrapper .fancytree-container li[role=treeitem] {
+}
+
+body.theme-melon-theme-3 div.tree-wrapper .fancytree-container span.fancytree-node {
+    padding: 1px 0;
+    margin-bottom: -3px;
+}
+
+body.theme-melon-theme-3 div.tree-wrapper .fancytree-container span.fancytree-node.fancytree-active {
+
 }
 
 body.theme-melon-theme-3 span.fancytree-title {
@@ -699,13 +688,25 @@ body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container {
     margin: 10px -5px 0;
     padding: 0 15px 10px;
     border-bottom: var(--border-accent-light);
+    
+    font-size: .9rem;
+}
+
+body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container .section-title-container {
+    justify-content: start;
+    margin-left: 10px;
 }
 
 body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container div.section-title {
     border-bottom: none;
     font-family: var(--font-headers);
+    padding: 0;
+    margin: 0 1rem 0 0;
+    padding-bottom: 0.2rem;
 }
-
+body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container div.section-title.section-title-empty {
+    display: none;
+}
 body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container div.section-title.active {
     border-bottom: var(--border-accent-muted);
 }
@@ -716,6 +717,7 @@ body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container d
 
 body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container div.section-body-container {
     font-size: 0.9rem;
+    /*! margin-left: 35px; */
 }
 
 body.theme-melon-theme-3 div#root-widget div#center-pane div.section-container div.section-body-container div.section-body.active div.attribute-list div.attribute-list-editor p {
@@ -785,10 +787,7 @@ body.theme-melon-theme-3 div#center-pane div.similar-notes-widget div.similar-no
 
 body.theme-melon-theme-3 div#center-pane div.attribute-list.component div.all-attr-wrapper p,
 body.theme-melon-theme-3 div#center-pane div.attribute-list.component div.all-attr-wrapper .inherited-attributes-wrapper {
-    /*color: var(--color-blue-dark);
-    font-size: .9rem;
-    font-family: var(--font-code);
-    margin-left: 2rem;*/
+
 }
 /*
 body.theme-melon-theme-3 div#center-pane div.attribute-list.component div.all-attr-wrapper .inherited-attributes-wrapper {
@@ -827,46 +826,49 @@ body.theme-melon-theme-3 div#center-pane button.btn {
     background-color: var(--color-blue-light);
     border: none;
     font-family: var(--font-headers);
+    /*! text-transform: uppercase; */
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 body.theme-melon-theme-3 div#center-pane button.btn.btn-sm {
-/*   font-weight: normal; */
-/*   font-size: 1rem; */
+
 }
 
-/* body.theme-melon-theme-3 div#center-pane .btn kbd {
-    background-color: var(--color-gray-light-alpha);
-    border: 1px solid var(--color-blue-light-text);
-    border-radius: 15px;
-    color: var(--color-blue-light-text);
-    font-family: var(--font-code);    
-    display: inline-block;
-    margin-left: 10px;
-    padding: 5px 10px;
-} */
+body.theme-melon-theme-3 div#center-pane .btn kbd {
+
+}
 
 /* note buttons - type,actions (vertical alignment with the note title) */
 body.theme-melon-theme-3 div.component.title-row {
     align-items: center;
-    /*! flex-shrink: 0; */
-    /*! flex-grow: 1; */
+    border-bottom: var(--border-accent);
+    color: var(--color-blue-dark);
+}
+
+body.theme-melon-theme-3 div#root-widget div#center-pane .title-row .dropdown :is(button)  {
+    background: none;
+    /*! border: var(--border-accent-light); */
+    color: var(--color-blue-dark);
 }
 
 body.theme-melon-theme-3 div.note-title-container {
     height: 3rem;
     flex-grow: 1;
-    border-bottom: var(--border-accent);
-    box-shadow: var(--shadow-standard);
+    /*! border-bottom: var(--border-accent); */
+    /*! box-shadow: var(--shadow-standard); */
+    border-radius: 3px 3px 0 0;
 }
 
 
 /* edit note button*/ /* message/button on top of notes and book view */
 body.theme-melon-theme-3 .alert.alert-warning {
-    background: var(--color-blue-light-alpha-darker) !important;
+    background: var(--color-blue-light) !important;
     border: var(--border-accent-light) !important;
     border-radius: var(--border-radius-small);
-    padding: 7px 125px;
+    /*! padding: 7px 125px; */
     margin: 0.3rem auto;
+    font-size: 1rem;
 }
 body.theme-melon-theme-3 #center-pane div.note-detail.component div.note-detail-read-only-code {
     display: flex;
@@ -882,20 +884,16 @@ body.theme-melon-theme-3 #center-pane div.note-detail.component > div.note-detai
     color: white;
 }
 
-/* book view - mute hide/show children button
+/* book view - mute hide/show children button */
 body.theme-melon-theme-3 .note-book-children .note-book-hide-children-button,
 body.theme-melon-theme-3 .note-book-children .note-book-open-children-button {
-    color: var(--color-gray-dark-text);
-    font-size: 90%;
-    margin: 10px 0;
-    display: block;
-    text-align: center;
-} */
 
-/* book view 
+} 
+
+/* book view */
 body.theme-melon-theme-3 .note-detail .note-detail-book > .note-detail-book-content > div.note-book-card .note-book-content {
-    flex-grow: 0;
-}*/
+
+}
 
 /* structure nested notes in book view */
 body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card .note-book-card {
@@ -903,16 +901,21 @@ body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-conten
     background: var(--color-gray-light);
 }
 
-/*body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card :is(h1, h2, h3, h4, h5, h6) {
-    font-size: 1rem;
-}*/
+body.theme-melon-theme-3 .note-detail .note-detail-book .note-detail-book-content > .note-book-card :is(h1, h2, h3, h4, h5, h6) {
+
+}
 
 body.theme-melon-theme-3 .note-book-card {
-    background-color: var(--color-paper-light);
-    border: var(--border-standard);
+    background-color: white;
+    border: var(--border-accent-light) !important;
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
-    /*flex-grow: 1;*/
+    margin: 2px;
+}
+
+body.theme-melon-theme-3 .note-list.grid-view .note-book-card:hover {
+    background: white;
+    border: var(--border-accent-light);
 }
 
 body.theme-melon-theme-3 .note-book-card .note-book-title .rendered-note-attributes {
@@ -948,21 +951,17 @@ body.theme-melon-theme-3 .note-book-card h5 a:hover {
 
 /* note title */
 body.theme-melon-theme-3 input.note-title {
-    /*border: var(--border-standard);*/
     border-radius: 0;
-    /*border-bottom: var(--border-accent);*/
-    
-    font-size: 28px;
+    font-size: 2rem;
     font-family: var(--font-headers);
-    font-weight: 600;
     padding: 0 10px;
-    color: var(--color-gray-text) !important;
+    color: var(--color-blue-dark) !important;
 }
 
 /* note title icon button*/
 body.theme-melon-theme-3 div#root-widget div.component div#center-pane.component div.component.title-row div.note-icon-container button.note-icon {
-    border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-standard);
+    border-radius: 0.5rem;
+    background: var(--color-paper-light);
 }
 
 /* note title - protected notes*/
@@ -1114,6 +1113,7 @@ body.theme-melon-theme-3 div#right-pane .card {
     box-shadow: var(--shadow-standard);
     margin: 0 0 10px 0;
     overflow: clip;
+    border-radius: var(--border-radius-small);
 }
     
 /* Card Header */
