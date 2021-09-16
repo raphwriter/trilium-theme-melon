@@ -1,9 +1,15 @@
-![screenshots](/screenshots/trilium-theme-melon-3_montage.png "More info below!")
-
 # melon-3
 A theme for [Trilium Notes](https://github.com/zadam/trilium), "_a hierarchical note taking application with focus on building large personal knowledge bases_". I really like this application and its many features. At the same time I felt like it needed some visual _overhaul_ for lack of better terms. I am trying to achieve a consistent look and feel.
 
 Sometimes things break (e.g. due to updates of the application) - please don't hesitate to file an issue!
+
+## Screenshots
+### Main Window
+![screenshot1](/screenshots/scrn01.png "More info below!")
+### Zen Mode
+![screenshot2](/screenshots/scrn02.png "More info below!")
+### Main Window with open Panels
+![screenshot3](/screenshots/scrn03.png "More info below!")
 
 ## Theme Installation
 Install the theme by following these steps:
