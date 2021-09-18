@@ -83,8 +83,10 @@ html {
     --color-blue-light-alpha: #2aa19270;
     --color-blue-light-alpha-darker: #2a9d8fd1;
     --color-blue-light-text: #f0f4f4;
-    --color-blue-light-gradient-1: #e1c116;
-    --color-blue-light-gradient-2: #ecca12;
+    /*--color-blue-light-gradient-1: #e1c116;
+    --color-blue-light-gradient-2: #ecca12;*/
+    --color-blue-light-gradient-1: #4ea596;
+    --color-blue-light-gradient-2: #2ba090;
     --color-yellow: #e9c46a; 
     --color-yellow-text: #63583c;
     --color-yellow-bg-alpha: #e9c46a1a; 
