@@ -1,0 +1,361 @@
+/* ============================================================================= */
+/*                                   MELON 4 
+/*                      by https://github.com/raphwriter/
+/*          A Theme For Trilium Notes (https://github.com/zadam/trilium)
+/* ============================================================================= */
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* FONT DECLARATIONS
+/* ----------------------------------------------------------------------------- */
+
+/* Fira Mono */
+@font-face {
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/FiraMono-Regular.woff') format('woff');
+}
+
+/* Fira Sans */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: light;
+  font-weight: 300;
+  src: url('/custom/fonts/FiraSans-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: regular;
+  font-weight: 400;
+  src: url('/custom/fonts/FiraSans-Regular.woff') format('woff');
+}
+
+/* Fira Code */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/custom/fonts/FiraCode-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/FiraCode-Bold.woff') format('woff');
+}
+
+/* Roboto-slab */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 200;
+  src: url('/custom/fonts/roboto-slab-v11-latin-200.woff') format('woff'); 
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 300;
+  src: url('/custom/fonts/roboto-slab-v11-latin-300.woff') format('woff'); 
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/custom/fonts/roboto-slab-v11-latin-regular.woff') format('woff'); 
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/custom/fonts/roboto-slab-v11-latin-600.woff') format('woff'); 
+}
+
+
+html {
+/* ----------------------------------------------------------------------------- */
+/* COLOR VARIABLES
+/* ----------------------------------------------------------------------------- */
+    --color-blue-dark: #264653;
+    --color-blue-dark-text: #a0b7c1;
+    --color-blue-light: #5ea299;
+    --color-blue-light-alpha: #2aa19270;
+    --color-blue-light-alpha-darker: #2a9d8fd1;
+    --color-blue-light-text: #f0f4f4;
+    --color-blue-light-gradient-1: #4ea596;
+    --color-blue-light-gradient-2: #2ba090;
+    --color-yellow: #e9c46a; 
+    --color-yellow-text: #63583c;
+    --color-yellow-bg-alpha: #e9c46a1a; 
+    --color-sidebar-yellow-dark: #e1dbce;
+    --color-orange-light: #f4a261;
+    --color-orange-light-text: #c96a2e;
+    --color-orange-dark: #e76f51;
+    --color-orange-dark-text: #f2dcd6; 
+    --color-gray: #d6d6d6;
+    --color-gray-text: #333;
+    --color-gray-text-code: #555;
+    --color-gray-light: #f5f5f5;
+    --color-gray-light-alpha: rgba(199, 199, 199, 0.2);
+    --color-gray-light-text: #999;
+    --color-gray-medium: #868E8D;
+    --color-gray-dark: #666;
+    --color-gray-dark-text: #666;
+    --color-paper: #ecebe3;
+    --color-paper-text: #555;
+    --color-paper-light: #fcfcfa;
+    --color-shadow: rgba(181, 181, 181, 0.6);
+    
+/* ----------------------------------------------------------------------------- */
+/* BORDER & SHADOW VARIABLES
+/* ----------------------------------------------------------------------------- */
+    --border-radius-small: 2px;
+    --border-radius-tabs: 2px;
+    --border-standard: 1px solid var(--color-gray);
+    --border-accent: 2px solid var(--color-orange-dark);
+    --border-accent-alt: 2px solid var(--color-blue-light);
+    --border-accent-muted: 2px solid var(--color-gray-dark);
+    --border-accent-light: 1px dotted var(--color-blue-dark-text);
+    
+    --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
+    --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
+    --shadow-90deg: 0 3px 5px -3px var(--color-shadow);
+
+/* ----------------------------------------------------------------------------- */
+/* FONT VARIABLES
+/* ----------------------------------------------------------------------------- */
+    --main-font-family-sans: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
+    --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+    --detail-text-font-family: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    --font-family-monospace: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+    --font-headers: 'Roboto Slab', Georgia, Serif;
+    --font-body: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* RESET
+/* ----------------------------------------------------------------------------- */
+
+
+#root-widget * {
+  font-family: var(--main-font-family-sans);
+  border-radius: var(--border-radius-small);
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* CodeMirror
+/* ----------------------------------------------------------------------------- */
+div.CodeMirror {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-atom {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-builtin {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-callee {
+  color: var(--color-yellow-text);
+}
+div.CodeMirror span.cm-comment {
+  color: var(--color-gray-light-text);
+}
+div.CodeMirror span.cm-def {
+  color: var(--color-gray-text-code);  
+}
+div.CodeMirror span.cm-keyword {
+  color: gray;  
+}
+div.CodeMirror span.cm-matchhighlight {
+  color: var(--color-gray-text-code);  
+}
+div.CodeMirror span.cm-number {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-operator {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-overlay {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-property {
+  color: var(--color-paper-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gray);
+  text-decoration-style: dotted;
+}
+div.CodeMirror span.cm-variable {
+  color: var(--color-blue-light-gradient-2);
+}
+div.CodeMirror span.cm-variable-2 {
+  color: var(--color-blue-light);
+}
+div.CodeMirror span.cm-variable-3 {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-qualifier {
+  color: var(--color-gray-text-code);
+}
+div.CodeMirror span.cm-string {
+  color: var(--color-orange-dark);  
+}
+div.CodeMirror span.cm-string-2 {
+  color: var(--color-gray-text-code);  
+}
+div.CodeMirror span.cm-tag {
+  color: var(--color-gray-text-code);
+}
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* HYPERLINKS
+/* ----------------------------------------------------------------------------- */
+
+a, a:visited, a:hover, .note-detail a, .modal-dialog a {
+    color: var(--color-blue-dark);
+}
+
+
+
+/* ----------------------------------------------------------------------------- */
+/* COMPONENTS
+/* ----------------------------------------------------------------------------- */
+
+/* ROOT WIDGET */
+
+div#root-widget {
+
+}
+
+
+
+/* MAIN MENU */
+
+div#root-widget div#left-pane span.fancytree-node:hover { 
+    background-color: var(--color-blue-light);
+    border: none;
+    color: white;
+}
+
+div#root-widget div#left-pane .fancytree-node {
+    height: 36px;
+    padding: 2px 4px;
+}
+
+div#root-widget div#left-pane span.fancytree-node.fancytree-active {
+    background-color: var(--color-blue-light) !important;
+    border: none;
+}
+
+div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
+  color: white;
+}
+
+
+
+/* CONTEXT MENU */
+
+#context-menu-container {
+  font-family: var(--main-font-family-sans);
+}
+
+
+
+/* TAB BAR */
+
+div#rest-pane .tab-row-widget {
+    
+}
+
+.tab-row-widget .note-tab .note-tab-title {
+    text-align: center;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-light-text);
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
+    background-color: var(--color-blue-light);
+    color: var(--color-blue-light-text);
+    font-weight: 600;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
+    content: "\2E28 ";
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
+    content: " \2E29";
+}
+
+
+
+/* LAUNCHER PANE */
+
+div#launcher-pane {
+    background-color: var(--color-blue-light);
+}
+
+div#launcher-pane .component,
+div#launcher-pane .icon-action {
+    color: var(--color-blue-light-text);
+}
+
+div#launcher-pane .global-menu-button {
+    background-image: url('/custom/images/icon-white2.png');
+}
+
+div#launcher-pane .icon-action:hover {
+    background-color: var(--color-gray-text);
+}
+
+.tooltip-inner {
+    font-family: var(--main-font-family-sans);
+}
+
+
+/* RIBBON */
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
+    border-bottom: 2px solid var(--color-orange-dark);
+    border-radius: 0;
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-spacer,
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
+    border-bottom: none;
+    border-radius: 0;
+}
+
+
+/* NOTEBOOK CARDS */
+
+.note-book-card {
+    background-color: white;
+    border: var(--border-accent-light) !important;
+    border-radius: var(--border-radius-small);
+    /*! box-shadow: var(--shadow-standard); */
+    margin: 3px;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+}
+.note-book-card.expanded > .note-book-title {
+    font-weight: 500;
+}
+
+
+
+/* NOTES */
+
+#center-pane .title-row .note-title-widget.component input.note-title {
+    color: var(--color-blue-light-text);
+    font-family: var(--main-font-family-serif);
+    font-weight: 600;
+}
