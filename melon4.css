@@ -77,6 +77,7 @@ html {
 /* ----------------------------------------------------------------------------- */
 /* COLOR VARIABLES
 /* ----------------------------------------------------------------------------- */
+    
     --color-blue-dark: #264653;
     --color-blue-dark-text: #a0b7c1;
     --color-blue-light: #5ea299;
@@ -86,6 +87,7 @@ html {
     --color-blue-light-gradient-1: #4ea596;
     --color-blue-light-gradient-2: #2ba090;
     --color-yellow: #e9c46a; 
+    --color-yellow-darker: #ecb400;
     --color-yellow-text: #63583c;
     --color-yellow-bg-alpha: #e9c46a1a; 
     --color-sidebar-yellow-dark: #e1dbce;
@@ -106,25 +108,30 @@ html {
     --color-paper-text: #555;
     --color-paper-light: #fcfcfa;
     --color-shadow: rgba(181, 181, 181, 0.6);
+    --color-shadow-light: rgba(181, 181, 181, 0.3);
     
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
 /* ----------------------------------------------------------------------------- */
+    
     --border-radius-small: 2px;
     --border-radius-tabs: 2px;
+    --border-radius-large: 10px;
     --border-standard: 1px solid var(--color-gray);
     --border-accent: 2px solid var(--color-orange-dark);
     --border-accent-alt: 2px solid var(--color-blue-light);
     --border-accent-muted: 2px solid var(--color-gray-dark);
     --border-accent-light: 1px dotted var(--color-blue-dark-text);
     
+    --shadow-light: 3px 4px 3px -3px var(--color-shadow-light);
     --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
     --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
     --shadow-90deg: 0 3px 5px -3px var(--color-shadow);
 
 /* ----------------------------------------------------------------------------- */
-/* FONT VARIABLES
+/* FONT VARIABLES 
 /* ----------------------------------------------------------------------------- */
+    
     --main-font-family-sans: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
     --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
@@ -137,21 +144,29 @@ html {
 
 
 /* ----------------------------------------------------------------------------- */
-/* RESET
+/* RESET 
 /* ----------------------------------------------------------------------------- */
-
 
 #root-widget * {
   font-family: var(--main-font-family-sans);
   border-radius: var(--border-radius-small);
 }
 
+#root-widget :is(h1, h2, h3, h4, h5, h6) {
+  border-bottom: none;
+  color: var(--color-blue-dark);
+  font-family: var(--main-font-family-serif);
+  margin-top: 1.6rem;
+  margin-bottom: .3rem;
+}
+
 
 /* ----------------------------------------------------------------------------- */
-/* CodeMirror
+/* CodeMirror 
 /* ----------------------------------------------------------------------------- */
+
 div.CodeMirror {
-  color: var(--color-gray-text-code);
+  /*color: var(--color-gray-text-code);*/
 }
 div.CodeMirror span.cm-atom {
   color: var(--color-gray-text-code);
@@ -163,13 +178,16 @@ div.CodeMirror span.cm-callee {
   color: var(--color-yellow-text);
 }
 div.CodeMirror span.cm-comment {
-  color: var(--color-gray-light-text);
+  color: var(--color-yellow-darker);
+  background-color: var(--color-gray-light);
+  padding: 5px 2px;
+  margin: -5px -2px;
 }
 div.CodeMirror span.cm-def {
   color: var(--color-gray-text-code);  
 }
 div.CodeMirror span.cm-keyword {
-  color: gray;  
+  color: var(--color-gray-text-code);  
 }
 div.CodeMirror span.cm-matchhighlight {
   color: var(--color-gray-text-code);  
@@ -184,13 +202,13 @@ div.CodeMirror span.cm-overlay {
   color: var(--color-gray-text-code);
 }
 div.CodeMirror span.cm-property {
-  color: var(--color-paper-text);
-  text-decoration: underline;
-  text-decoration-color: var(--color-gray);
-  text-decoration-style: dotted;
+    color: var(--color-paper-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-gray);
+    text-decoration-style: dotted;
 }
 div.CodeMirror span.cm-variable {
-  color: var(--color-blue-light-gradient-2);
+  color: var(--color-blue-dark);
 }
 div.CodeMirror span.cm-variable-2 {
   color: var(--color-blue-light);
@@ -211,31 +229,59 @@ div.CodeMirror span.cm-tag {
   color: var(--color-gray-text-code);
 }
 
+.note-detail-code-editor div.CodeMirror-selected,
+.note-detail-code-editor div.CodeMirror-line::selection {
+  background-color: var(--color-blue-light-alpha);
+}
 
+.CodeMirror-matchingbracket { 
+  text-decoration: none; 
+  color: var(--color-orange-dark) !important;
+  border: 1px solid var(--color-gray);
+}
 
 /* ----------------------------------------------------------------------------- */
 /* HYPERLINKS
 /* ----------------------------------------------------------------------------- */
 
-a, a:visited, a:hover, .note-detail a, .modal-dialog a {
+a, a:visited, a:hover, 
+.note-detail a, .note-detail a:hover,
+.modal-dialog a, .modal-dialog a:hover, 
+.note-paths-widget a, .note-paths-widget a:hover, 
+.similar-notes-widget a, .similar-notes-widget a:hover,
+.related-notes-container a, .related-notes-container a:hover,
+div.tooltip a {
     color: var(--color-blue-dark);
+    border-bottom: 1px solid var(--color-orange-dark);
+    border-radius: 0;
+    text-decoration: none;
+}
+
+a:hover, 
+.note-detail a:hover,
+.modal-dialog a:hover, 
+.note-paths-widget a:hover, 
+.similar-notes-widget a:hover,
+.related-notes-container a:hover {
+    border-bottom: 1px solid var(--color-blue-light);
+    border-radius: 0;
+    color: var(--color-blue-light);
+    text-decoration: none;
 }
 
 
-
 /* ----------------------------------------------------------------------------- */
-/* COMPONENTS
+/* COMPONENTS 
 /* ----------------------------------------------------------------------------- */
 
-/* ROOT WIDGET */
+/* ----------- DROPDOWN MENU ----------- */
 
-div#root-widget {
-
+div#root-widget div#left-pane .dropdown-menu a {
+    color: var(--color-dark-blue);
+  
 }
 
-
-
-/* MAIN MENU */
+/* ----------- TREE ----------- */
 
 div#root-widget div#left-pane span.fancytree-node:hover { 
     background-color: var(--color-blue-light);
@@ -246,20 +292,33 @@ div#root-widget div#left-pane span.fancytree-node:hover {
 div#root-widget div#left-pane .fancytree-node {
     height: 36px;
     padding: 2px 4px;
+  font-family: var(--main-font-family-serif);
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-active {
     background-color: var(--color-blue-light) !important;
     border: none;
+  font-family: var(--main-font-family-serif);
+}
+
+div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
+  font-family: var(--main-font-family-serif);
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
   color: white;
 }
 
+div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
+  color: var(--color-blue-dark);
+}
+
+div#root-widget div#launcher-pane div.dropdown div.dropdown-menu a {
+  color: var(--color-blue-dark);
+}
 
 
-/* CONTEXT MENU */
+/* ----------- CONTEXT MENU ----------- */
 
 #context-menu-container {
   font-family: var(--main-font-family-sans);
@@ -267,7 +326,7 @@ div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
 
 
 
-/* TAB BAR */
+/* ----------- TAB BAR ----------- */
 
 div#rest-pane .tab-row-widget {
     
@@ -289,7 +348,7 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[activ
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
-    content: "\2E28 ";
+    content: "\2E28  ";
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
@@ -298,7 +357,7 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[activ
 
 
 
-/* LAUNCHER PANE */
+/* ----------- LAUNCHER PANE ----------- */
 
 div#launcher-pane {
     background-color: var(--color-blue-light);
@@ -310,7 +369,13 @@ div#launcher-pane .icon-action {
 }
 
 div#launcher-pane .global-menu-button {
-    background-image: url('/custom/images/icon-white2.png');
+    /*background-image: url('/custom/images/icon-white2.png');*/
+    filter: invert(1);
+}
+
+div#launcher-pane .global-menu-button:hover {
+    /*background-image: url('/custom/images/icon-white2.png');*/
+    filter: invert(0);
 }
 
 div#launcher-pane .icon-action:hover {
@@ -322,7 +387,8 @@ div#launcher-pane .icon-action:hover {
 }
 
 
-/* RIBBON */
+/* ----------- RIBBON ----------- */
+
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
     border-bottom: 2px solid var(--color-orange-dark);
     border-radius: 0;
@@ -334,10 +400,60 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
     border-radius: 0;
 }
 
+.note-paths-widget a {
+  font-weight: 400;
+}
 
-/* NOTEBOOK CARDS */
+.note-paths-widget li {
+  
+}
 
-.note-book-card {
+
+/* ----------- FORM ELEMENTS ----------- */
+
+div#root-widget div#center-pane button:not(.bx) {
+    background-color: var(--color-gray-dark-text);  
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-large);
+    border: none;
+    color: white;
+    font-family: var(--main-font-family-serif);
+    padding: .1rem .8rem;
+}
+
+div#root-widget div#center-pane button:not(.bx).btn-primary {
+    background-color: var(--color-orange-dark);
+}
+
+div#center-pane button:not(.bx).btn-secondary {
+    background-color: var(--color-gray-dark);
+}
+
+div#center-pane .switch {
+  background-color: white;
+}
+
+div#center-pane .switch .slider {
+  background-color: #f3f3f3;
+  box-shadow: var(--shadow-light);
+  border-radius: var(--border-radius-large);
+}
+
+div#center-pane .switch .slider::before {
+  background-color: var(--color-gray-dark);
+  border-radius: var(--border-radius-large);
+}
+
+div#center-pane .switch .slider.checked::before {
+  background-color: var(--color-orange-dark);
+  border-radius: var(--border-radius-large);
+}
+
+
+
+/* ----------- NOTEBOOK CARDS ----------- */
+
+div#center-pane .note-book-card {
     background-color: white;
     border: var(--border-accent-light) !important;
     border-radius: var(--border-radius-small);
@@ -346,16 +462,104 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
     margin-bottom: 1rem;
     padding: .5rem 1rem;
 }
+
 .note-book-card.expanded > .note-book-title {
     font-weight: 500;
 }
 
+.note-book-card :is(h1, h2, h3, h4, h5) {
+    font-size: 1rem;
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card {
+    background-color: white;
+  
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card:hover {
+    background-color: white;
+    box-shadow: var(--shadow-standard);
+  
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card h5 {
+    color: var(--color-blue-dark);  
+    width: max-content;
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card h5 span.rendered-note-attributes {
+    display: none;  /* hide note attributes */
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content {
+    
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content a,
+.note-list-widget .note-list-widget-content .note-list .note-book-card h5 a {
+    color: var(--color-blue-dark)
+}
+
+.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content .rendered-note-content {
+    color: var(--color-gray-dark);
+}
 
 
-/* NOTES */
 
-#center-pane .title-row .note-title-widget.component input.note-title {
-    color: var(--color-blue-light-text);
+/* ----------- NOTES ----------- */
+
+#center-pane .title-row {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#center-pane .title-row .note-icon-widget {
+  margin-top: 1rem;
+}
+
+#center-pane .title-row .note-title-widget {
+    align-self: center;
+    display: flex;
+    align-items: center;
+}
+
+#center-pane .title-row .note-title-widget input.note-title {
+    color: var(--color-blue-dark) !important;
     font-family: var(--main-font-family-serif);
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+
+#center-pane .note-detail h2:first-of-type {
+    margin-top: auto;
+}
+
+#center-pane .note-detail p {
+  color: var(--color-gray-text);
+}
+
+#center-pane .note-detail p a {
+  color: var(--color-blue-dark);
+  border-bottom: 1px solid var(--color-orange-dark);
+}
+
+/* div.tooltip.note-tooltip, 
+div.note-tooltip-content,
+div.tooltip-inner {
+  
+}
+
+div.tooltip.note-tooltip pre {
+  
+}*/
+
+
+#center-pane pre {
+  color: var(--color-blue-dark);
+}
+
+#center-pane code {
+  font-family: var(--main-font-family-mono);
 }
