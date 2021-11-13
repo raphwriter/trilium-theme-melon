@@ -14,19 +14,17 @@ I really like this application and its many features. At the same time I felt li
 
 #### In a nutshell:
 Install the theme by following these steps:
-- copy the (**raw**) content of ![trilium-theme-melon-4.css](https://raw.githubusercontent.com/raphwriter/trilium-theme-melon/master/trilium-theme-melon-4.css)
-- paste it into a new trilium **code** note (type: CSS) named "melon-theme-3"
-- add a new attribute to the melon-theme-3 note (Alt + A)
-  - either copy & paste ```#appTheme``` to the node's attributes
+- copy the (**raw**) content of ![trilium-theme-melon-4.css](https://raw.githubusercontent.com/raphwriter/trilium-theme-melon/master/melon-theme-4.css)
+- paste it into a new trilium **code** note (type: CSS) named "melon-theme-4"
+- add a new attribute to the melon-theme-4 note `(Alt + A)`
+  - either copy & paste `#appTheme=melon-4` to the node's attributes
   - or use the UI with these settings
     - Type: Label
     - Name: appTheme
-    - Value: _empty_
+    - Value: melon4
     - inheritable: _not ticked_
 - go to Menu > Options
 - select it as your new theme
-
-
 
 ## Additional Fonts
 To get the full experience you need to install some additional fonts.
