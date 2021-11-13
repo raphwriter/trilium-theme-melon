@@ -1,1 +1,4 @@
 vscode.code-workspace
+.idea/
+.github/workflows
+.directory
