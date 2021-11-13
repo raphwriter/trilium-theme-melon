@@ -5,18 +5,16 @@ I really like this application and its many features. At the same time I felt li
 
 ## Screenshots
 ### Main Window
-![screenshot1](/screenshots/scrn01.png "More info below!")
-### Zen Mode
-![screenshot2](/screenshots/scrn02.png "More info below!")
-### Main Window with open Panels
-![screenshot3](/screenshots/scrn03.png "More info below!")
+![screenshot1](/screenshots/scrn4_01.png "More info below!")
+
 
 ## Theme Installation
 
-![screenshot5](/screenshots/scrn05.png "Setup")
+### Please follow the official instructions [here](https://github.com/zadam/trilium/wiki/Themes).
 
+#### In a nutshell:
 Install the theme by following these steps:
-- copy the (**raw**) content of ![trilium-theme-melon-3.css](https://raw.githubusercontent.com/raphwriter/trilium-theme-melon/master/trilium-theme-melon-3.css)
+- copy the (**raw**) content of ![trilium-theme-melon-4.css](https://raw.githubusercontent.com/raphwriter/trilium-theme-melon/master/trilium-theme-melon-4.css)
 - paste it into a new trilium **code** note (type: CSS) named "melon-theme-3"
 - add a new attribute to the melon-theme-3 note (Alt + A)
   - either copy & paste ```#appTheme``` to the node's attributes
@@ -28,7 +26,7 @@ Install the theme by following these steps:
 - go to Menu > Options
 - select it as your new theme
 
-Further instructions and information on themes can be found [here](https://github.com/zadam/trilium/wiki/Themes)
+
 
 ## Additional Fonts
 To get the full experience you need to install some additional fonts.
@@ -43,5 +41,3 @@ To get the full experience you need to install some additional fonts.
 
 ```
 
-### Example Screenshot
-![screenshot3](/screenshots/scrn04.png "Font Setup")
