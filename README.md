@@ -5,11 +5,8 @@ I really like this application and its many features. At the same time I felt li
 
 ## Screenshots
 ### Main Window
-![screenshot1](/screenshots/scrn01.png "More info below!")
-### Zen Mode
-![screenshot2](/screenshots/scrn02.png "More info below!")
-### Main Window with open Panels
-![screenshot3](/screenshots/scrn03.png "More info below!")
+![screenshot1](/screenshots/scrn4_01.png "More info below!")
+
 
 ## Theme Installation
 
@@ -43,5 +40,3 @@ To get the full experience you need to install some additional fonts.
 
 ```
 
-### Example Screenshot
-![screenshot3](/screenshots/scrn04.png "Font Setup")
