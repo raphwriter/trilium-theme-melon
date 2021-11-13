@@ -1,5 +1,5 @@
-# melon-3
-A theme for [Trilium Notes](https://github.com/zadam/trilium), "_a hierarchical note taking application with focus on building large personal knowledge bases_". 
+# melon-4
+A theme for [Trilium Notes](https://github.com/zadam/trilium), (>= 0.48.x) "_a hierarchical note taking application with focus on building large personal knowledge bases_". 
 
 I really like this application and its many features. At the same time I felt like it needed some visual _overhaul_ for lack of better terms. I am trying to achieve a consistent look and feel. Sometimes things break (e.g. due to updates of the application) - please don't hesitate to file an issue!
 
