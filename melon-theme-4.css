@@ -1,7 +1,7 @@
 /* ============================================================================= */
-/*                                   MELON 4 
-/*                      by https://github.com/raphwriter/
-/*          A Theme For Trilium Notes (https://github.com/zadam/trilium)
+/*                                   MELON 4                                     */
+/*                      by https://github.com/raphwriter/                        */ 
+/*          A Theme For Trilium Notes (https://github.com/zadam/trilium)         */
 /* ============================================================================= */
 
 
@@ -78,11 +78,13 @@ html {
 /* COLOR VARIABLES
 /* ----------------------------------------------------------------------------- */
     
-    --color-blue-dark: #264653;
+    --color-blue-dark: #2e4b76;
+    --color-blue-dark-alpha: #2e4b76d1;  
     --color-blue-dark-text: #a0b7c1;
-    --color-blue-light: #5ea299;
-    --color-blue-light-alpha: #2aa19270;
-    --color-blue-light-alpha-darker: #2a9d8fd1;
+    --color-blue-light: #3cad9e;
+    --color-blue-light-alpha: #3cad9e70;
+    --color-blue-light-alpha-darker: #3cad9ed1;
+    --color-blue-light-alpha-lighter: #2aa19229;
     --color-blue-light-text: #f0f4f4;
     --color-blue-light-gradient-1: #4ea596;
     --color-blue-light-gradient-2: #2ba090;
@@ -147,12 +149,14 @@ html {
 /* RESET 
 /* ----------------------------------------------------------------------------- */
 
-#root-widget * {
+#root-widget *, .modal-content, :not(.ribbon-body *), form input {
   font-family: var(--main-font-family-sans);
   border-radius: var(--border-radius-small);
 }
 
-#root-widget :is(h1, h2, h3, h4, h5, h6) {
+
+#root-widget :is(h1, h2, h3, h4, h5, h6),
+.modal-content :is(h1, h2, h3, h4, h5, h6) {
   border-bottom: none;
   color: var(--color-blue-dark);
   font-family: var(--main-font-family-serif);
@@ -160,13 +164,33 @@ html {
   margin-bottom: .3rem;
 }
 
+#root-widget a {
+  color: var(--color-blue-dark);
+}
+
+
+span.edited-note-line {
+  padding: 0 .5rem 0 0;
+  display: flex;
+}
+span.edited-note-line small {
+  color: var(--color-gray-dark);
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+div#rest-pane.component div#center-pane .title-row {
+
+}
+
 
 /* ----------------------------------------------------------------------------- */
 /* CodeMirror 
 /* ----------------------------------------------------------------------------- */
 
-div.CodeMirror {
+div#root-widget div#rest-pane div#center-pane div.note-detail div.note-detail-code div.note-detail-code-editor div.CodeMirror-code span {
   /*color: var(--color-gray-text-code);*/
+    font-family: var(--font-code);
 }
 div.CodeMirror span.cm-atom {
   color: var(--color-gray-text-code);
@@ -250,7 +274,9 @@ a, a:visited, a:hover,
 .note-paths-widget a, .note-paths-widget a:hover, 
 .similar-notes-widget a, .similar-notes-widget a:hover,
 .related-notes-container a, .related-notes-container a:hover,
-div.tooltip a {
+div.tooltip a, 
+li a, li a:visited, li a:hover
+{
     color: var(--color-blue-dark);
     border-bottom: 1px solid var(--color-orange-dark);
     border-radius: 0;
@@ -270,35 +296,91 @@ a:hover,
 }
 
 
+
+/* ----------------------------------------------------------------------------- */
+/* MODALS 
+/* ----------------------------------------------------------------------------- */
+
+/* ----------- RECENT CHANGES ----------- */
+div#recent-changes-content div {
+  margin-bottom: 2rem;
+}
+
+div#recent-changes-content div ul {
+  margin-left: .5rem;
+  margin-top: .5rem;
+  padding-left: 0;
+}
+
+div#recent-changes-content div ul li {
+  list-style-type: none;
+  margin-bottom: .3rem;
+}
+
+div#recent-changes-content div ul li span {
+  color: var(--color-blue-light);
+  font-family: var(--main-font-family-serif);
+}
+
+div#recent-changes-content div ul li span small {
+  color: var(--color-gray-light-text);
+  display: block;
+  margin-left: 0rem;
+}
+
+div#recent-changes-content div b {
+  border-bottom: 1px solid var(--color-gray);
+  color: var(--color-blue-dark);
+  display: block;
+  font-family: var(--main-font-family-serif);
+  font-weight: normal;
+}
+
+
+
 /* ----------------------------------------------------------------------------- */
 /* COMPONENTS 
 /* ----------------------------------------------------------------------------- */
+
+/* ----------- GUTTER ----------- */
+
+div#root-widget div.gutter-horizontal {
+  background: rgb(238,238,238);
+  background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(238,238,238,1) 48.8%, rgba(94,162,153,1) 49%, rgba(238,238,238,1) 49.2%, rgba(238,238,238,1) 49.8%, rgba(94,162,153,1) 50%, rgba(238,238,238,1) 50.2%, rgba(238,238,238,1) 50.8%, rgba(94,162,153,1) 51%, rgba(238,238,238,1) 51.2%, rgba(238,238,238,1) 100%);
+}
+
+
 
 /* ----------- DROPDOWN MENU ----------- */
 
 div#root-widget div#left-pane .dropdown-menu a {
     color: var(--color-dark-blue);
-  
 }
+
+
 
 /* ----------- TREE ----------- */
 
+div#root-widget div#left-pane div.tree ul#ft-id-1 {
+  margin-right: 1rem;
+}
+
 div#root-widget div#left-pane span.fancytree-node:hover { 
-    background-color: var(--color-blue-light);
-    border: none;
-    color: white;
+    background-color: #2aa19229;
+    border: 1px dotted var(--color-blue-light);
+    //color: white;
+  color: var(--color-blue-light);
 }
 
 div#root-widget div#left-pane .fancytree-node {
-    height: 36px;
-    padding: 2px 4px;
+height: 36px; padding: 2px 4px 5px;
   font-family: var(--main-font-family-serif);
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-active {
-    background-color: var(--color-blue-light) !important;
-    border: none;
-  font-family: var(--main-font-family-serif);
+  background-color: var(--color-gray-light-alpha) !important;
+  border: none !important;
+  /*! font-family: var(--main-font-family-serif); */
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
@@ -306,7 +388,7 @@ div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
-  color: white;
+  color: var(--color-blue-dark);
 }
 
 div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
@@ -316,6 +398,20 @@ div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
 div#root-widget div#launcher-pane div.dropdown div.dropdown-menu a {
   color: var(--color-blue-dark);
 }
+
+div#root-widget div#left-pane span.fancytree-node.protected > span.fancytree-custom-icon {
+  /* remove shadow from protected notes icon */
+  filter: none;
+  color: var(--color-gray-medium);
+}
+
+div#root-widget div#left-pane span.fancytree-node.multiple-parents .fancytree-title::after {
+  /* cloned notes icon */
+  content: " \1F517";
+  font-size: .8rem;
+  color: var(--color-blue-light);
+}
+
 
 
 /* ----------- CONTEXT MENU ----------- */
@@ -342,17 +438,19 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
-    background-color: var(--color-blue-light);
+    background-color: #3cad9e;
     color: var(--color-blue-light-text);
     font-weight: 600;
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
-    content: "\2E28  ";
+    content: "\203B  "; /* reference mark */
+  content: "\1F348  "; /* melon */
+  content: "\1F34B   "; /* lemon */
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
-    content: " \2E29";
+    /*content: " \203B";*/
 }
 
 
@@ -389,15 +487,66 @@ div#launcher-pane .icon-action:hover {
 
 /* ----------- RIBBON ----------- */
 
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
-    border-bottom: 2px solid var(--color-orange-dark);
-    border-radius: 0;
+div#rest-pane.component div#center-pane div.ribbon-tab-container {
+  justify-content: space-evenly;
+  max-width: 55%;
 }
 
+.ribbon-body span,
+.ribbon-body p {
+  font-family: var(--main-font-family-mono) !important;
+  
+}
+
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
+  
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
+  border: 1px solid var(--color-gray);
+    /*! padding: 0.3rem .3rem 0rem; */
+  justify-content: space-between;
+  border-left: none;
+  border-right: none;
+}
+
+div#rest-pane.component div#center-pane .ribbon-button-container {
+  border: none;
+    padding: 0.3rem .3rem 0rem;
+  justify-content: end;
+  align-content: end;
+}
+div#rest-pane.component div#center-pane .ribbon-button-container button {
+
+}
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-spacer,
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
-    border-bottom: none;
-    border-radius: 0;
+  border-radius: 0;
+  padding: 0.3rem 1rem;
+  border-bottom: none;
+
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-spacer {
+  display: none;
+  max-width: 0;
+  
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title.active {
+  background-color: var(--color-orange-dark);
+  color: white;
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title:hover {
+  background-color: var(--color-blue-light-alpha);
+  color: white;
+}
+
+div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title.active:hover {
+  background-color: var(--color-blue-light-gradient-2);
+  color: white;
 }
 
 .note-paths-widget a {
@@ -406,6 +555,10 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
 
 .note-paths-widget li {
   
+}
+
+div#rest-pane.component div#center-pane .button-widget.icon-action {
+  color: var(--color-gray-medium);
 }
 
 
@@ -449,6 +602,16 @@ div#center-pane .switch .slider.checked::before {
   border-radius: var(--border-radius-large);
 }
 
+input#clone-to-note-autocomplete,
+.algolia-autocomplete {
+  font-family: var(--main-font-family-serif);
+}
+
+/* checkbox background*/
+.ck-content .todo-list .todo-list__label > input[checked]::before {
+  background: var(--color-blue-dark-alpha);
+  border-radius: var(--border-radius-small);
+}
 
 
 /* ----------- NOTEBOOK CARDS ----------- */
@@ -473,13 +636,11 @@ div#center-pane .note-book-card {
 
 .note-list-widget .note-list-widget-content .note-list .note-book-card {
     background-color: white;
-  
 }
 
 .note-list-widget .note-list-widget-content .note-list .note-book-card:hover {
     background-color: white;
     box-shadow: var(--shadow-standard);
-  
 }
 
 .note-list-widget .note-list-widget-content .note-list .note-book-card h5 {
@@ -508,14 +669,45 @@ div#center-pane .note-book-card {
 
 /* ----------- NOTES ----------- */
 
+#center-pane .backlinks-ticker {
+  background-color: var(--color-gray-light);
+  color: var(--color-gray-dark-text);
+  border: var(--border-accent-light);
+  top: 0;
+  right: 12px;
+  width: fit-content;
+}
+
+#center-pane .backlinks-ticker span.backlinks-count {
+  font-family: var(--main-font-family-mono);
+  font-size: .95rem;
+
+}
+
 #center-pane .title-row {
-    min-height: 3.5rem;
+    min-height: 4.5rem;
     display: flex;
     align-items: center;
+  margin-bottom: 0.5rem;
+    /*! box-shadow: -3px 3px 3px -3px gray inset; */
 }
 
 #center-pane .title-row .note-icon-widget {
-  margin-top: 1rem;
+  
+  /*! align-content: baseline; */
+  display: flex;
+  margin: 0;
+  padding: 5px;
+  
+}
+
+#center-pane .note-detail {
+  border: 1px solid var(--color-gray);
+  padding: 0.5rem 0.2rem;
+}
+
+#center-pane .title-row .note-icon-widget button {
+  color: var(--color-blue-light);
 }
 
 #center-pane .title-row .note-title-widget {
@@ -529,8 +721,8 @@ div#center-pane .note-book-card {
     font-family: var(--main-font-family-serif);
     font-weight: 400;
     font-size: 2rem;
+  box-shadow: var(--shadow-dark);
 }
-
 
 #center-pane .note-detail h2:first-of-type {
     margin-top: auto;
@@ -545,21 +737,24 @@ div#center-pane .note-book-card {
   border-bottom: 1px solid var(--color-orange-dark);
 }
 
-/* div.tooltip.note-tooltip, 
-div.note-tooltip-content,
-div.tooltip-inner {
-  
-}
-
-div.tooltip.note-tooltip pre {
-  
-}*/
-
-
-#center-pane pre {
-  color: var(--color-blue-dark);
+#center-pane div.note-detail-editable-text div.note-detail-editable-text-editor.ck.ck-content pre,
+#center-pane .CodeMirror pre code {
+  color: var(--color-blue-dark) !important;
+  padding: 1.5rem;
+  margin: 1.0rem auto 2.5rem;
+  background-color: var(--color-gray-light);
+  border: 1px dotted var(--color-gray);
 }
 
 #center-pane code {
   font-family: var(--main-font-family-mono);
+}
+
+div#root-widget div#rest-pane div#center-pane div.note-detail img {
+  border: 1px solid var(--color-gray);
+  padding: .5rem;
+}
+
+figcaption {
+  font-style: italic;
 }
