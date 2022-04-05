@@ -80,7 +80,7 @@ html {
     
     --color-blue-dark: #2e4b76;
     --color-blue-dark-alpha: #2e4b76d1;  
-    --color-blue-dark-text: #a0b7c1;
+    --color-blue-dark-text: #e8f1f5;
     --color-blue-light: #3cad9e;
     --color-blue-light-alpha: #3cad9e70;
     --color-blue-light-alpha-darker: #3cad9ed1;
@@ -104,6 +104,8 @@ html {
     --color-gray-light-alpha: rgba(199, 199, 199, 0.2);
     --color-gray-light-text: #999;
     --color-gray-medium: #868E8D;
+    --color-gray-light-buttons: #e9e9e9;
+    --color-gray-light-buttons-text: #434343;
     --color-gray-dark: #666;
     --color-gray-dark-text: #666;
     --color-paper: #ecebe3;
@@ -303,7 +305,6 @@ a:hover,
 }
 
 
-
 /* ----------------------------------------------------------------------------- */
 /* MODALS 
 /* ----------------------------------------------------------------------------- */
@@ -352,17 +353,22 @@ div#recent-changes-content div b {
 /* ----------- GUTTER ----------- */
 
 div#root-widget div.gutter-horizontal {
-  background: white;
-  width: 5px !important;
+  background: var(--color-gray-light);
+  /*! width: 5px !important; */
   border-left: var(--border-standard);
   border-radius: 0;
-  margin-right: 1rem;
+  padding-right: 0.5rem;
+  border-right: var(--border-standard);
 }
+
+
 
 /* -----------LEFT PANE -------------- */
 div#left-pane {
   background-color: var(--color-paper-light-cool);
 }
+
+
 
 /* ----------- DROPDOWN MENU ----------- */
 
@@ -370,11 +376,110 @@ div#root-widget div#left-pane .dropdown-menu a {
     color: var(--color-dark-blue);
 }
 
+a.dropdown-item {
+  border-bottom: none;
+}
+div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
+  color: var(--color-blue-dark);
+}
+
+div#root-widget div#launcher-pane div.dropdown div.dropdown-menu a {
+  color: var(--color-blue-dark);
+}
+
+div#root-widget div#rest-pane .dropdown-menu a:hover:not(.disabled), .dropdown-item:hover:not(.disabled),
+div#root-widget div#rest-pane div#center-pane div.ribbon-container div.ribbon-top-row div.ribbon-button-container div.dropdown.show div.dropdown-menu a.dropdown-item.show-source-button:hover kbd{
+  background-color: var(--color-blue-light-alpha) !important;
+  color: var(--color-blue-light-gradient-2) !important;
+}
+
+
 
 /* ----------- TABS ----------- */
+
+div#root-widget div#rest-pane > div.component:first-child {
+  border-bottom: var(--border-standard);
+  height: 50px !important;
+}
+
 div#root-widget div#rest-pane div.tab-row-widget {
+  padding-bottom: .3rem;
+}
+
+div#root-widget div#rest-pane div.tab-row-widget-container {
+  height: 50px;
+}
+
+div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab {
+  
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-dark);
+  background-color: var(--color-gray-light-alpha);
+  border-radius: 0;
+  margin-left: 5px;
+  /*! padding: 5px; */
+}
+
+div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab:hover {
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-light-alpha);
+}
+
+.tab-row-widget .note-tab .note-tab-title {
+    
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper {
+    background-color: var(--color-gray-light);
+    color: var(--color-gray-light-text);
+    align-items: center;
+    height: 50px;
+    border-radius: 0;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper:hover {
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-light-alpha);
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div:hover {
+  background: none;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div {
+  height: 50px;
+  align-items: center;
+  display: flex;
+  padding: 0;
   
 }
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div span {
+  top: unset;
+}
+
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
+    background-color: #3cad9e;
+    color: var(--color-blue-light-text);
+    font-weight: 600;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
+  /*! content: "\203B  "; */ /* reference mark */
+  /*! content: "\1F348  "; */ /* melon */
+  content: "\1F34B     "; /* lemon */
+  margin-right: 5px;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
+    /*content: " \203B";*/
+}
+
 
 
 /* ----------- TREE ----------- */
@@ -387,7 +492,6 @@ div#root-widget div#left-pane div.tree ul#ft-id-1 {
 div#root-widget div#left-pane span.fancytree-node:hover { 
     background-color: #2aa19229;
     border: 1px dotted var(--color-blue-light);
-    //color: white;
   color: var(--color-blue-light);
 }
 
@@ -410,14 +514,6 @@ div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
   color: var(--color-blue-dark);
 }
 
-div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
-  color: var(--color-blue-dark);
-}
-
-div#root-widget div#launcher-pane div.dropdown div.dropdown-menu a {
-  color: var(--color-blue-dark);
-}
-
 div#root-widget div#left-pane span.fancytree-node.protected > span.fancytree-custom-icon {
   /* remove shadow from protected notes icon */
   filter: none;
@@ -437,39 +533,6 @@ div#root-widget div#left-pane span.fancytree-node.multiple-parents .fancytree-ti
 
 #context-menu-container {
   font-family: var(--main-font-family-sans);
-}
-
-
-
-/* ----------- TAB BAR ----------- */
-
-div#rest-pane .tab-row-widget {
-    
-}
-
-.tab-row-widget .note-tab .note-tab-title {
-    text-align: center;
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper {
-    background-color: var(--color-gray-light);
-    color: var(--color-gray-light-text);
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
-    background-color: #3cad9e;
-    color: var(--color-blue-light-text);
-    font-weight: 600;
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
-    content: "\203B  "; /* reference mark */
-  content: "\1F348  "; /* melon */
-  content: "\1F34B   "; /* lemon */
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
-    /*content: " \203B";*/
 }
 
 
@@ -506,16 +569,40 @@ div#launcher-pane .icon-action:hover {
 
 /* ----------- RIBBON ----------- */
 
-div#rest-pane.component div#center-pane div.ribbon-tab-container {
-  justify-content: start;
+div#rest-pane.component div#center-pane div.ribbon-body.active {
+  background-color: var(--color-gray-light);
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.ribbon-body span,
-.ribbon-body p {
+div#rest-pane.component div#center-pane div.attribute-list {
+  margin-top: 0;
+}
+
+div#rest-pane.component div#center-pane div.ribbon-tab-container {
+  justify-content: start;
+  margin-left: 0;
+}
+
+div#rest-pane.component div#center-pane div.ribbon-container {
+  margin-bottom: 0px;
+  padding-bottom: 5px;
+}
+
+div#rest-pane.component div#center-pane div.ribbon-body-container,
+div#rest-pane.component div#center-pane div.ribbon-body-container p,
+div#rest-pane.component div#center-pane div.ribbon-body-container div.inherited-attributes-container span {
   font-family: var(--main-font-family-mono) !important;
   
 }
 
+div#rest-pane.component div#center-pane div.ribbon-body-container div.component {
+  font-size: 1rem;
+}
+
+div#rest-pane.component div#center-pane span.bx {
+  font-family: boxicons !important;
+}
 
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
   
@@ -527,6 +614,7 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
   justify-content: space-between;
   border-left: none;
   border-right: none;
+  /*! box-shadow: var(--shadow-90deg); */
 }
 
 div#rest-pane.component div#center-pane .ribbon-button-container {
@@ -556,6 +644,7 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
   background-color: var(--color-gray-light);
   color: var(--color-blue-dark-alpha);
   font-weight: bold;
+  /*! border-bottom: none; */
 }
 
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title:hover {
@@ -568,12 +657,22 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
   color: var(--color-blue-light);
 }
 
-.note-paths-widget a {
+div#root-widget div#center-pane .note-paths-widget a {
   font-weight: 400;
 }
 
-.note-paths-widget li {
+div#root-widget div#center-pane .note-paths-widget ul {
+  padding: .4rem 0;
+}
+
+div#root-widget div#center-pane .note-paths-widget li {
+  list-style-type: none;
   
+}
+
+div#root-widget div#center-pane .note-paths-widget li::before {
+  content: "\29FD  ";
+  color: var(--color-orange-dark);
 }
 
 div#rest-pane.component div#center-pane .button-widget.icon-action {
@@ -584,13 +683,14 @@ div#rest-pane.component div#center-pane .button-widget.icon-action {
 /* ----------- FORM ELEMENTS ----------- */
 
 div#root-widget div#center-pane button:not(.bx) {
-    background-color: var(--color-gray-dark-text);  
+    background-color: var(--color-gray-light-buttons);  
     box-shadow: var(--shadow-light);
-    border-radius: var(--border-radius-large);
+    border-radius: var(--border-radius-small);
     border: none;
-    color: white;
+    color: var(--color-gray-light-buttons-text);
     font-family: var(--main-font-family-serif);
-    padding: .1rem .8rem;
+    padding: 0.2rem .8rem;
+    margin: .2rem;
 }
 
 div#root-widget div#center-pane button:not(.bx).btn-primary {
@@ -602,23 +702,26 @@ div#center-pane button:not(.bx).btn-secondary {
 }
 
 div#center-pane .switch {
-  background-color: white;
+  background: none;
 }
 
 div#center-pane .switch .slider {
-  background-color: #f3f3f3;
+  /*slider background*/
+  background-color: var(--color-gray-light-buttons);
   box-shadow: var(--shadow-light);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-small);
 }
 
 div#center-pane .switch .slider::before {
-  background-color: var(--color-gray-dark);
-  border-radius: var(--border-radius-large);
+  /*slider off state*/
+  background-color: var(--color-gray-light-buttons-text);
+  border-radius: var(--border-radius-small);
 }
 
 div#center-pane .switch .slider.checked::before {
-  background-color: var(--color-orange-dark);
-  border-radius: var(--border-radius-large);
+  /*slider on state*/
+  background-color: var(--color-blue-light);
+  border-radius: var(--border-radius-small);
 }
 
 input#clone-to-note-autocomplete,
@@ -659,6 +762,8 @@ input#clone-to-note-autocomplete,
 
 div#root-widget div#rest-pane div#center-pane div.split-note-container-widget div.note-split.component {
   margin-left: 0;
+  border-right: var(--border-standard);
+  /*! border-left: var(--border-standard); */
 }
 
 
@@ -666,10 +771,10 @@ div#root-widget div#rest-pane div#center-pane div.split-note-container-widget di
 
 div#center-pane .note-book-card {
     background-color: white;
-    border: var(--border-accent-light) !important;
+    border: var(--border-standard) !important;
     border-radius: var(--border-radius-small);
     /*! box-shadow: var(--shadow-standard); */
-    margin: 0;
+    margin: 5px;
     margin-bottom: 1rem;
     padding: .5rem 1rem;
 }
@@ -758,9 +863,9 @@ div#center-pane .note-list-container div.note-book-card h5.note-book-title {
 }
 
 #center-pane .note-detail {
-  border: 1px solid var(--color-gray);
+  /*! border: 1px solid var(--color-gray); */
   padding: 0.5rem 0.2rem;
-  margin-top: .8rem;
+  /*! margin-top: .8rem; */
 }
 
 #center-pane .note-list-widget div.note-list.list-view,
@@ -782,9 +887,19 @@ div#center-pane .note-list-container div.note-book-card h5.note-book-title {
 #center-pane .title-row .note-title-widget input.note-title {
     color: var(--color-blue-dark) !important;
     font-family: var(--main-font-family-serif);
-    font-weight: 400;
+    font-weight: 600;
     font-size: 2rem;
-  box-shadow: var(--shadow-dark);
+  /*! box-shadow: none; */
+  
+}
+
+#center-pane .title-row .note-title-widget input.note-title.protected {
+  text-shadow: none;
+  color: var(--color-gray-medium) !important;
+}
+
+#center-pane .title-row .note-title-widget input.note-title.protected {
+  
 }
 
 #center-pane .note-detail h2:first-of-type {
