@@ -726,7 +726,24 @@ div#center-pane .switch .slider.checked::before {
 
 input#clone-to-note-autocomplete,
 .algolia-autocomplete {
-  font-family: var(--main-font-family-serif);
+  
+}
+
+/*Algolia (Search Autocomplete Form Field)*/
+.algolia-autocomplete small {
+  font-family: var(--main-font-family-mono);
+  color: var(--color-gray-dark);
+  display: block;
+  
+}
+.algolia-autocomplete .aa-suggestion {
+  border-bottom: var(--border-standard);
+}
+.algolia-autocomplete .aa-dropdown-menu b {
+  color: var(--color-blue-light-gradient-1);
+  text-decoration: underline;
+  font-weight: normal;
+
 }
 
 /* checkbox background*/
@@ -765,6 +782,7 @@ div#root-widget div#rest-pane div#center-pane div.split-note-container-widget di
   border-right: var(--border-standard);
   /*! border-left: var(--border-standard); */
 }
+
 
 
 /* ----------- NOTEBOOK CARDS ----------- */
@@ -935,4 +953,4 @@ div#root-widget div#rest-pane div#center-pane div.note-detail img {
 
 figcaption {
   font-style: italic;
-}
+}r
