@@ -369,6 +369,31 @@ div#left-pane {
 }
 
 
+/* ----------- RIGHT PANE ------------ */
+
+div#right-pane.component {
+    margin-left: 10px;
+}
+
+div#right-pane.component div.card-header {
+    border-radius: 0;
+    font-family: var(--font-headers);
+    font-weight: normal;
+}
+
+div#right-pane.component div.card-header .toc > ol {
+    padding-left: 15px;
+}
+
+div#right-pane.component div.card-body .toc > ol > ol li {
+    list-style: lower-latin;
+}
+
+div#right-pane.component div.card-body div.toc-widget {
+padding: 0 1rem;
+contain: none;
+overflow: auto;
+    }
 
 /* ----------- DROPDOWN MENU ----------- */
 
