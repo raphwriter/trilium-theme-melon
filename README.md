@@ -5,8 +5,7 @@ I really like this application and its many features. At the same time I felt li
 
 ## Screenshots
 ### Main Window
-![screenshot1](/screenshots/scrn4_01.png "More info below!")
-
+![scrn4_01](https://user-images.githubusercontent.com/28687075/192508241-88fb757e-9c85-4272-b2e4-7da5da79ec5e.png "More info below!")
 
 ## Theme Installation
 
