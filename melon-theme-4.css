@@ -1081,7 +1081,11 @@ div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-
   margin: 0;
   padding: 0;
   flex-grow: 1;
-  display: flex;
+  /*! display: flex; */
+}
+
+div#center-pane div.note-detail div.canvas-widget {
+  display: grid;
 }
 
 div#center-pane div.note-detail div.note-detail-readonly-text,
