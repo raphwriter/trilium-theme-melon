@@ -116,7 +116,7 @@ html {
     --color-shadow-light: rgba(181, 181, 181, 0.3);
     --gradient-blue-light: linear-gradient(138deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-1) 35%, var(--color-blue-light-gradient-2) 100%);
     --gradient-paper-light: linear-gradient(170deg, var(--color-paper-light-cool) 0%, var(--color-paper-light-cool) 45%, var(--color-paper-light) 100%);
-    
+    --launcher-pane-background-color: var(--gradient-blue-light);
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
 /* ----------------------------------------------------------------------------- */
@@ -648,18 +648,27 @@ div#launcher-pane {
 }
 
 div#launcher-pane .component,
+div#launcher-pane .component button,
 div#launcher-pane .icon-action {
     color: var(--color-blue-light-text);
+
 }
 
 div#launcher-pane .global-menu-button {
-    /*background-image: url('/custom/images/icon-white2.png');*/
-    filter: invert(1);
+  filter:invert(1);
 }
 
 div#launcher-pane .global-menu-button:hover {
-    /*background-image: url('/custom/images/icon-white2.png');*/
+  filter:invert(1);
+}
+
+
+div#launcher-pane .component button:hover {
+    /*! background-image: url('/custom/images/icon-white2.png'); */
     filter: invert(0);
+    background-color: var(--color-gray-light-alpha);
+    display: block;
+    width: inherit;
 }
 
 div#launcher-pane .icon-action:hover {
