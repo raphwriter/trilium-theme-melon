@@ -556,6 +556,7 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
   justify-content: end;
   margin-right: 3px;
   margin-left: 3px;
+  font-size:30px;
 }
 
 /* close button "x" */
