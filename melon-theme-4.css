@@ -495,11 +495,11 @@ div#root-widget div#rest-pane > div.component:first-child {
 }
 
 div#root-widget div#rest-pane div.tab-row-widget {
-  /*padding-bottom: .3rem;*/
+
 }
 
 div#root-widget div#rest-pane div.tab-row-widget-container {
-  /*height: 50px;*/
+
 }
 
 div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab {
@@ -512,7 +512,6 @@ div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab {
   background-color: var(--color-gray-light-alpha);
   border-radius: 0;
   margin-left: 5px;
-  /*! padding: 5px; */
 }
 
 div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab:hover {
@@ -537,8 +536,8 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
   background-color: var(--color-blue-light-alpha);
 }
 
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div:hover {
-  /*! background: none; */
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active=""] div.note-tab-wrapper   {
+  color: white;
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div {
@@ -548,7 +547,6 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
   padding: 0;
   font-family: var(--font-headers);
   font-weight: normal;
-  /*! justify-content: center; */
 }
 
 /* close button */
@@ -560,7 +558,6 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close {
-  /*! background-color: inherit; */
   height: 1.5rem;
   width: 1.5rem;
   justify-content: center;
@@ -568,10 +565,7 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close:hover {
   color: var(--color-gray-light-buttons-text);
-  /*! background-color: white; */
-  
   cursor: pointer;
-  /*! border: 1px solid gray; */
 }
 
 /* close button "x" */
@@ -583,7 +577,6 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
     background-color: #3cad9e;
     color: var(--color-blue-light-text);
-    /*! font-weight: 600; */
     background: var(--gradient-blue-light);
 }
 
@@ -593,10 +586,6 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[activ
   content: "\1F34B     "; /* lemon */
   margin-right: 5px;
   font-size: .8rem;
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::after {
-    /*content: " \203B";*/
 }
 
 
@@ -622,7 +611,6 @@ height: 36px; padding: 2px 4px 5px;
 div#root-widget div#left-pane span.fancytree-node.fancytree-active {
   background-color: var(--color-gray-light-alpha) !important;
   border: none !important;
-  /*! font-family: var(--main-font-family-serif); */
 }
 
 div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
@@ -680,7 +668,6 @@ div#launcher-pane .global-menu-button:hover {
 
 
 div#launcher-pane .component button:hover {
-    /*! background-image: url('/custom/images/icon-white2.png'); */
     filter: invert(0);
     background-color: var(--color-gray-light-alpha);
     display: block;
@@ -699,7 +686,6 @@ div#launcher-pane .icon-action:hover {
 /* ----------- RIBBON ----------- */
 
 div#rest-pane.component div#center-pane div.ribbon-body.active {
-  /*! background-color: var(--color-gray-light); */
   margin-left: 0;
   margin-right: 0;
   border: none;
@@ -742,14 +728,8 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
 }
 
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
-  /*! border: 1px solid var(--color-gray); */
-    /*! padding: 0.3rem .3rem 0rem; */
   justify-content: space-between;
   border: none;
-  /*! border-right: none; */
-  /*! box-shadow: var(--shadow-90deg); */
-  /*! border-top: 1px solid var(--color-gray-light-buttons); */
-  /*! min-height: 50px; */
 }
 
 div#rest-pane.component div#center-pane .ribbon-button-container {
@@ -777,8 +757,6 @@ div#rest-pane.component div#center-pane div.split-note-container-widget div.ribb
 
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title.active {
   color: var(--color-blue-light);
-  /*! font-weight: bold; */
-  /*! border-bottom: none; */
 }
 
 div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title:hover {
@@ -806,7 +784,6 @@ div#root-widget div#center-pane .note-paths-widget li {
 
 div#root-widget div#center-pane .note-paths-widget li::before {
   content: "\203A \202F";
-  /*! color: var(--color-orange-dark); */
 }
 
 div#rest-pane.component div#center-pane .button-widget.icon-action {
@@ -916,7 +893,6 @@ input#clone-to-note-autocomplete,
 div#root-widget div#rest-pane div#center-pane div.split-note-container-widget div.note-split.component {
   margin-left: 0;
   border-right: var(--border-standard);
-  /*! border-left: var(--border-standard); */
 }
 
 
@@ -967,14 +943,9 @@ div#center-pane h5 > span.note-book-title{
 }
 
 div#center-pane .note-book-card :is(h1, h2, h3, h4, h5, h6).note-book-header span.note-icon {
-  /*! color: var(--color-blue-dark); */
-  /*! background-color: white; */
   padding: 3px;
   border-radius: 3px;
   margin-right: 5px;
-  /*! box-shadow: var(--shadow-light); */
-  /*! display: none; */
-  /*! border: var(--border-standard); */
 }
 
 div.note-list-widget div.note-list-widget-content div.note-list-container div.note-book-card.expanded div.note-book-content div.rendered-note-content pre {
@@ -1030,9 +1001,7 @@ div.note-list-widget div.note-list-widget-content div.note-list-container div.no
 }
 
 div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text {
-  /*! padding: 3px 0; */
   contain: content;
-  /*! object-fit: cover; */
   border: 1px solid lightgray;
   margin-top: 10px;
   padding: 10px;
@@ -1078,8 +1047,6 @@ div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-
   min-height: 4.5rem;
   display: flex;
   align-items: center;
-  /* margin-bottom: 0.5rem; */
-  /*! box-shadow: -3px 3px 3px -3px gray inset; */
 }
 
 #center-pane .title-row .note-icon-widget {
@@ -1093,11 +1060,7 @@ div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-
 
 /* Trilium >= 0.55.1 */
 #center-pane div.scrolling-container {
-  /*! border: 1px solid var(--color-gray); */
-  /*! padding: 10px; */
-  /*! margin: 16px; */
   display: flex;
-  /*! height: max-content; */
   flex-direction: column;
   justify-content: space-between;
 }
@@ -1129,7 +1092,6 @@ div#center-pane div.note-detail div.note-detail-editable-text {
 }
 
 #center-pane .note-detail + .note-list-widget {
-  /*! margin: 1rem .5rem .5rem 0; */
   padding: 0;
   background-color: var(--color-blue-light-text);
   border-top: var(--border-standard);
@@ -1137,20 +1099,16 @@ div#center-pane div.note-detail div.note-detail-editable-text {
   margin-bottom: 0;
   margin-right: 0;
   display: flex;
-  /*! flex-grow: 1; */
   flex-direction: column;
   flex-shrink: 0;
 }
 
 #center-pane .note-list-widget div.note-list.list-view,
 #center-pane .note-list-widget div.note-list.grid-view {
-  /*! display: flex; */
-  /*! max-height: 50vh; */
 }
 
 #center-pane div.note-list.list-view div.note-list-wrapper div.note-list-container {
   display: flex;
-  /*! max-height: 50vh; */
   flex-direction: column;
 }
 
