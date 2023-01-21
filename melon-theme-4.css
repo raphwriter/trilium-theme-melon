@@ -534,11 +534,11 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper:hover {
   color: white;
-  background-color: var(--color-blue-light-alpha);
+  background-color: var(--color-gray-medium);
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div:hover {
-  background: none;
+  /*! background: none; */
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div {
@@ -556,12 +556,28 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
   justify-content: end;
   margin-right: 3px;
   margin-left: 3px;
+  
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close {
+  /*! background-color: inherit; */
+  height: 1.5rem;
+  width: 1.5rem;
+  justify-content: center;
+}
+
+div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close:hover {
+  color: var(--color-gray-light-buttons-text);
+  /*! background-color: white; */
+  
+  cursor: pointer;
+  /*! border: 1px solid gray; */
 }
 
 /* close button "x" */
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div span {
   top: unset;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
@@ -1192,13 +1208,9 @@ div#center-pane div.note-detail div.note-detail-editable-text {
 div#center-pane div.scrolling-container div.note-detail section.include-note {
   background-color: white;
   margin: 1rem 12rem 1rem;
-  /*! border: 1px dotted var(--color-gray-dark); */
-  /*! background: var(--gradient-paper-light); */ 
   box-shadow: var(--shadow-embedded-notes);
   border-radius: var(--border-radius-small);
   padding: 20px 30px;
-  /*! border-left: var(--border-accent-muted); */
-  /*! width: 75%; */
 }
 
 #center-pane code {
