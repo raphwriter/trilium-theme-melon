@@ -533,8 +533,8 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.n
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper:hover {
-  color: white;
-  background-color: var(--color-gray-medium);
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-light-alpha);
 }
 
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div:hover {
