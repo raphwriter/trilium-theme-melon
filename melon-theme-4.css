@@ -1077,11 +1077,9 @@ div#center-pane div.note-detail div.canvas-widget {
 }
 
 
-/* fix no margin on read only notes */  
 div#center-pane div.note-detail div.note-detail-readonly-text
  {
    border-left: 5px solid var(--color-blue-light);
-  /*! margin: 1rem 4rem 2rem 1rem; */
    padding: 2rem 4rem 1rem 2rem;
 }
 
@@ -1090,13 +1088,12 @@ div#center-pane div.note-detail div.note-detail-printable {
 }
 
 div#center-pane div.note-detail div.note-detail-editable-text-editor {
-  /*! margin: 0; */
-  /*! padding: 0; */
+
 }
 
 div#center-pane div.note-detail div.note-detail-editable-text {
   /*padding: 20px 25px 5px 25px;*/
-     padding: 2rem 4rem 1rem 2rem;
+     padding: 2rem 0 1rem 2rem;
   border-left: 5px solid var(--color-orange-dark);
   flex-direction: column;
   display: flex;
