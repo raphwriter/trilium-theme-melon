@@ -117,6 +117,8 @@ html {
     --gradient-blue-light: linear-gradient(138deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-1) 35%, var(--color-blue-light-gradient-2) 100%);
     --gradient-paper-light: linear-gradient(170deg, var(--color-paper-light-cool) 0%, var(--color-paper-light-cool) 45%, var(--color-paper-light) 100%);
     --launcher-pane-background-color: var(--gradient-blue-light);
+    --ck-color-image-caption-background: var(--color-shadow-light);
+    
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
 /* ----------------------------------------------------------------------------- */
@@ -603,6 +605,7 @@ div#root-widget div#left-pane span.fancytree-node:hover {
   color: var(--color-blue-light);
 }
 
+
 div#root-widget div#left-pane .fancytree-node {
 height: 36px; padding: 2px 4px 5px;
   font-family: var(--main-font-family-serif);
@@ -627,11 +630,34 @@ div#root-widget div#left-pane span.fancytree-node.protected > span.fancytree-cus
   color: var(--color-gray-medium);
 }
 
+
+/* multiple selected nodes */
+
+div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected {
+  background-color: var(--color-gray-light) !important;
+  color: var(--color-blue-dark-alpha);
+}
+
+div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected .fancytree-title {
+    font-style: normal;
+  text-decoration: none;
+}
+
+/* NOTES WITH MULTIPLE PARENTS*/
+
 div#root-widget div#left-pane span.fancytree-node.multiple-parents .fancytree-title::after {
   /* cloned notes icon */
-  content: " \1F517";
-  font-size: .8rem;
+  font-family: boxicons;
+  /*content: " \1F517";*/
+  content: " \EA72";
+  font-size: .85rem;
   color: var(--color-blue-light);
+  color: var(--color-blue-dark);
+}
+
+div#root-widget div#left-pane div.tree-wrapper div.tree .ui-fancytree.fancytree-container.fancytree-plain.fancytree-ext-clones.fancytree-treefocus span.fancytree-node.fancytree-has-children.multiple-parents.fancytree-match.fancytree-active-clone {
+  background-color: var(--color-gray-light) !important;
+  color: var(--color-blue-dark-alpha);
 }
 
 
@@ -1189,6 +1215,10 @@ div#root-widget div#rest-pane div#center-pane div.note-detail img {
   padding: .5rem;
 }
 
-figcaption {
+/* FIGURES & IMAGES */
+
+/* figcaption */
+div#root-widget div#center-pane div.split-note-container-widget div.note-detail figure > figcaption {
   font-style: italic;
+  background-color: white !important;
 }
