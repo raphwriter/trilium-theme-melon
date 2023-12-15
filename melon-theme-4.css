@@ -155,7 +155,7 @@ html {
 
 #root-widget {
   /* FF basic styling */
-  scrollbar-color: var(--color-gray-medium) var(--color-gray-light);
+  scrollbar-color: var(--color-gray-dark) var(--color-gray-light);
   scrollbar-gutter: 5px;
 }
 
@@ -170,7 +170,7 @@ html {
 }
 
 
-#root-widget :is(h1, h2, h3, h4, h5, h6),
+#root-widget #center-pane :is(h1, h2, h3, h4, h5, h6),
 .modal-content :is(h1, h2, h3, h4, h5, h6) {
   border-bottom: none;
   color: var(--color-gray-light-buttons-text);
@@ -182,6 +182,16 @@ html {
   border-radius: 0;
 
   font-family: var(--font-headers) !important;
+}
+
+/* Excalidraw fixes */
+#root-widget #center-pane div.excalidraw-wrapper :is(h1, h2, h3, h4, h5, h6) {
+  margin: unset;
+  padding: unset;
+}
+
+#root-widget #center-pane div.excalidraw-wrapper .App-menu__left .panelColumn {
+  row-gap: 0;
 }
 
 
@@ -324,6 +334,10 @@ a:hover,
     border-radius: 0;
     color: var(--color-blue-light);
     text-decoration: none;
+}
+
+div#root-widget div#rest-pane div#center-pane div.scrolling-container div.note-detail.component div.note-detail-editable-text div.note-detail-editable-text-editor.ck.ck-content li span.todo-list__label__description a {
+  margin-left: 0.4rem;
 }
 
 
@@ -651,7 +665,6 @@ div#root-widget div#left-pane span.fancytree-node.multiple-parents .fancytree-ti
   /*content: " \1F517";*/
   content: " \EA72";
   font-size: .85rem;
-  color: var(--color-blue-light);
   color: var(--color-blue-dark);
 }
 
@@ -819,17 +832,7 @@ div#rest-pane.component div#center-pane .button-widget.icon-action {
 
 /* ----------- FORM ELEMENTS ----------- */
 
-div#root-widget div#center-pane button:not(.bx) {
-    background-color: var(--color-gray-light-buttons);  
-    /*! box-shadow: var(--shadow-light); */
-    border-radius: var(--border-radius-small);
-    /*! border: none; */
-    color: var(--color-gray-light-buttons-text);
-    /*! font-family: var(--main-font-family-serif); */
-    padding: 0.2rem .8rem;
-    /*! margin: .2rem; */
-    font-size: 0.95rem;
-}
+
 
 div#root-widget div#center-pane button:not(.bx).btn-primary {
     background-color: var(--color-blue-light);
@@ -1086,9 +1089,9 @@ div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-
 
 /* Trilium >= 0.55.1 */
 #center-pane div.scrolling-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  /*! display: flex; */
+  /*! flex-direction: column; */
+  /*! justify-content: space-between; */
 }
 
 #center-pane .note-detail {
