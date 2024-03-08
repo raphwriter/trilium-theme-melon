@@ -118,6 +118,7 @@ html {
     --gradient-paper-light: linear-gradient(170deg, var(--color-paper-light-cool) 0%, var(--color-paper-light-cool) 45%, var(--color-paper-light) 100%);
     --launcher-pane-background-color: var(--gradient-blue-light);
     --ck-color-image-caption-background: var(--color-shadow-light);
+    --main-background-color: #fafafa;
     
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
@@ -170,7 +171,7 @@ html {
 }
 
 
-#root-widget #center-pane :is(h1, h2, h3, h4, h5, h6),
+#root-widget #center-pane .note-detail :is(h1, h2, h3, h4, h5, h6),
 .modal-content :is(h1, h2, h3, h4, h5, h6) {
   border-bottom: none;
   color: var(--color-gray-light-buttons-text);
@@ -183,6 +184,7 @@ html {
 
   font-family: var(--font-headers) !important;
 }
+
 
 /* Excalidraw fixes */
 #root-widget #center-pane div.excalidraw-wrapper :is(h1, h2, h3, h4, h5, h6) {
@@ -473,10 +475,46 @@ div#right-pane.component div.card-body .toc > ol > ol li {
 }
 
 div#right-pane.component div.card-body div.toc-widget {
-padding: 0 1rem;
-contain: none;
-overflow: auto;
-    }
+  padding-left: 0;
+  contain: none;
+  overflow: auto;
+}
+
+div#right-pane.component div.card-body div.toc-widget li {
+  text-justify: none;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+div#right-pane.component div.card-body div.toc-widget li:hover {
+    font-weight: unset;
+  color: var(--color-blue-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-blue-light);
+}
+
+div#right-pane.component div.card-body div.highlights-list-widget {
+  padding-left: 0;
+}
+
+div#right-pane.component div.card-body div.highlights-list-widget li {
+  text-justify: none;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+div#right-pane.component div.card-body div.highlights-list-widget li:hover {
+  font-weight: unset;
+  color: var(--color-blue-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-blue-light);
+}
+
+div#right-pane.component div.card-body div.highlights-list-widget li strong {
+  font-weight: unset;
+}
 
 /* ----------- DROPDOWN MENU ----------- */
 
@@ -928,36 +966,35 @@ div#root-widget div#rest-pane div#center-pane div.split-note-container-widget di
 
 /* ----------- NOTEBOOK CARDS ----------- */
 
+/* LIST VIEW & GRID VIEW */
 div#center-pane .note-list {
 
 }
 
 div#center-pane .note-list .note-book-card {
-    
     border: var(--border-standard) !important;
     border-radius: var(--border-radius-small);
     box-shadow: var(--shadow-standard);
     padding: 10px;
 }
 
-div#center-pane .note-list.list-view .note-book-card {
-  margin: 5px 0px;
-  overflow-y: hidden;
-}
-
-div#center-pane .note-list.grid-view .note-book-card {
-  margin: 10px;
-}
 
 div#center-pane .note-book-card :is(h1, h2, h3, h4, h5, h6) {
-  border-bottom: var(--border-standard);
+  /*border-bottom: var(--border-standard);
   background-color: var(--color-gray-light);
-  color: var(--color-blue-dark);
   display: block;
   margin-top: 0;
   width: 100%;
   padding: 6px;
-  margin-bottom: 0;
+  margin-bottom: 0;*/
+}
+
+
+
+div#center-pane .note-book-card .rendered-content :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-blue-dark);
+  background: none;
+  font-weight: bold;
 }
 
 div#center-pane .note-book-card h5:first-of-type {
@@ -977,12 +1014,40 @@ div#center-pane .note-book-card :is(h1, h2, h3, h4, h5, h6).note-book-header spa
   margin-right: 5px;
 }
 
+
+/* GRID VIEW */
+/* GRID VIEW - note card */
+div#center-pane .note-list.grid-view .note-book-card {
+  margin: 10px;
+}
+/* GRID VIEW - note headers */
+#root-widget #center-pane .note-list.grid-view .note-book-card :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0.1rem 0;
+  padding: 0.3rem 0 0.4rem;
+}
+
+
+
+/* LIST VIEW */
+
+/* LIST VIEW - note card*/
+div#center-pane .note-list-widget .note-list.list-view .note-book-card {
+  margin: 5px 0px;
+  overflow-y: hidden;
+}
+/* LIST VIEW - note headers*/
+#root-widget #center-pane .note-list-widget .note-list.list-view .note-book-card :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0.1rem 0;
+  padding: 0.1rem 0 0.5rem;
+}
+
+
 div.note-list-widget div.note-list-widget-content div.note-list-container div.note-book-card.expanded div.note-book-content div.rendered-note-content pre {
   font-size: .9rem;
   padding: 3px 6px;
 }
 
-.note-book-card.expanded > .note-book-title {
+div#center-pane .note-book-card.expanded > .note-book-title {
     font-weight: 500;
 }
 
@@ -1008,7 +1073,8 @@ div.note-list-widget div.note-list-widget-content div.note-list-container div.no
 }
 
 .note-list-widget .note-list-widget-content .note-list .note-book-card h5 span.rendered-note-attributes {
-    display: none;  /* hide note attributes */
+  display: none;  /* comment to show note attributes in list/grid view */
+  
 }
 
 .note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content {
@@ -1032,9 +1098,14 @@ div.note-list-widget div.note-list-widget-content div.note-list-container div.no
 div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text {
   contain: content;
   border: 1px solid lightgray;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 1rem;
+  padding: 0.5rem;
 }
+
+div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text .rendered-content {
+  /*font-size: .95rem;*/
+}
+
 
 div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text img {
   max-width: 100%;
@@ -1186,6 +1257,10 @@ div#center-pane div.note-detail div.note-detail-editable-text {
   color: var(--color-gray-text);
 }
 
+#center-pane .note-detail li {
+  color: var(--color-gray-text);
+}
+
 #center-pane .note-detail p a {
   color: var(--color-blue-dark);
   border-bottom: 1px solid var(--color-orange-dark);
@@ -1202,11 +1277,13 @@ div#center-pane div.note-detail div.note-detail-editable-text {
 
 /* embedded notes */
 div#center-pane div.scrolling-container div.note-detail section.include-note {
-  background-color: white;
-  margin: 1rem 12rem 1rem;
+  background-color: var(--main-background-color);
+  margin: 1.1rem;
   box-shadow: var(--shadow-embedded-notes);
-  border-radius: var(--border-radius-small);
-  padding: 20px 30px;
+  border-radius: 0;
+  padding: 0.5rem 0.5rem;
+  outline: 1px dotted var(--color-gray-light-text);
+  outline-offset: 1rem;
 }
 
 #center-pane code {
@@ -1216,6 +1293,13 @@ div#center-pane div.scrolling-container div.note-detail section.include-note {
 div#root-widget div#rest-pane div#center-pane div.note-detail img {
   border: 1px solid var(--color-gray);
   padding: .5rem;
+}
+
+/* TABLES */
+
+div#center-pane div.note-detail table,
+div#center-pane figure.table table {
+    border: var(--border-light);
 }
 
 /* FIGURES & IMAGES */
