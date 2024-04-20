@@ -203,8 +203,18 @@ html {
 
 
 span.edited-note-line {
-  padding: 0 .5rem 0 0;
-  display: flex;
+  display: inline-flex;
+  margin-left: 1rem;
+  color: var(--color-gray-dark);
+  background-color: white;
+  border: var(--border-standard);
+  margin-bottom: 0.2rem;
+  padding: 0.1rem 0.3rem;
+}
+span.edited-note-line:before {
+  /*color: var(--color-gray-dark);
+  content: "- ";
+  margin-right: 0.2rem;*/
 }
 span.edited-note-line small {
   color: var(--color-gray-dark);
@@ -785,15 +795,67 @@ div#rest-pane.component div#center-pane div.ribbon-container {
   background-color: var(--color-blue-light-text);
 }
 
+div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list span,
 div#rest-pane.component div#center-pane div.ribbon-body-container,
 div#rest-pane.component div#center-pane div.ribbon-body-container p,
 div#rest-pane.component div#center-pane div.ribbon-body-container div.inherited-attributes-container span {
   font-family: var(--main-font-family-mono) !important;
-  
+  font-size: 0.85rem;
+
 }
 
-div#rest-pane.component div#center-pane div.ribbon-body-container div.component {
-  font-size: 1rem;
+/* show inherited attributes as tags/labels */
+div#rest-pane.component div#center-pane div.ribbon-body-container div.inherited-attributes-container span {
+    margin-right: 0.5rem;
+  border-right: 1px solid var(--color-gray-dark);
+  padding-right: 0.5rem;
+  border-radius: 0;
+  border: var(--border-standard);
+  background-color: white;
+  padding: 0.2rem 0.3rem;
+    line-height: 1.7rem;
+}
+
+div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a {
+  border-right: var(--border-standard);
+  padding-right: 0.5rem;
+  /*! margin-right: 0.5rem; */
+  border-bottom: none;
+}
+div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a:last-child {
+  border-right: 0;
+}
+
+div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a:last-of-type {
+  border-right: var(--border-standard);
+  /*?!*/
+}
+
+div#rest-pane.component div#center-pane div.promoted-attributes-widget {
+  /*! font-size: 0.75rem; */
+  font-weight: 100;
+  
+}
+div#rest-pane.component div#center-pane div.promoted-attributes-container {
+  justify-content: start;
+  align-items: center;
+  align-content: first baseline;
+}
+
+div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell {
+  margin: 5px 1rem;
+}
+
+div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell div.input-group {
+  margin-left: 0.3rem;
+}
+
+div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell div.input-group input {
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+  /*! height: 1.7rem; */
+  border: var(--border-standard);
+  background: white !important;
 }
 
 div#rest-pane.component div#center-pane span.bx {
@@ -865,6 +927,12 @@ div#root-widget div#center-pane .note-paths-widget li::before {
 
 div#rest-pane.component div#center-pane .button-widget.icon-action {
   color: var(--color-gray-medium);
+}
+
+
+/* Promoted Attributes */
+div#center-pane.component div.promoted-attributes-container {
+
 }
 
 
