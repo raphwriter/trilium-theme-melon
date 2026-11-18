@@ -99,98 +99,93 @@
 /* COLOR VARIABLES
 /* ----------------------------------------------------------------------------- */
     
-    /* Primär: dunkles Blau -> tiefes Petrol/Indigo */
-    --color-blue-dark: #1f3a5f;
-    --color-blue-dark-alpha: #1f3a5fd9;
-    --color-blue-dark-text: #eaf0f7;
+  --color-blue-dark: #1f3a5f;
+  --color-blue-dark-alpha: #1f3a5fd9;
+  --color-blue-dark-text: #eaf0f7;
 
-    /* Primär: helles Türkis -> modernes Petrol */
-    --color-blue-light: #2a9d8f;
-    --color-blue-light-alpha: #2a9d8f66;
-    --color-blue-light-alpha-darker: #2a9d8fd9;
-    --color-blue-light-alpha-lighter: #2a9d8f24;
-    --color-blue-light-text: #f2f7f6;
-    --color-blue-light-gradient-1: #35b3a2;
-    --color-blue-light-gradient-2: #21867a;
+  --color-blue-light: #2a9d8f;
+  --color-blue-light-alpha: #2a9d8f66;
+  --color-blue-light-alpha-darker: #2a9d8fd9;
+  --color-blue-light-alpha-lighter: #2a9d8f24;
+  --color-blue-light-text: #f2f7f6;
+  --color-blue-light-gradient-1: #35b3a2;
+  --color-blue-light-gradient-2: #21867a;
 
-    /* Akzent Gelb -> warmes Sand/Senf, weniger grell */
-    --color-yellow: #e4b95b;
-    --color-yellow-darker: #d9a53a;
-    --color-yellow-text: #5a4a26;
-    --color-yellow-bg-alpha: #e4b95b1f;
-    --color-sidebar-yellow-dark: #e7e1d6;
+  --color-yellow: #e4b95b;
+  --color-yellow-darker: #d9a53a;
+  --color-yellow-text: #5a4a26;
+  --color-yellow-bg-alpha: #e4b95b1f;
+  --color-sidebar-yellow-dark: #e7e1d6;
 
-    /* Akzent Orange -> Terrakotta mit klarem Kontrast */
-    --color-orange-light: #ef8f5a;
-    --color-orange-light-text: #a84e20;
-    --color-orange-dark: #d45d3f;
-    --color-orange-dark-text: #f6e3dc;
+  --color-orange-light: #ef8f5a;
+  --color-orange-light-text: #a84e20;
+  --color-orange-dark: #d45d3f;
+  --color-orange-dark-text: #f6e3dc;
 
-    /* Neutraltöne: warmes Grau statt reiner Grau, kontrastärmer text-lastig */
-    --color-gray: #cfd2d4;
-    --color-gray-text: #1a1d21;
-    --color-gray-text-code: #565b60;
-    --color-gray-light: #f4f4f2;
-    --color-gray-light-alpha: rgba(180, 184, 188, 0.18);
-    --color-gray-light-text: #8b9095;
-    --color-gray-medium: #7a8186;
-    --color-gray-light-buttons: #e7e9eb;
-    --color-gray-light-buttons-text: #3a3f44;
-    --color-gray-dark: #585f65;
-    --color-gray-dark-text: #585f65;
+  --color-gray: #cfd2d4;
+  --color-gray-text: #1a1d21;
+  --color-gray-text-code: #565b60;
+  --color-gray-light: #f4f4f2;
+  --color-gray-light-alpha: rgba(180, 184, 188, 0.18);
+  --color-gray-light-text: #8b9095;
+  --color-gray-medium: #7a8186;
+  --color-gray-light-buttons: #e7e9eb;
+  --color-gray-light-buttons-text: #3a3f44;
+  --color-gray-dark: #585f65;
+  --color-gray-dark-text: #585f65;
 
-    /* Papier: minimal wärmer, ruhiger */
-    --color-paper: #eeece6;
-    --color-paper-text: #565b60;
-    --color-paper-light: #fdfdfc;
-    --color-paper-light-cool: #fbfcfd;
-    --color-shadow: rgba(28, 32, 36, 0.14);
-    --color-shadow-light: rgba(28, 32, 36, 0.07);
+  --color-paper: #eeece6;
+  --color-paper-text: #565b60;
+  --color-paper-light: #fdfdfc;
+  --color-paper-light-cool: #fbfcfd;
+  --color-shadow: rgba(28, 32, 36, 0.14);
+  --color-shadow-light: rgba(28, 32, 36, 0.07);
 
-    /* Gradients: weichere Winkel, kurze Verläufe */
-    --gradient-blue-light: linear-gradient(135deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-2) 100%);
-    --gradient-paper-light: linear-gradient(168deg, var(--color-paper-light-cool) 0%, var(--color-paper-light) 100%);
+  --gradient-blue-light: linear-gradient(135deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-2) 100%);
+  --gradient-paper-light: linear-gradient(168deg, var(--color-paper-light-cool) 0%, var(--color-paper-light) 100%);
 
-    --launcher-pane-background-color: var(--gradient-blue-light);
-    --ck-color-image-caption-background: var(--color-shadow-light);
-    --main-background-color: #fbfbfa;
+  --launcher-pane-background-color: var(--gradient-blue-light);
+  --ck-color-image-caption-background: var(--color-shadow-light);
+  --main-background-color: #fffefc;
+  --note-list-view-search-result-highlight-color: var(--color-blue-light);
     
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
 /* ----------------------------------------------------------------------------- */
     
-    --border-radius-small: 2px;
-    --border-radius-tabs: 2px;
-    --border-radius-large: 10px;
-    --border-standard: 1px solid var(--color-gray);
-    --border-accent: 2px solid var(--color-orange-dark);
-    --border-accent-alt: 2px solid var(--color-blue-light);
-    --border-accent-muted: 2px solid var(--color-gray-dark);
-    --border-accent-light: 1px dotted var(--color-blue-dark-text);
-    
-    --shadow-light: 3px 4px 3px -3px var(--color-shadow-light);
-    --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
-    --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
-    --shadow-90deg: 0 3px 5px -3px var(--color-shadow);
-    --shadow-90deg-inset: 0 9px 4px -9px inset var(--color-shadow-light);
-    --shadow-embedded-notes: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  --border-radius-small: 2px;
+  --border-radius-medium: 5px;
+  --border-radius-tabs: 2px;
+  --border-radius-large: 10px;
+  --border-standard: 1px solid var(--color-gray);
+  --border-accent: 2px solid var(--color-orange-dark);
+  --border-accent-alt: 2px solid var(--color-blue-light);
+  --border-accent-muted: 2px solid var(--color-gray-dark);
+  --border-accent-light: 1px dotted var(--color-blue-dark-text);
 
-/* ----------------------------------------------------------------------------- */
-/* FONT VARIABLES 
-/* ----------------------------------------------------------------------------- */
-    /*
-    --main-font-family-sans: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
-    --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
-    --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
-    --detail-text-font-family: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
-    --font-family-monospace: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
-    --font-headers: 'Roboto Slab', Georgia, Serif;
-    
-    --font-body: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
-    */
-    --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
- 
-    /* override default theme variables */
+  --shadow-light: 3px 4px 3px -3px var(--color-shadow-light);
+  --shadow-standard: 3px 4px 3px -3px var(--color-shadow);
+  --shadow-accented: 2px 2px 5px -2px var(--color-gray-dark);
+  --shadow-90deg: 0 3px 5px -3px var(--color-shadow);
+  --shadow-90deg-inset: 0 9px 4px -9px inset var(--color-shadow-light);
+  --shadow-embedded-notes: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  /* ----------------------------------------------------------------------------- */
+  /* FONT VARIABLES 
+  /* ----------------------------------------------------------------------------- */
+  /*
+  --main-font-family-sans: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+  --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
+  --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+  --detail-text-font-family: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+  --font-family-monospace: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
+  --font-headers: 'Roboto Slab', Georgia, Serif;
+
+  --font-body: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+  */
+  --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
+
+  /* override default theme variables */
   --main-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
   --tree-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
   --detail-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
@@ -205,9 +200,7 @@
 /* RESET 
 /* ----------------------------------------------------------------------------- */
 body {
-  /*font-family: var(--main-font-family-sans) !important;*/
 }
-
 /* Excalidraw fixes */
 #root-widget #center-pane div.excalidraw-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin: unset;
@@ -221,7 +214,6 @@ body {
 /* ----------------------------------------------------------------------------- */
 /* HYPERLINKS
 /* ----------------------------------------------------------------------------- */
-
 a, a:visited, a:hover, 
 .note-detail a, .note-detail a:hover,
 .modal-dialog a, .modal-dialog a:hover, 
@@ -231,13 +223,8 @@ a, a:visited, a:hover,
 div.tooltip a, 
 li a, li a:visited, li a:hover
 {
-    color: var(--color-blue-dark);
+  color: var(--color-blue-dark);
   border-radius: 0;  
-  /*
-    border-bottom: 1px solid var(--color-gray-dark);
-    
-    text-decoration: none;
-    */
 }
 
 a:hover, 
@@ -249,20 +236,11 @@ a:hover,
   border-bottom: 1px solid var(--color-blue-light);
   border-radius: 0;  
   text-decoration: none;
-  /*
-    
-    color: var(--color-blue-light);
-    */
 }
 
-
-
 /* ----------------------------------------------------------------------------- */
-/* LAYOUT COMPONENTS 
+/* GUTTER
 /* ----------------------------------------------------------------------------- */
-
-/* GUTTER */
-
 div#root-widget div.gutter-horizontal {
   background: var(--color-gray-light);
   /*! width: 5px !important; */
@@ -272,18 +250,98 @@ div#root-widget div.gutter-horizontal {
   border-right: var(--border-standard);
 }
 
-/* LEFT PANE */
+/* ----------------------------------------------------------------------------- */
+/* LEFT PANE
+/* ----------------------------------------------------------------------------- */
 div#left-pane {
-    background-color: var(--color-paper-light-cool);
+    background-color: #fffefc;
 }
 
-/* RIGHT PANE */
+/* ----------------------------------------------------------------------------- */
+/* LEFT PANE - TREE 
+/* ----------------------------------------------------------------------------- */
+div#root-widget div#left-pane .fancytree-node {
+/*! height: 34px; */ /*! padding: 2px 4px 5px; */
+  border-top: 1px dotted lightgray;
+  border-radius: 0;
+font-weight: 350;
+}
+div#root-widget div#left-pane span.fancytree-node:hover { 
+  background-color: #2aa19229;
+  border: 1px dotted var(--color-blue-light);
+  color: var(--color-blue-light);
+}
+div#root-widget div#left-pane span.fancytree-node.fancytree-active {
+  background-color: var(--color-gray-light-alpha) !important;
+  border: none !important;
+  color: var(--color-orange-dark);
+}
+div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
+}
+/* multiple selected nodes */
+div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected {
+  background-color: var(--color-gray-light) !important;
+  color: var(--color-orange-light);
+}
+div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected .fancytree-custom-icon::before {
+    border: none;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* LEFT PANE - QUICK SEARCH
+/* ----------------------------------------------------------------------------- */
+#left-pane .quick-search .cm-content {
+}
+#left-pane .quick-search {
+  border-bottom: var(--border-standard);
+  align-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-90deg);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* LAUNCHER
+/* ----------------------------------------------------------------------------- */
+div#launcher-pane {
+    background-color: var(--color-blue-light);
+    background: var(--gradient-blue-light);
+}
+div#launcher-pane :is(.component, .component button, .icon-action) {
+    color: var(--color-blue-light-text);
+}
+div#launcher-pane .global-menu-button {
+  border-radius: 0;
+}
+div#launcher-pane .global-menu-button svg g path {
+  fill: white;
+}
+div#launcher-pane .component button:hover {
+    background-color: var(--color-gray-light-alpha);
+}
+div#launcher-pane .icon-action:hover {
+    background-color: var(--color-gray-text);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* RIGHT PANE
+/* ----------------------------------------------------------------------------- */
+#left-pane .quick-search .cm-content {
+}
+#left-pane .quick-search {
+  border-bottom: var(--border-standard);
+  align-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-90deg);
+}
+
 div#right-pane div.card-header {
     border-radius: 0;
     font-weight: normal;
 }
 
-/* TABS */
+/* ----------------------------------------------------------------------------- */
+/* TABS
+/* ----------------------------------------------------------------------------- */
 div#rest-pane .tab-row-container div.note-tab div.note-tab-wrapper {
     background-color: var(--color-gray-light);
     border-radius: 0;
@@ -314,66 +372,6 @@ div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[activ
   font-size: .8rem;
 }
 
-
-
-
-/* ----------------------------------------------------------------------------- */
-/* TREE 
-/* ----------------------------------------------------------------------------- */
-div#root-widget div#left-pane .fancytree-node {
-/*! height: 34px; */ /*! padding: 2px 4px 5px; */
-  border-top: 1px dotted lightgray;
-  border-radius: 0;
-font-weight: 350;
-}
-div#root-widget div#left-pane span.fancytree-node:hover { 
-  background-color: #2aa19229;
-  border: 1px dotted var(--color-blue-light);
-  color: var(--color-blue-light);
-}
-div#root-widget div#left-pane span.fancytree-node.fancytree-active {
-  background-color: var(--color-gray-light-alpha) !important;
-  border: none !important;
-  color: var(--color-orange-dark);
-}
-div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
-}
-
-/* multiple selected nodes */
-div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected {
-  background-color: var(--color-gray-light) !important;
-  color: var(--color-orange-light);
-}
-div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected .fancytree-custom-icon::before {
-    border: none;
-}
-
-
-
-/* ----------------------------------------------------------------------------- */
-/* LAUNCHER
-/* ----------------------------------------------------------------------------- */
-div#launcher-pane {
-    background-color: var(--color-blue-light);
-    background: var(--gradient-blue-light);
-}
-div#launcher-pane :is(.component, .component button, .icon-action) {
-    color: var(--color-blue-light-text);
-}
-div#launcher-pane .global-menu-button {
-  border-radius: 0;
-}
-div#launcher-pane .global-menu-button svg g path {
-  fill: white;
-}
-div#launcher-pane .component button:hover {
-    background-color: var(--color-gray-light-alpha);
-}
-div#launcher-pane .icon-action:hover {
-    background-color: var(--color-gray-text);
-}
-
-
 /* ----------------------------------------------------------------------------- */
 /* TOOLTIPS
 /* ----------------------------------------------------------------------------- */
@@ -398,13 +396,11 @@ div.tooltip-inner div.note-tooltip-content .rendered-content div {
   font-size: 1rem;
 }
 
-
 /* ----------------------------------------------------------------------------- */
 /* ICONS
 /* ----------------------------------------------------------------------------- */
 div#rest-pane.component div#center-pane span.bx {
 }
-
 
 /* ----------------------------------------------------------------------------- */
 /* FORM ELEMENTS
@@ -440,51 +436,10 @@ div#center-pane .switch .slider.checked::before {
   background: var(--color-blue-dark-alpha);
   border-radius: var(--border-radius-small);
 }
-/* Quick Search Widget*/
-#left-pane .quick-search .cm-content {
-}
-#left-pane .quick-search {
-  border-bottom: var(--border-standard);
-  align-content: center;
-  align-items: center;
-  box-shadow: var(--shadow-90deg);
-}
-
 
 /* ----------------------------------------------------------------------------- */
-/* List View & Grid View
+/* NOTES - HEADER - Split View
 /* ----------------------------------------------------------------------------- */
-div#center-pane .note-list .note-book-card {
-    border: var(--border-standard) !important;
-    border-radius: var(--border-radius-small);
-    padding: 10px;
-}
-div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content :is(h2, h3, h4, h5, h6, p, li, a) {
-  font-weight: normal;
-  font-size: .9rem;
-  filter: saturate(0.8);
-}
-div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content a {
-  color: var(--color-blue-dark);
-}
-div#center-pane .note-book-card h5.note-book-header {
-  background-color: var(--color-blue-light-text);
-  border: 1px solid white;
-  outline: 1px solid var(--color-gray);
-  padding: 0.1rem 0 0.2rem;
-}
-.note-list-widget .note-list-widget-content .note-list .note-book-card {
-    background-color: white;
-}
-.note-list-widget .note-list-widget-content .note-list .note-book-card:hover {
-    background-color: white;
-    box-shadow: var(--shadow-standard);
-}
-
-/* ----------------------------------------------------------------------------- */
-/* NOTES 
-/* ----------------------------------------------------------------------------- */
-/* Note Header (Split View) */
 #center-pane .title-row .note-icon-widget {
   margin: 0;
   padding: 5px 5px 5px 10px;
@@ -492,10 +447,7 @@ div#center-pane .note-book-card h5.note-book-header {
 #center-pane .title-row .note-icon-widget button {
   color: var(--color-gray-text);
 }
-div#center-pane div.note-detail div.note-detail-readonly-text {
-   border-left: 5px solid var(--color-blue-light);
-   padding: 2rem 4rem 1rem 2rem;
-}
+
 #center-pane .title-row .note-title-widget {
     align-self: center;
     display: flex;
@@ -509,7 +461,17 @@ div#center-pane div.note-detail div.note-detail-readonly-text {
   box-shadow: none;
 }
 
-/* Note Header (Full View) */
+#center-pane .promoted-attribute-cell {
+  margin: 3px 10px;
+}
+#center-pane .tn-chip {
+  background-color: var(--color-sidebar-yellow-dark);
+  border-radius: var(--border-radius-medium);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* NOTES - HEADER - Full View
+/* ----------------------------------------------------------------------------- */
 #center-pane div.component.split-note-container-widget .note-icon {
   color: var(--color-orange-dark);
 }
@@ -517,58 +479,78 @@ div#center-pane div.note-detail div.note-detail-readonly-text {
   /*font-family: var(--main-font-family-serif);*/
   color: var(--color-gray-text);
 }
-#center-pane div.component div.title-actions .note-type-switcher {
-  top: 0;
-}
-#center-pane div.component div.title-actions > .note-type-switcher:empty {
-  display: none;
-}
-
 
 #center-pane div.component.split-note-container-widget div.component.scrolling-container div.inline-title input {
   color: var(--color-gray-text);  
   font-weight: 600;
 }
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions {
+
+/* ----------------------------------------------------------------------------- */
+/* NOTES - HEADER - Title Actions & Promoted Attributes
+/* ----------------------------------------------------------------------------- */
+#center-pane .title-actions {
   background-color: var(--color-gray-light);
   border-top: 1px dashed var(--color-gray-light-text);
   border-bottom: 1px dashed var(--color-gray-light-text);
   color: var(--color-paper-text);
+  gap: 0;
   justify-self: self-end;
   margin-bottom: 1rem;
   margin-top: 1.3rem;
+  padding-block: 7px 3px;
 }
-
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions a.badge {
+#center-pane .title-actions .note-type-switcher {
+  top: 0;
+  margin-left: 10px;
+  font-size: .85rem;
+}
+#center-pane .title-actions .note-type-switcher .intro {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+#center-pane .title-actions > .note-type-switcher:empty {
+  display: none;
+}
+#center-pane .note-type-switcher .ext-badge,
+#center-pane .note-type-switcher .dropdown-badge button {
+  color: var(--color-gray-text-code);
+}
+#center-pane .title-actions a.badge {
   font-weight: normal;
   font-size: .85rem;
 }
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions a.badge:hover {
+#center-pane .title-actions a.badge:hover {
   background-color: var(--color-blue-light-alpha);
   border-bottom: 0;
 }
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-title {
+#center-pane .title-actions .collapsible-title {
   text-transform: uppercase;
-  /*font-family: var(--main-font-family-serif);*/
+  font-size: 0.85rem;
 }
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-body {
-  
+#center-pane .title-actions .collapsible-body {
+  font-size: .85rem;
+  font-weight: 400;
 }
-
-#center-pane div.component.split-note-container-widget div.component.scrolling-container .promoted-attributes-container label {
+#center-pane .title-actions .edited-notes .no-edited-notes-found {
+  margin-left: 10px;
+  font-weight: 400;
+}
+#center-pane .promoted-attributes-container label {
   text-transform: uppercase;
+  font-size: .85rem;
+  font-weight: 400;
 }
 #center-pane div.component.split-note-container-widget div.component.scrolling-container .promoted-attributes-container input {
-  text-transform: uppercase;
-  background-color: var(--color-blue-light-alpha-lighter);
+  font-size: .85rem;
+  text-transform: capitalize;
 }
-
-
 #center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-inner-body {
-  /*! margin-left: 1.7rem; */
+  padding-top: 0.1rem;
 }
 
-/* Note Body */
+/* ----------------------------------------------------------------------------- */
+/* NOTES - BODY
+/* ----------------------------------------------------------------------------- */
 div#center-pane div.note-detail div.note-detail-editable-text {
   padding: .5rem;
 }
@@ -576,10 +558,8 @@ div#center-pane div.note-detail div.note-detail-editable-text {
   border-bottom: 1px dotted var(--color-gray);
   margin-top: 3rem;
   padding-bottom: .1rem;
-  /*! display: inline-block; */
 }
 #center-pane .note-detail :is(a, button, li, p, div, span, form, div) {
-  /*font-family: var(--main-font-family-sans);*/
 }
 #center-pane .note-detail :is(p, a, li, div, form) {
   color: var(--color-gray-text);
@@ -601,46 +581,44 @@ div#center-pane div.note-detail div.note-detail-editable-text {
   background-color: var(--color-gray-light);
   border: 1px dotted var(--color-gray);
 }
-
-#center-pane .ck.ck-editor__editable pre[data-language]::after {
-  /*font-family: var(--main-font-family-sans);*/
+#center-pane .ck.ck-editor__editable pre[data-language]::after { 
 }
-
 div#root-widget div#rest-pane div#center-pane div.note-detail img {
-  /*! border: 1px solid var(--color-gray); */
-  /*! padding: .5rem; */
 }
 
-/* Tables */
+/* ----------------------------------------------------------------------------- */
+/* NOTES - BODY - Tables
+/* ----------------------------------------------------------------------------- */
 div#center-pane div.note-detail table,
 div#center-pane figure.table table {
     border: var(--border-light);
 }
-
-/* Figures and Images */
+/* ----------------------------------------------------------------------------- */
+/* NOTES - BODY - Figures and Images
+/* ----------------------------------------------------------------------------- */
 div#root-widget div#center-pane div.split-note-container-widget div.note-detail figure > figcaption {
   font-style: italic;
   background-color: white !important;
 }
 
-
-/* Note Bottom */
+/* ----------------------------------------------------------------------------- */
+/* NOTES - BOTTOM
+/* ----------------------------------------------------------------------------- */
 #center-pane .note-detail + .note-list-widget {
-  background-color: var(--color-blue-light-text);
-  border-top: var(--border-standard);
-  box-shadow: var(--shadow-90deg-inset);
+  background-color: var(--main-background-color);
+  border-top: 1px dashed var(--color-gray-medium);
+  flex-shrink: 0;
   margin-bottom: 0;
   margin-right: 0;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
 }
 #center-pane .title-row .note-title-widget input.note-title.protected {
   text-shadow: none;
   color: var(--color-gray-medium) !important;
 }
+#center-pane div.note-list-widget div.note-list-container .tn-card-frame.note-book-card.no-tooltip-preview.block-link h5.note-book-header span.tn-icon {
+  color: var(--color-gray-dark-text);
+}
 #rest-pane .status-bar {
-  
 }
 #rest-pane .status-bar .status-bar-main-row div.breadcrumb {
 
@@ -654,19 +632,44 @@ div#root-widget div#center-pane div.split-note-container-widget div.note-detail 
   border-radius: 0;
 }
 
+/* ----------------------------------------------------------------------------- */
+/* NOTES - BOTTOM - List View & Grid View
+/* ----------------------------------------------------------------------------- */
+div#center-pane .note-list .note-book-card {
+    border: 1px solid var(--color-gray);
+    border-radius: var(--border-radius-small);
+    padding: 3px 8px;
+}
+div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content :is(h2, h3, h4, h5, h6, p, li, a) {
+  font-weight: normal;
+  font-size: .9rem;
+  filter: saturate(0.8);
+}
+div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content a {
+  color: var(--color-blue-dark);
+}
+div#center-pane .note-book-card h5.note-book-header {
+  border: none;
+  padding: 0.2rem 0 0.1rem 0.4rem;
+  color: var(--color-gray-dark-text);
+}
+.note-list-widget .note-list-widget-content .note-list .note-book-card {
+    background-color: white;
+}
+.note-list-widget .note-list-widget-content .note-list .note-book-card:hover {
+    background-color: white;
+    box-shadow: var(--shadow-standard);
+}
 
 /* ----------------------------------------------------------------------------- */
 /* CodeMirror 
 /* ----------------------------------------------------------------------------- */
-
 div#root-widget div#rest-pane div#center-pane .cm-scroller span {
     font-family: var(--font-code);
 }
-
 div#root-widget div#rest-pane div#center-pane .cm-scroller span.cm-matchingBracket { 
   text-decoration: none; 
   font-weight: 700;
   color: var(--color-orange-dark) !important;
   border: 1px solid var(--color-gray);
 }
-
