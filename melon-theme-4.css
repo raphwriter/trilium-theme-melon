@@ -1,7 +1,8 @@
+
 /* ============================================================================= */
 /*                                   MELON 4                                     */
 /*                      by https://github.com/raphwriter/                        */ 
-/*          A Theme For Trilium Notes (https://github.com/zadam/trilium)         */
+/*          A Theme For Trilium (https://github.com/TriliumNext/Trilium)         */
 /* ============================================================================= */
 
 
@@ -11,14 +12,16 @@
 /* ----------------------------------------------------------------------------- */
 
 /* Fira Mono */
+/*
 @font-face {
   font-family: 'Fira Mono';
   font-style: normal;
   font-weight: 400;
   src: url('/custom/fonts/FiraMono-Regular.woff') format('woff');
 }
-
+*/
 /* Fira Sans */
+/*
 @font-face {
   font-family: 'Fira Sans';
   font-style: light;
@@ -31,6 +34,7 @@
   font-weight: 400;
   src: url('/custom/fonts/FiraSans-Regular.woff') format('woff');
 }
+*/
 
 /* Fira Code */
 @font-face {
@@ -47,6 +51,7 @@
 }
 
 /* Roboto-slab */
+/*
 @font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -71,54 +76,84 @@
   font-weight: 600;
   src: url('/custom/fonts/roboto-slab-v11-latin-600.woff') format('woff'); 
 }
+*/
 
+/* Geist */
+@font-face {
+  font-family: "Geist";
+  src: url("/custom/fonts/Geist-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist";
+  src: url("/custom/fonts/Geist-Italic-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
-html {
+#trilium-app {
 /* ----------------------------------------------------------------------------- */
 /* COLOR VARIABLES
 /* ----------------------------------------------------------------------------- */
     
-    --color-blue-dark: #2e4b76;
-    --color-blue-dark-alpha: #2e4b76d1;  
-    --color-blue-dark-text: #e8f1f5;
-    --color-blue-light: #3cad9e;
-    --color-blue-light-alpha: #3cad9e70;
-    --color-blue-light-alpha-darker: #3cad9ed1;
-    --color-blue-light-alpha-lighter: #2aa19229;
-    --color-blue-light-text: #f0f4f4;
-    --color-blue-light-gradient-1: #4ea596;
-    --color-blue-light-gradient-2: #2ba090;
-    --color-yellow: #e9c46a; 
-    --color-yellow-darker: #ecb400;
-    --color-yellow-text: #63583c;
-    --color-yellow-bg-alpha: #e9c46a1a; 
-    --color-sidebar-yellow-dark: #e1dbce;
-    --color-orange-light: #f4a261;
-    --color-orange-light-text: #c96a2e;
-    --color-orange-dark: #e76f51;
-    --color-orange-dark-text: #f2dcd6; 
-    --color-gray: #d6d6d6;
-    --color-gray-text: #333;
-    --color-gray-text-code: #555;
-    --color-gray-light: #f5f5f5;
-    --color-gray-light-alpha: rgba(199, 199, 199, 0.2);
-    --color-gray-light-text: #999;
-    --color-gray-medium: #868E8D;
-    --color-gray-light-buttons: #e9e9e9;
-    --color-gray-light-buttons-text: #434343;
-    --color-gray-dark: #666;
-    --color-gray-dark-text: #666;
-    --color-paper: #ecebe3;
-    --color-paper-text: #555;
-    --color-paper-light: #fcfcfa;
-    --color-paper-light-cool: #fcfcfd;
-    --color-shadow: rgba(181, 181, 181, 0.6);
-    --color-shadow-light: rgba(181, 181, 181, 0.3);
-    --gradient-blue-light: linear-gradient(138deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-1) 35%, var(--color-blue-light-gradient-2) 100%);
-    --gradient-paper-light: linear-gradient(170deg, var(--color-paper-light-cool) 0%, var(--color-paper-light-cool) 45%, var(--color-paper-light) 100%);
+    /* Primär: dunkles Blau -> tiefes Petrol/Indigo */
+    --color-blue-dark: #1f3a5f;
+    --color-blue-dark-alpha: #1f3a5fd9;
+    --color-blue-dark-text: #eaf0f7;
+
+    /* Primär: helles Türkis -> modernes Petrol */
+    --color-blue-light: #2a9d8f;
+    --color-blue-light-alpha: #2a9d8f66;
+    --color-blue-light-alpha-darker: #2a9d8fd9;
+    --color-blue-light-alpha-lighter: #2a9d8f24;
+    --color-blue-light-text: #f2f7f6;
+    --color-blue-light-gradient-1: #35b3a2;
+    --color-blue-light-gradient-2: #21867a;
+
+    /* Akzent Gelb -> warmes Sand/Senf, weniger grell */
+    --color-yellow: #e4b95b;
+    --color-yellow-darker: #d9a53a;
+    --color-yellow-text: #5a4a26;
+    --color-yellow-bg-alpha: #e4b95b1f;
+    --color-sidebar-yellow-dark: #e7e1d6;
+
+    /* Akzent Orange -> Terrakotta mit klarem Kontrast */
+    --color-orange-light: #ef8f5a;
+    --color-orange-light-text: #a84e20;
+    --color-orange-dark: #d45d3f;
+    --color-orange-dark-text: #f6e3dc;
+
+    /* Neutraltöne: warmes Grau statt reiner Grau, kontrastärmer text-lastig */
+    --color-gray: #cfd2d4;
+    --color-gray-text: #1a1d21;
+    --color-gray-text-code: #565b60;
+    --color-gray-light: #f4f4f2;
+    --color-gray-light-alpha: rgba(180, 184, 188, 0.18);
+    --color-gray-light-text: #8b9095;
+    --color-gray-medium: #7a8186;
+    --color-gray-light-buttons: #e7e9eb;
+    --color-gray-light-buttons-text: #3a3f44;
+    --color-gray-dark: #585f65;
+    --color-gray-dark-text: #585f65;
+
+    /* Papier: minimal wärmer, ruhiger */
+    --color-paper: #eeece6;
+    --color-paper-text: #565b60;
+    --color-paper-light: #fdfdfc;
+    --color-paper-light-cool: #fbfcfd;
+    --color-shadow: rgba(28, 32, 36, 0.14);
+    --color-shadow-light: rgba(28, 32, 36, 0.07);
+
+    /* Gradients: weichere Winkel, kurze Verläufe */
+    --gradient-blue-light: linear-gradient(135deg, var(--color-blue-light-gradient-1) 0%, var(--color-blue-light-gradient-2) 100%);
+    --gradient-paper-light: linear-gradient(168deg, var(--color-paper-light-cool) 0%, var(--color-paper-light) 100%);
+
     --launcher-pane-background-color: var(--gradient-blue-light);
     --ck-color-image-caption-background: var(--color-shadow-light);
-    --main-background-color: #fafafa;
+    --main-background-color: #fbfbfa;
     
 /* ----------------------------------------------------------------------------- */
 /* BORDER & SHADOW VARIABLES
@@ -143,179 +178,45 @@ html {
 /* ----------------------------------------------------------------------------- */
 /* FONT VARIABLES 
 /* ----------------------------------------------------------------------------- */
-    
+    /*
     --main-font-family-sans: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --main-font-family-serif: 'Roboto Slab', Georgia, Serif;
     --main-font-family-mono: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
     --detail-text-font-family: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
     --font-family-monospace: 'Fira Mono', 'Source Code Pro', Courier, Monospace;
     --font-headers: 'Roboto Slab', Georgia, Serif;
+    
     --font-body: 'Fira Sans', 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, Sans-serif;
+    */
     --font-code: 'Fira Code', 'Source Code Pro', Courier, Monospace;
+ 
+    /* override default theme variables */
+  --main-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
+  --tree-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
+  --detail-font-family: "Geist", 'Open Sans', 'Source Sans Pro', 'Liberation Sans', Arial, sans-serif;
+  --main-font-size: 100%;
+  --tree-font-size: 100%;
+  --detail-font-size: 100%;
+  --monospace-font-size: 100%;
+  --monospace-font-family: var(--font-code);
 }
-
-#root-widget {
-  /* FF basic styling */
-  scrollbar-color: var(--color-gray-dark) var(--color-gray-light);
-  scrollbar-gutter: 5px;
-}
-
 
 /* ----------------------------------------------------------------------------- */
 /* RESET 
 /* ----------------------------------------------------------------------------- */
-
-#root-widget *, .modal-content, :not(.ribbon-body *), form input, :not(h1, h2, h3, h4, h5, h6) {
-  font-family: var(--font-body);
-  border-radius: var(--border-radius-small);
+body {
+  /*font-family: var(--main-font-family-sans) !important;*/
 }
-
-
-#root-widget #center-pane .note-detail :is(h1, h2, h3, h4, h5, h6),
-.modal-content :is(h1, h2, h3, h4, h5, h6) {
-  border-bottom: none;
-  color: var(--color-gray-light-buttons-text);
-  font-family: var(--main-font-family-serif);
-  margin-top: 1.6rem;
-  margin-bottom: .3rem;
-  font-weight: bold;
-  padding: 6px 0px;
-  border-radius: 0;
-
-  font-family: var(--font-headers) !important;
-}
-
 
 /* Excalidraw fixes */
 #root-widget #center-pane div.excalidraw-wrapper :is(h1, h2, h3, h4, h5, h6) {
   margin: unset;
   padding: unset;
 }
-
 #root-widget #center-pane div.excalidraw-wrapper .App-menu__left .panelColumn {
   row-gap: 0;
 }
 
-
-#root-widget a {
-  color: var(--color-blue-dark);
-}
-
-
-span.edited-note-line {
-  display: inline-flex;
-  margin-left: 1rem;
-  color: var(--color-gray-dark);
-  background-color: white;
-  border: var(--border-standard);
-  margin-bottom: 0.2rem;
-  padding: 0.1rem 0.3rem;
-}
-span.edited-note-line:before {
-  /*color: var(--color-gray-dark);
-  content: "- ";
-  margin-right: 0.2rem;*/
-}
-span.edited-note-line small {
-  color: var(--color-gray-dark);
-  margin-right: 2px;
-  margin-left: 2px;
-}
-
-div#rest-pane.component div#center-pane .title-row {
-
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* CodeMirror 
-/* ----------------------------------------------------------------------------- */
-
-div#root-widget div#rest-pane div#center-pane div.note-detail div.note-detail-code div.note-detail-code-editor div.CodeMirror-code span {
-  /*color: var(--color-gray-text-code);*/
-    font-family: var(--font-code);
-}
-div.CodeMirror span.cm-atom {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-builtin {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-callee {
-  color: var(--color-yellow-text);
-}
-div.CodeMirror span.cm-comment {
-  color: var(--color-yellow-darker);
-  background-color: var(--color-gray-light);
-  padding: 5px 2px;
-  margin: -5px -2px;
-}
-div.CodeMirror span.cm-def {
-  color: var(--color-gray-text-code);  
-}
-div.CodeMirror span.cm-keyword {
-  color: var(--color-gray-text-code);  
-}
-div.CodeMirror span.cm-matchhighlight {
-  color: var(--color-gray-text-code);  
-}
-div.CodeMirror span.cm-number {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-operator {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-overlay {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-property {
-    color: var(--color-paper-text);
-    text-decoration: underline;
-    text-decoration-color: var(--color-gray);
-    text-decoration-style: dotted;
-}
-div.CodeMirror span.cm-variable {
-  color: var(--color-blue-dark);
-}
-div.CodeMirror span.cm-variable-2 {
-  color: var(--color-blue-light);
-}
-div.CodeMirror span.cm-variable-3 {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-qualifier {
-  color: var(--color-gray-text-code);
-}
-div.CodeMirror span.cm-string {
-  color: var(--color-orange-dark);  
-}
-div.CodeMirror span.cm-string-2 {
-  color: var(--color-gray-text-code);  
-}
-div.CodeMirror span.cm-tag {
-  color: var(--color-gray-text-code);
-}
-
-.note-detail-code-editor div.CodeMirror-selected,
-.note-detail-code-editor div.CodeMirror-line::selection {
-  background-color: var(--color-blue-light-alpha);
-}
-
-.CodeMirror-matchingbracket { 
-  text-decoration: none; 
-  color: var(--color-orange-dark) !important;
-  border: 1px solid var(--color-gray);
-}
-
-.CodeMirror-linenumber {
-  /*! font-size: 0.9rem; */
-  color: var(--color-gray);
-  font-family: var(--font-code) !important;
-}
-
-.CodeMirror-linenumber::before {
-  /*content: "\00B7";*/
-}
 
 /* ----------------------------------------------------------------------------- */
 /* HYPERLINKS
@@ -331,9 +232,12 @@ div.tooltip a,
 li a, li a:visited, li a:hover
 {
     color: var(--color-blue-dark);
+  border-radius: 0;  
+  /*
     border-bottom: 1px solid var(--color-gray-dark);
-    border-radius: 0 !important;
+    
     text-decoration: none;
+    */
 }
 
 a:hover, 
@@ -342,110 +246,22 @@ a:hover,
 .note-paths-widget a:hover, 
 .similar-notes-widget a:hover,
 .related-notes-container a:hover {
-    border-bottom: 1px solid var(--color-blue-light);
-    border-radius: 0;
+  border-bottom: 1px solid var(--color-blue-light);
+  border-radius: 0;  
+  text-decoration: none;
+  /*
+    
     color: var(--color-blue-light);
-    text-decoration: none;
-}
-
-div#root-widget div#rest-pane div#center-pane div.scrolling-container div.note-detail.component div.note-detail-editable-text div.note-detail-editable-text-editor.ck.ck-content li span.todo-list__label__description a {
-  margin-left: 0.4rem;
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* CK EDITOR 
-/* ----------------------------------------------------------------------------- */
-div.ck-body-wrapper div.ck.ck-reset_all.ck-body.ck-rounded-corners button.ck.ck-button.ck-off.ck-block-toolbar-button,
-div.ck-body-wrapper div.ck.ck-reset_all.ck-body.ck-rounded-corners button.ck.ck-button.ck-on.ck-block-toolbar-button {
-  /*! position: absolute; */
-  /*! left: -50px; */
-  margin: 0 0 0 -20px;
-  /*! border: 1px dashed var(--color-gray-light-buttons-text); */
-  border-radius: 7px;
-  width: 31px;
-  height: 31px;
-  color: var(--color-gray-light-buttons-text);
-  outline: 1px solid var(--color-blue-light-text);
-  outline-offset: -3px;
-  box-shadow: var(--shadow-embedded-notes);
-  padding: 5px;
-  background: var(--gradient-paper-light);
-  border: 2px solid white;
-}
-
-div.ck-body-wrapper div.ck.ck-reset_all.ck-body.ck-rounded-corners div.ck.ck-balloon-panel.ck-balloon-panel_with-arrow.ck-toolbar-container.ck-balloon-panel_visible {
-  border-radius: 7px;
-  background: var(--gradient-paper-light);
-  border: 2px solid white;
-  box-shadow: var(--shadow-embedded-notes);
-  color: var(--color-gray-light-buttons-text);
-  outline: 1px solid var(--color-blue-light-text);
-  outline-offset: -3px;
-  padding: 5px;
-  
-}
-
-div.ck-body-wrapper div.ck.ck-reset_all.ck-body.ck-rounded-corners div.ck.ck-balloon-panel.ck-balloon-panel_with-arrow.ck-toolbar-container.ck-balloon-panel_visible .ck-toolbar,
-div.ck-body-wrapper div.ck.ck-reset_all.ck-body.ck-rounded-corners div.ck.ck-balloon-panel.ck-balloon-panel_with-arrow.ck-toolbar-container.ck-balloon-panel_visible .ck-toolbar .ck-toolbar__items {
-  background: var(--gradient-paper-light);
-}
-
-.ck.ck-button, a.ck.ck-button {
-  background: var(--gradient-light-gray);
-}
-
-.ck.ck-button:not(.ck-disabled):hover, a.ck.ck-button:not(.ck-disabled):hover {
-  background: var(--color-blue-light-alpha);
-}
-
-
-/* ----------------------------------------------------------------------------- */
-/* MODALS 
-/* ----------------------------------------------------------------------------- */
-
-/* ----------- RECENT CHANGES ----------- */
-div#recent-changes-content div {
-  margin-bottom: 2rem;
-}
-
-div#recent-changes-content div ul {
-  margin-left: .5rem;
-  margin-top: .5rem;
-  padding-left: 0;
-}
-
-div#recent-changes-content div ul li {
-  list-style-type: none;
-  margin-bottom: .3rem;
-}
-
-div#recent-changes-content div ul li span {
-  color: var(--color-blue-light);
-  font-family: var(--main-font-family-serif);
-}
-
-div#recent-changes-content div ul li span small {
-  color: var(--color-gray-light-text);
-  display: block;
-  margin-left: 0rem;
-}
-
-div#recent-changes-content div b {
-  border-bottom: 1px solid var(--color-gray);
-  color: var(--color-blue-dark);
-  display: block;
-  font-family: var(--main-font-family-serif);
-  font-weight: normal;
+    */
 }
 
 
 
 /* ----------------------------------------------------------------------------- */
-/* COMPONENTS 
+/* LAYOUT COMPONENTS 
 /* ----------------------------------------------------------------------------- */
 
-/* ----------- GUTTER ----------- */
+/* GUTTER */
 
 div#root-widget div.gutter-horizontal {
   background: var(--color-gray-light);
@@ -456,884 +272,327 @@ div#root-widget div.gutter-horizontal {
   border-right: var(--border-standard);
 }
 
-
-
-/* -----------LEFT PANE -------------- */
+/* LEFT PANE */
 div#left-pane {
-  background-color: var(--color-paper-light-cool);
+    background-color: var(--color-paper-light-cool);
 }
 
-
-/* ----------- RIGHT PANE ------------ */
-
-div#right-pane.component {
-    margin-left: 10px;
-}
-
-div#right-pane.component div.card-header {
+/* RIGHT PANE */
+div#right-pane div.card-header {
     border-radius: 0;
-    font-family: var(--font-headers);
     font-weight: normal;
 }
 
-div#right-pane.component div.card-header .toc > ol {
-    padding-left: 15px;
-}
-
-div#right-pane.component div.card-body .toc > ol > ol li {
-    list-style: lower-latin;
-}
-
-div#right-pane.component div.card-body div.toc-widget {
-  padding-left: 0;
-  contain: none;
-  overflow: auto;
-}
-
-div#right-pane.component div.card-body div.toc-widget li {
-  text-justify: none;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
-  margin-bottom: 0.4rem;
-}
-
-div#right-pane.component div.card-body div.toc-widget li:hover {
-    font-weight: unset;
-  color: var(--color-blue-dark);
-  text-decoration: underline;
-  text-decoration-color: var(--color-blue-light);
-}
-
-div#right-pane.component div.card-body div.highlights-list-widget {
-  padding-left: 0;
-}
-
-div#right-pane.component div.card-body div.highlights-list-widget li {
-  text-justify: none;
-  font-size: 0.9rem;
-  line-height: 1.2rem;
-  margin-bottom: 0.4rem;
-}
-
-div#right-pane.component div.card-body div.highlights-list-widget li:hover {
-  font-weight: unset;
-  color: var(--color-blue-dark);
-  text-decoration: underline;
-  text-decoration-color: var(--color-blue-light);
-}
-
-div#right-pane.component div.card-body div.highlights-list-widget li strong {
-  font-weight: unset;
-}
-
-/* ----------- DROPDOWN MENU ----------- */
-
-div#root-widget div#left-pane .dropdown-menu a {
-    color: var(--color-dark-blue);
-}
-
-a.dropdown-item {
-  border-bottom: none;
-}
-div#root-widget div#launcher-pane div.dropdown div.dropdown-menu span.bx {
-  color: var(--color-blue-dark);
-}
-
-div#root-widget div#launcher-pane div.dropdown div.dropdown-menu a {
-  color: var(--color-blue-dark);
-}
-
-div#root-widget div#rest-pane .dropdown-menu a:hover:not(.disabled), .dropdown-item:hover:not(.disabled),
-div#root-widget div#rest-pane div#center-pane div.ribbon-container div.ribbon-top-row div.ribbon-button-container div.dropdown.show div.dropdown-menu a.dropdown-item.show-source-button:hover kbd{
-  background-color: var(--color-blue-light-alpha) !important;
-  color: var(--color-blue-light-gradient-2) !important;
-}
-
-
-
-/* ----------- TABS ----------- */
-
-div#root-widget div#rest-pane > div.component:first-child {
-  border-bottom: var(--border-standard);
-  height: 50px !important;
-}
-
-div#root-widget div#rest-pane div.tab-row-widget {
-
-}
-
-div#root-widget div#rest-pane div.tab-row-widget-container {
-
-}
-
-div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-gray-dark);
-  background-color: var(--color-gray-light-alpha);
-  border-radius: 0;
-  margin-left: 5px;
-}
-
-div#root-widget div#rest-pane div.tab-row-widget div.note-new-tab:hover {
-  color: var(--color-blue-light);
-  background-color: var(--color-blue-light-alpha);
-}
-
-.tab-row-widget .note-tab .note-tab-title {
-    
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper {
+/* TABS */
+div#rest-pane .tab-row-container div.note-tab div.note-tab-wrapper {
     background-color: var(--color-gray-light);
-    color: var(--color-gray-light-text);
-    align-items: center;
-    height: 50px;
     border-radius: 0;
+    color: var(--color-gray-light-text);    
 }
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper:hover {
-  color: var(--color-blue-light);
-  background-color: var(--color-blue-light-alpha);
-}
-
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active=""] div.note-tab-wrapper   {
-  color: white;
-}
-
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div {
-  height: 50px;
   align-items: center;
   display: flex;
   padding: 0;
-  font-family: var(--font-headers);
-  font-weight: normal;
 }
-
-/* close button */
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close span {
-  justify-content: end;
-  margin-right: 3px;
-  margin-left: 3px;
-  
-}
-
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close {
-  height: 1.5rem;
-  width: 1.5rem;
   justify-content: center;
 }
-
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper .note-tab-close:hover {
   color: var(--color-gray-light-buttons-text);
   cursor: pointer;
 }
-
-/* close button "x" */
-div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab div.note-tab-wrapper > div span {
-  top: unset;
-  font-size: 1.5rem;
-}
-
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper {
     background-color: #3cad9e;
-    color: var(--color-blue-light-text);
     background: var(--gradient-blue-light);
+    color: var(--color-blue-light-text);
 }
-
 div#rest-pane div.tab-row-widget div.tab-row-widget-container div.note-tab[active] .note-tab-wrapper div.note-tab-title::before {
-  /*! content: "\203B  "; */ /* reference mark */
-  /*! content: "\1F348  "; */ /* melon */
-  content: "\1F34B     "; /* lemon */
+  /*! content: "\203B  "; */   /* reference mark */
+  /*! content: "\1F348 "; */   /* melon */
+  /*! content: "\1F34B "; */   /* lemon */ 
   margin-right: 5px;
   font-size: .8rem;
 }
 
 
 
-/* ----------- TREE ----------- */
 
-div#root-widget div#left-pane div.tree ul#ft-id-1 {
-  margin-left: .4rem;
-  margin-right: .7rem;
+/* ----------------------------------------------------------------------------- */
+/* TREE 
+/* ----------------------------------------------------------------------------- */
+div#root-widget div#left-pane .fancytree-node {
+/*! height: 34px; */ /*! padding: 2px 4px 5px; */
+  border-top: 1px dotted lightgray;
+  border-radius: 0;
+font-weight: 350;
 }
-
 div#root-widget div#left-pane span.fancytree-node:hover { 
-    background-color: #2aa19229;
-    border: 1px dotted var(--color-blue-light);
+  background-color: #2aa19229;
+  border: 1px dotted var(--color-blue-light);
   color: var(--color-blue-light);
 }
-
-
-div#root-widget div#left-pane .fancytree-node {
-height: 36px; padding: 2px 4px 5px;
-  font-family: var(--main-font-family-serif);
-}
-
 div#root-widget div#left-pane span.fancytree-node.fancytree-active {
   background-color: var(--color-gray-light-alpha) !important;
   border: none !important;
+  color: var(--color-orange-dark);
 }
-
 div#root-widget div#left-pane span.fancytree-node.fancytree-node span {
-  font-family: var(--main-font-family-serif);
 }
-
-div#root-widget div#left-pane span.fancytree-node.fancytree-active span {
-  color: var(--color-blue-dark);
-}
-
-div#root-widget div#left-pane span.fancytree-node.protected > span.fancytree-custom-icon {
-  /* remove shadow from protected notes icon */
-  filter: none;
-  color: var(--color-gray-medium);
-}
-
 
 /* multiple selected nodes */
-
 div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected {
   background-color: var(--color-gray-light) !important;
-  color: var(--color-blue-dark-alpha);
+  color: var(--color-orange-light);
 }
-
-div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected .fancytree-title {
-    font-style: normal;
-  text-decoration: none;
-}
-
-/* NOTES WITH MULTIPLE PARENTS*/
-
-div#root-widget div#left-pane span.fancytree-node.multiple-parents .fancytree-title::after {
-  /* cloned notes icon */
-  font-family: boxicons;
-  /*content: " \1F517";*/
-  content: " \EA72";
-  font-size: .85rem;
-  color: var(--color-blue-dark);
-}
-
-div#root-widget div#left-pane div.tree-wrapper div.tree .ui-fancytree.fancytree-container.fancytree-plain.fancytree-ext-clones.fancytree-treefocus span.fancytree-node.fancytree-has-children.multiple-parents.fancytree-match.fancytree-active-clone {
-  background-color: var(--color-gray-light) !important;
-  color: var(--color-blue-dark-alpha);
+div#root-widget div#left-pane div.tree-wrapper div.tree span.fancytree-selected .fancytree-custom-icon::before {
+    border: none;
 }
 
 
 
-/* ----------- CONTEXT MENU ----------- */
-
-#context-menu-container {
-  font-family: var(--main-font-family-sans);
-}
-
-
-
-/* ----------- LAUNCHER PANE ----------- */
-
+/* ----------------------------------------------------------------------------- */
+/* LAUNCHER
+/* ----------------------------------------------------------------------------- */
 div#launcher-pane {
     background-color: var(--color-blue-light);
     background: var(--gradient-blue-light);
 }
-
-div#launcher-pane .component,
-div#launcher-pane .component button,
-div#launcher-pane .icon-action {
+div#launcher-pane :is(.component, .component button, .icon-action) {
     color: var(--color-blue-light-text);
-
 }
-
 div#launcher-pane .global-menu-button {
-  filter:invert(1);
+  border-radius: 0;
 }
-
-div#launcher-pane .global-menu-button:hover {
-  filter:invert(1);
+div#launcher-pane .global-menu-button svg g path {
+  fill: white;
 }
-
-
 div#launcher-pane .component button:hover {
-    filter: invert(0);
     background-color: var(--color-gray-light-alpha);
-    display: block;
-    width: inherit;
 }
-
 div#launcher-pane .icon-action:hover {
     background-color: var(--color-gray-text);
 }
 
+
+/* ----------------------------------------------------------------------------- */
+/* TOOLTIPS
+/* ----------------------------------------------------------------------------- */
 .tooltip-inner {
-    font-family: var(--main-font-family-sans);
 }
 
-
-/* ----------- RIBBON ----------- */
-
-div#rest-pane.component div#center-pane div.ribbon-body.active {
-  margin-left: 0;
-  margin-right: 0;
-  border: none;
-}
-
-div#rest-pane.component div#center-pane div.attribute-list {
-  margin-top: 0;
-}
-
-div#rest-pane.component div#center-pane div.ribbon-tab-container {
-  justify-content: start;
-  margin-left: 0;
-}
-
-div#rest-pane.component div#center-pane div.ribbon-container {
-  margin-bottom: 0px;
-  /*! padding-bottom: 5px; */
-  border-bottom: 1px solid var(--color-gray-light-buttons);
-  border-top: 1px solid var(--color-gray-light-buttons);
+div.tooltip-inner div.note-tooltip-content .note-tooltip-title {
   background-color: var(--color-blue-light-text);
+  border: 1px solid var(--color-gray);
+  padding: 0.3rem 0.5rem;
+}
+div.tooltip-inner div.note-tooltip-content .note-tooltip-title a {
+  color: var(--color-gray-text);
 }
 
-div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list span,
-div#rest-pane.component div#center-pane div.ribbon-body-container,
-div#rest-pane.component div#center-pane div.ribbon-body-container p,
-div#rest-pane.component div#center-pane div.ribbon-body-container div.inherited-attributes-container span {
-  font-family: var(--main-font-family-mono) !important;
-  font-size: 0.85rem;
-
-}
-
-/* show inherited attributes as tags/labels */
-div#rest-pane.component div#center-pane div.ribbon-body-container div.inherited-attributes-container span {
-    margin-right: 0.5rem;
-  border-right: 1px solid var(--color-gray-dark);
-  padding-right: 0.5rem;
-  border-radius: 0;
-  border: var(--border-standard);
-  background-color: white;
-  padding: 0.2rem 0.3rem;
-    line-height: 1.7rem;
-}
-
-div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a {
-  border-right: var(--border-standard);
-  padding-right: 0.5rem;
-  /*! margin-right: 0.5rem; */
-  border-bottom: none;
-}
-div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a:last-child {
-  border-right: 0;
-}
-
-div#rest-pane.component div#center-pane div.ribbon-body-container div.attribute-list p a:last-of-type {
-  border-right: var(--border-standard);
-  /*?!*/
-}
-
-div#rest-pane.component div#center-pane div.promoted-attributes-widget {
-  /*! font-size: 0.75rem; */
-  font-weight: 100;
-  
-}
-div#rest-pane.component div#center-pane div.promoted-attributes-container {
-  justify-content: start;
-  align-items: center;
-  align-content: first baseline;
-}
-
-div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell {
-  margin: 5px 1rem;
-}
-
-div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell div.input-group {
-  margin-left: 0.3rem;
-}
-
-div#rest-pane.component div#center-pane div.promoted-attributes-widget div.promoted-attributes-container div.promoted-attribute-cell div.input-group input {
-  padding: 0 0.5rem;
-  font-size: 0.9rem;
-  /*! height: 1.7rem; */
-  border: var(--border-standard);
-  background: white !important;
-}
-
-div#rest-pane.component div#center-pane span.bx {
-  font-family: boxicons !important;
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
-  
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-top-row {
-  justify-content: space-between;
-  border: none;
-}
-
-div#rest-pane.component div#center-pane .ribbon-button-container {
-  border: none;
-    padding: 0.3rem .3rem 0rem;
-  justify-content: end;
-  align-content: end;
-}
-div#rest-pane.component div#center-pane .ribbon-button-container button {
-
-}
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-spacer,
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title {
-  border-radius: 0;
-  padding: 0.3rem 1rem;
-  border-bottom: none;
-
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-spacer {
-  display: none;
-  max-width: 0;
-  
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title.active {
-  color: var(--color-blue-light);
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title:hover {
-  background-color: var(--color-blue-light-alpha);
-  color: var(--color-blue-light);
-}
-
-div#rest-pane.component div#center-pane div.split-note-container-widget div.ribbon-container div.ribbon-tab-title.active:hover {
-  background-color: var(--color-blue-light-alpha);
-  color: var(--color-blue-light);
-}
-
-div#root-widget div#center-pane .note-paths-widget a {
-  font-weight: 400;
-}
-
-div#root-widget div#center-pane .note-paths-widget ul {
-  padding: .4rem 0;
-}
-
-div#root-widget div#center-pane .note-paths-widget li {
-  list-style-type: none;
-  
-}
-
-div#root-widget div#center-pane .note-paths-widget li::before {
-  content: "\203A \202F";
-}
-
-div#rest-pane.component div#center-pane .button-widget.icon-action {
+div.tooltip-inner div.note-tooltip-content .note-tooltip-title a .note-path {
   color: var(--color-gray-medium);
+  margin-left: .5rem;
+}
+
+div.tooltip-inner div.note-tooltip-content .rendered-content div {
+  font-size: 1rem;
 }
 
 
-/* Promoted Attributes */
-div#center-pane.component div.promoted-attributes-container {
-
+/* ----------------------------------------------------------------------------- */
+/* ICONS
+/* ----------------------------------------------------------------------------- */
+div#rest-pane.component div#center-pane span.bx {
 }
 
 
-/* ----------- FORM ELEMENTS ----------- */
-
-
-
+/* ----------------------------------------------------------------------------- */
+/* FORM ELEMENTS
+/* ----------------------------------------------------------------------------- */
 div#root-widget div#center-pane button:not(.bx).btn-primary {
     background-color: var(--color-blue-light);
     color: white;
 }
-
 div#center-pane button:not(.bx).btn-secondary {
     background-color: var(--color-gray-dark);
 }
-
 div#center-pane .switch {
   background: none;
 }
-
 div#center-pane .switch .slider {
   /*slider background*/
   background-color: var(--color-gray-light-buttons);
   box-shadow: var(--shadow-light);
   border-radius: var(--border-radius-small);
 }
-
 div#center-pane .switch .slider::before {
   /*slider off state*/
   background-color: var(--color-gray-light-buttons-text);
   border-radius: var(--border-radius-small);
 }
-
 div#center-pane .switch .slider.checked::before {
   /*slider on state*/
   background-color: var(--color-blue-light);
   border-radius: var(--border-radius-small);
 }
-
-input#clone-to-note-autocomplete,
-.algolia-autocomplete {
-  
-}
-
-/*Algolia (Search Autocomplete Form Field)*/
-.algolia-autocomplete small {
-  font-family: var(--main-font-family-mono);
-  color: var(--color-gray-dark);
-  display: block;
-  
-}
-.algolia-autocomplete .aa-suggestion {
-  border-bottom: var(--border-standard);
-}
-.algolia-autocomplete .aa-dropdown-menu b {
-  color: var(--color-blue-light-gradient-1);
-  text-decoration: underline;
-  font-weight: normal;
-
-}
-
 /* checkbox background*/
 .ck-content .todo-list .todo-list__label > input[checked]::before {
   background: var(--color-blue-dark-alpha);
   border-radius: var(--border-radius-small);
 }
-
-
-#left-pane input.search-string {
-  background: white !important;
-  border: 1px solid var(--color-blue-light);
-  border-radius: var(--border-radius-small);
-  border: var(--border-accent-light);
-  box-shadow: var(--shadow-light) inset;
-    margin-right: 10px;
+/* Quick Search Widget*/
+#left-pane .quick-search .cm-content {
 }
-
-#left-pane div.quick-search {
+#left-pane .quick-search {
   border-bottom: var(--border-standard);
-  padding: unset;
-
   align-content: center;
   align-items: center;
-}
-
-#left-pane div.quick-search button {
-  padding: unset;
-  align-self: center;
-  margin: 0 10px;
+  box-shadow: var(--shadow-90deg);
 }
 
 
-div#root-widget div#rest-pane div#center-pane div.split-note-container-widget div.note-split.component {
-  margin-left: 0;
-  border-right: var(--border-standard);
-}
-
-
-
-/* ----------- NOTEBOOK CARDS ----------- */
-
-/* LIST VIEW & GRID VIEW */
-div#center-pane .note-list {
-
-}
-
+/* ----------------------------------------------------------------------------- */
+/* List View & Grid View
+/* ----------------------------------------------------------------------------- */
 div#center-pane .note-list .note-book-card {
     border: var(--border-standard) !important;
     border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-standard);
     padding: 10px;
 }
-
-
-div#center-pane .note-book-card :is(h1, h2, h3, h4, h5, h6) {
-  /*border-bottom: var(--border-standard);
-  background-color: var(--color-gray-light);
-  display: block;
-  margin-top: 0;
-  width: 100%;
-  padding: 6px;
-  margin-bottom: 0;*/
+div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content :is(h2, h3, h4, h5, h6, p, li, a) {
+  font-weight: normal;
+  font-size: .9rem;
+  filter: saturate(0.8);
 }
-
-
-
-div#center-pane .note-book-card .rendered-content :is(h1, h2, h3, h4, h5, h6) {
+div#center-pane .note-list.grid-view .note-list-wrapper div.rendered-content a {
   color: var(--color-blue-dark);
-  background: none;
-  font-weight: bold;
 }
-
-div#center-pane .note-book-card h5:first-of-type {
+div#center-pane .note-book-card h5.note-book-header {
   background-color: var(--color-blue-light-text);
   border: 1px solid white;
   outline: 1px solid var(--color-gray);
+  padding: 0.1rem 0 0.2rem;
 }
-
-div#center-pane h5 > span.note-book-title{
-  font-family: var(--font-headers);
-  /*! font-weight: normal; */
-}
-
-div#center-pane .note-book-card :is(h1, h2, h3, h4, h5, h6).note-book-header span.note-icon {
-  padding: 3px;
-  border-radius: 3px;
-  margin-right: 5px;
-}
-
-
-/* GRID VIEW */
-/* GRID VIEW - note card */
-div#center-pane .note-list.grid-view .note-book-card {
-  margin: 10px;
-}
-/* GRID VIEW - note headers */
-#root-widget #center-pane .note-list.grid-view .note-book-card :is(h1, h2, h3, h4, h5, h6) {
-  margin: 0.1rem 0;
-  padding: 0.3rem 0 0.4rem;
-}
-
-
-
-/* LIST VIEW */
-
-/* LIST VIEW - note card*/
-div#center-pane .note-list-widget .note-list.list-view .note-book-card {
-  margin: 5px 0px;
-  overflow-y: hidden;
-}
-/* LIST VIEW - note headers*/
-#root-widget #center-pane .note-list-widget .note-list.list-view .note-book-card :is(h1, h2, h3, h4, h5, h6) {
-  margin: 0.1rem 0;
-  padding: 0.1rem 0 0.5rem;
-}
-
-
-div.note-list-widget div.note-list-widget-content div.note-list-container div.note-book-card.expanded div.note-book-content div.rendered-note-content pre {
-  font-size: .9rem;
-  padding: 3px 6px;
-}
-
-div#center-pane .note-book-card.expanded > .note-book-title {
-    font-weight: 500;
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card :is(h1, h2, h3, h4, h5) {
-    font-size: 1rem;
-}
-
-.note-list-container div.note-book-card h5.note-book-title {
-  margin-top: 0;
-}
-
 .note-list-widget .note-list-widget-content .note-list .note-book-card {
     background-color: white;
 }
-
 .note-list-widget .note-list-widget-content .note-list .note-book-card:hover {
     background-color: white;
     box-shadow: var(--shadow-standard);
 }
 
-.note-list-widget .note-list-widget-content .note-list .note-book-card h5 {
-    color: var(--color-blue-dark);  
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card h5 span.rendered-note-attributes {
-  display: none;  /* comment to show note attributes in list/grid view */
-  
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content {
-    
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card.expanded .note-book-content {
-    
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content a,
-.note-list-widget .note-list-widget-content .note-list .note-book-card h5 a {
-    color: var(--color-blue-dark);
-}
-
-.note-list-widget .note-list-widget-content .note-list .note-book-card .note-book-content .rendered-note-content {
-    color: var(--color-gray-dark);
-    padding: 0 5px !important;
-}
-
-div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text {
-  contain: content;
-  border: 1px solid lightgray;
-  margin-top: 1rem;
-  padding: 0.5rem;
-}
-
-div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text .rendered-content {
-  /*font-size: .95rem;*/
-}
-
-
-div#center-pane div.note-list-widget div.note-list-widget-content div.note-list.grid-view div.note-list-wrapper div.note-list-container div.note-book-card.block-link.expanded div.note-book-content.type-text img {
-  max-width: 100%;
-}
-
-/* remove background from small note renders*/
-div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-wrapper div.note-list-container div.note-book-card div.note-book-content.type-text div.rendered-note-content div.ck-content :is(h2, h3, h4, h5, pre) {
-  background: none;
-  /*! padding-left: 0; */
-  margin-bottom: 5px;
-}
-
-div#center-pane div.note-list-widget div.note-list-widget-content div.note-list-wrapper div.note-list-container div.note-book-card div.note-book-content.type-text div.rendered-note-content div.ck-content :is(h2, h3, h4, h5) {
-  padding-left: 0;
-}
-
-/* ----------- NOTES ----------- */
-
-#center-pane .backlinks-ticker {
-  background-color: var(--color-gray-light);
-  color: var(--color-gray-dark-text);
-  border: var(--border-accent-light);
-  top: 0;
-  right: 12px;
-  width: fit-content;
-}
-
-#center-pane .backlinks-items div :is(h2, h3, h4, h5, h6) {
-  font-size: 1.1rem;
-}
-
-#center-pane .backlinks-ticker span.backlinks-count {
-  font-family: var(--main-font-family-mono);
-  font-size: .95rem;
-
-}
-
-#center-pane .title-row {
-  min-height: 4.5rem;
-  display: flex;
-  align-items: center;
-}
-
+/* ----------------------------------------------------------------------------- */
+/* NOTES 
+/* ----------------------------------------------------------------------------- */
+/* Note Header (Split View) */
 #center-pane .title-row .note-icon-widget {
-  
-  /*! align-content: baseline; */
-  display: flex;
   margin: 0;
-  padding: 5px;
-  
+  padding: 5px 5px 5px 10px;
 }
-
-/* Trilium >= 0.55.1 */
-#center-pane div.scrolling-container {
-  /*! display: flex; */
-  /*! flex-direction: column; */
-  /*! justify-content: space-between; */
+#center-pane .title-row .note-icon-widget button {
+  color: var(--color-gray-text);
 }
-
-#center-pane .note-detail {
-  /*! margin: 0; */
-  /*! padding: 0; */
-  flex-grow: 1;
-  /*! display: flex; */
-}
-
-div#center-pane div.note-detail div.canvas-widget {
-  display: grid;
-}
-
-
-div#center-pane div.note-detail div.note-detail-readonly-text
- {
+div#center-pane div.note-detail div.note-detail-readonly-text {
    border-left: 5px solid var(--color-blue-light);
    padding: 2rem 4rem 1rem 2rem;
 }
-
-div#center-pane div.note-detail div.note-detail-printable {
-  
-}
-
-div#center-pane div.note-detail div.note-detail-editable-text-editor {
-
-}
-
-div#center-pane div.note-detail div.note-detail-editable-text {
-  /*padding: 20px 25px 5px 25px;*/
-     padding: 2rem 0 1rem 2rem;
-  border-left: 5px solid var(--color-orange-dark);
-  flex-direction: column;
-  display: flex;
-  flex-grow: 1;
-}
-
-#center-pane .note-detail + .note-list-widget {
-  padding: 0;
-  background-color: var(--color-blue-light-text);
-  border-top: var(--border-standard);
-  box-shadow: var(--shadow-90deg-inset);
-  margin-bottom: 0;
-  margin-right: 0;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-
-#center-pane .note-list-widget div.note-list.list-view,
-#center-pane .note-list-widget div.note-list.grid-view {
-}
-
-#center-pane div.note-list.list-view div.note-list-wrapper div.note-list-container {
-  display: flex;
-  flex-direction: column;
-}
-
-#center-pane .title-row .note-icon-widget button {
-  color: var(--color-blue-dark);
-}
-
 #center-pane .title-row .note-title-widget {
     align-self: center;
     display: flex;
     align-items: center;
 }
-
 #center-pane .title-row .note-title-widget input.note-title {
-    color: var(--color-blue-dark) !important;
-    font-family: var(--main-font-family-serif);
+    color: var(--color-paper-text);
+    /*! font-family: var(--main-font-family-serif); */
     font-weight: 600;
-    font-size: 2rem;
-  /*! box-shadow: none; */
+    font-size: 1.85rem;
+  box-shadow: none;
+}
+
+/* Note Header (Full View) */
+#center-pane div.component.split-note-container-widget .note-icon {
+  color: var(--color-orange-dark);
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container div.inline-title {
+  /*font-family: var(--main-font-family-serif);*/
+  color: var(--color-gray-text);
+}
+#center-pane div.component div.title-actions .note-type-switcher {
+  top: 0;
+}
+#center-pane div.component div.title-actions > .note-type-switcher:empty {
+  display: none;
+}
+
+
+#center-pane div.component.split-note-container-widget div.component.scrolling-container div.inline-title input {
+  color: var(--color-gray-text);  
+  font-weight: 600;
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions {
+  background-color: var(--color-gray-light);
+  border-top: 1px dashed var(--color-gray-light-text);
+  border-bottom: 1px dashed var(--color-gray-light-text);
+  color: var(--color-paper-text);
+  justify-self: self-end;
+  margin-bottom: 1rem;
+  margin-top: 1.3rem;
+}
+
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions a.badge {
+  font-weight: normal;
+  font-size: .85rem;
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions a.badge:hover {
+  background-color: var(--color-blue-light-alpha);
+  border-bottom: 0;
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-title {
+  text-transform: uppercase;
+  /*font-family: var(--main-font-family-serif);*/
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-body {
   
 }
 
-#center-pane .title-row .note-title-widget input.note-title.protected {
-  text-shadow: none;
-  color: var(--color-gray-medium) !important;
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .promoted-attributes-container label {
+  text-transform: uppercase;
+}
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .promoted-attributes-container input {
+  text-transform: uppercase;
+  background-color: var(--color-blue-light-alpha-lighter);
 }
 
-#center-pane .title-row .note-title-widget input.note-title.protected {
-  
+
+#center-pane div.component.split-note-container-widget div.component.scrolling-container .title-actions .collapsible-inner-body {
+  /*! margin-left: 1.7rem; */
 }
 
-#center-pane .note-detail h2:first-of-type {
-    margin-top: auto;
+/* Note Body */
+div#center-pane div.note-detail div.note-detail-editable-text {
+  padding: .5rem;
 }
-
-#center-pane .note-detail p {
+#center-pane .note-detail :is(h2, h3, h4, h5, h6) {
+  border-bottom: 1px dotted var(--color-gray);
+  margin-top: 3rem;
+  padding-bottom: .1rem;
+  /*! display: inline-block; */
+}
+#center-pane .note-detail :is(a, button, li, p, div, span, form, div) {
+  /*font-family: var(--main-font-family-sans);*/
+}
+#center-pane .note-detail :is(p, a, li, div, form) {
   color: var(--color-gray-text);
+  font-weight: 300;
 }
-
-#center-pane .note-detail li {
-  color: var(--color-gray-text);
-}
-
-#center-pane .note-detail p a {
+#center-pane .note-detail a {
   color: var(--color-blue-dark);
   border-bottom: 1px solid var(--color-orange-dark);
 }
-
+#center-pane .note-detail a:hover {
+  text-decoration: none;
+  color: var(--color-blue-dark-alpha);
+}
 #center-pane div.note-detail-editable-text div.note-detail-editable-text-editor.ck.ck-content pre,
 #center-pane .CodeMirror pre code {
   color: var(--color-blue-dark) !important;
@@ -1343,37 +602,71 @@ div#center-pane div.note-detail div.note-detail-editable-text {
   border: 1px dotted var(--color-gray);
 }
 
-/* embedded notes */
-div#center-pane div.scrolling-container div.note-detail section.include-note {
-  background-color: var(--main-background-color);
-  margin: 1.1rem;
-  box-shadow: var(--shadow-embedded-notes);
-  border-radius: 0;
-  padding: 0.5rem 0.5rem;
-  outline: 1px dotted var(--color-gray-light-text);
-  outline-offset: 1rem;
-}
-
-#center-pane code {
-  font-family: var(--main-font-family-mono);
+#center-pane .ck.ck-editor__editable pre[data-language]::after {
+  /*font-family: var(--main-font-family-sans);*/
 }
 
 div#root-widget div#rest-pane div#center-pane div.note-detail img {
-  border: 1px solid var(--color-gray);
-  padding: .5rem;
+  /*! border: 1px solid var(--color-gray); */
+  /*! padding: .5rem; */
 }
 
-/* TABLES */
-
+/* Tables */
 div#center-pane div.note-detail table,
 div#center-pane figure.table table {
     border: var(--border-light);
 }
 
-/* FIGURES & IMAGES */
-
-/* figcaption */
+/* Figures and Images */
 div#root-widget div#center-pane div.split-note-container-widget div.note-detail figure > figcaption {
   font-style: italic;
   background-color: white !important;
 }
+
+
+/* Note Bottom */
+#center-pane .note-detail + .note-list-widget {
+  background-color: var(--color-blue-light-text);
+  border-top: var(--border-standard);
+  box-shadow: var(--shadow-90deg-inset);
+  margin-bottom: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+#center-pane .title-row .note-title-widget input.note-title.protected {
+  text-shadow: none;
+  color: var(--color-gray-medium) !important;
+}
+#rest-pane .status-bar {
+  
+}
+#rest-pane .status-bar .status-bar-main-row div.breadcrumb {
+
+}
+#rest-pane .status-bar .status-bar-main-row div.breadcrumb div.dropdown {
+  
+}
+#rest-pane .status-bar .status-bar-main-row div.breadcrumb div.dropdown button {
+  color: var(--color-blue-dark);
+  border: 0;
+  border-radius: 0;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* CodeMirror 
+/* ----------------------------------------------------------------------------- */
+
+div#root-widget div#rest-pane div#center-pane .cm-scroller span {
+    font-family: var(--font-code);
+}
+
+div#root-widget div#rest-pane div#center-pane .cm-scroller span.cm-matchingBracket { 
+  text-decoration: none; 
+  font-weight: 700;
+  color: var(--color-orange-dark) !important;
+  border: 1px solid var(--color-gray);
+}
+

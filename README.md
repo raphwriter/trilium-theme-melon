@@ -1,40 +1,19 @@
 # 🍋 melon-4
-A theme for [Trilium Notes](https://github.com/zadam/trilium), (>= 0.48.x) "_a hierarchical note taking application with focus on building large personal knowledge bases_". 
+A theme for [Trilium](https://github.com/TriliumNext/Trilium),  "_a hierarchical note taking application with focus on building large personal knowledge bases_". 
 
-I really like this application and its many features. At the same time I felt like it needed some visual _overhaul_ for lack of better terms. I am trying to achieve a consistent look and feel. Sometimes things break (e.g. due to updates of the application) - please don't hesitate to file an issue!
 
 ## Screenshots
-### Main Window
-![scrn4_01](https://user-images.githubusercontent.com/28687075/192508241-88fb757e-9c85-4272-b2e4-7da5da79ec5e.png "More info below!")
+
+![scrn4_01](https://user-images.githubusercontent.com/28687075/192508241-88fb757e-9c85-4272-b2e4-7da5da79ec5e.png)
 
 ## Theme Installation
+Please follow the official instructions [here](https://docs.triliumnotes.org/user-guide/concepts/themes).
 
-### Please follow the official instructions [here](https://github.com/zadam/trilium/wiki/Themes).
+## Fonts (Suggestion)
+- Geist (Notes, UI)
+- Fira Code (Code/Monospace)
 
-#### In a nutshell:
-Install the theme by following these steps:
-- copy the (**raw**) content of ![trilium-theme-melon-4.css](https://raw.githubusercontent.com/raphwriter/trilium-theme-melon/master/melon-theme-4.css)
-- paste it into a new trilium **code** note (type: CSS) named "melon-theme-4"
-- add a new attribute to the melon-theme-4 note `(Alt + A)`
-  - either copy & paste `#appTheme=melon-4` to the node's attributes
-  - or use the UI with these settings
-    - Type: Label
-    - Name: appTheme
-    - Value: melon4
-    - inheritable: _not ticked_
-- go to Menu > Options
-- select it as your new theme
+You can get them from this repository (./fonts-dist) as ready-to-import .zip files
 
-## Additional Fonts
-To get the full experience you need to install some additional fonts.
-- The web font files (.woff) have to be imported into the theme note (right click on theme note, select _Import into note_)
-- the _customResourceProvider_ attribute needs to be added to every font file you want to use
-- the respective attribute _value_ should be _fonts/Font-File-Name.woff_
-
-### Example Attributes (use to copy&paste)
-
-```
-#originalFileName=FiraCode-Regular.woff #customResourceProvider="fonts/FiraCode-Regular.woff"
-
-```
-
+### Fonts Installation
+See [the official instructions](https://docs.triliumnotes.org/user-guide/concepts/themes/fonts)
