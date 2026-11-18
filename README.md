@@ -4,7 +4,7 @@ A theme for [Trilium](https://github.com/TriliumNext/Trilium),  "_a hierarchical
 
 ## Screenshots
 
-![scrn4_01](https://user-images.githubusercontent.com/28687075/192508241-88fb757e-9c85-4272-b2e4-7da5da79ec5e.png)
+![scrn4_01](screenshots/scrn4_01.png)
 
 ## Theme Installation
 Please follow the official instructions [here](https://docs.triliumnotes.org/user-guide/concepts/themes).
